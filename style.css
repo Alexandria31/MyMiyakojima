@@ -1,0 +1,121 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+/* Background */
+body {
+    background: #3bb6b0;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #ffffff;
+}
+/* Animated Wave */
+.wave {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 200%;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: waveMove 12s infinite linear;
+}
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/* Centered Content */
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    transform: translateY(-110px);
+}
+/*logo */
+.logo {
+    width: 290px;
+    height:auto
+}
+/*Coming Soon Animation*/
+.coming-soon {
+    font-family: "Playfair Display", serif;
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    animation: floatText 3s ease-in-out infinite;
+}
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+/* Japanese text */
+.jp  {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.4em;
+    margin-top: 6px;
+    opacity: 0.9;
+}
+/* Teaser text */
+.teaser {
+    margin-top: 2px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+/*CTA*/
+.cta {
+    margin-top: 18px;
+}
+/*Email Button*/
+.email-btn {  
+    display: inline-block;
+    margin-top: 10px;  
+    padding: 14px 30px;
+    background: #ffffff;
+    color: #1f8f8f;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid rgba(31, 143, 143, 0.2);
+}
+.email-btn:hover {
+    background: #e6f7f6;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+/* Force background waves to stay behind */
+.wave,
+.waves,
+.bg,
+.background,
+.ocean,
+#wave,
+#waves {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 220px;
+    }
+    .coming-soon {
+        font-size: 2.6rem;
+    }
+  
+}
