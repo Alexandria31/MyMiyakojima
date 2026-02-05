@@ -33,25 +33,30 @@ body {
 }
 /* Centered Content */
 .container {
-    height: 100vh;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 24px 20px;
     text-align: center;
-    padding: 40px;
+    box-sizing: border-box;
 }
 /*logo */
 .logo {
-    display: block;
-    margin: 0 auto 30px auto;
-    max-width: 320px;
+    margin: 0 auto 12px auto;
+    max-width: clamp(180px, 22vw, 260px);
 }
 /*Coming Soon Animation*/
 .coming-soon {
     font-family: "Playfair Display", serif;
-    font-size: 3.2rem;
+    font-size: clamp(2.2rem, 5vw, 3rem);
     letter-spacing: 1px;
     animation: floatText 3s ease-in-out infinite;
+    margin: 8px 0;
 }
 @keyframes floatText {
     0%, 100% {
@@ -65,18 +70,18 @@ body {
 .jp  {
     font-family: "Noto Serif JP", serif;
     font-size: 1.4em;
-    margin-top: 6px;
+    margin-top: 4px;
     opacity: 0.9;
 }
 /* Teaser text */
 .teaser {
-    margin-top: 2px;
+    margin-top: 8px;
     font-size: 1.1em;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 /*CTA*/
 .cta {
-    margin-top: 18px;
+    margin-top: 16px;
 }
 /*Email Button*/
 .email-btn {  
@@ -110,13 +115,14 @@ body {
     pointer-events: none;
 }
 
+
 @media (max-width: 768px) {
     .overflow-hidden {
         overflow: auto;
     }
     .logo {
-        max-width: 240px; /*slightly smaller logo on mobile*/
-        margin-bottom: 15px;
+        max-width: 220px; /*slightly smaller logo on mobile*/
+        margin-bottom: 20px;
     }
     .h1 {
         font-size: 2.2rem;
@@ -131,7 +137,7 @@ body {
         transform: none;
     }
     .coming-soon {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
     }
     .teaser {
         margin-top: 10px;
