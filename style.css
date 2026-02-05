@@ -39,7 +39,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 40px;
-    transform: translateY(-110px);
 }
 /*logo */
 .logo {
@@ -112,12 +111,20 @@ body {
 
 @media (max-width: 768px) {
     .logo {
-        width: 240px; /*slightly smaller logo on mobile*/
-        margin-bottom: 10px;
+        width: 220px; /*slightly smaller logo on mobile*/
+        margin-bottom: 20px;
     }
     .container {
         padding-top: 60px;
-        transform: translateY(-40px);
     }
-  
+    .coming-soon {
+        font-size: 2.6rem;
+        margin-top: 10px;
+    }
+    .teaser {
+        margin-top: 14px;
+    }
+    .cta {
+        margin-top: 24px;
+    }
 }
