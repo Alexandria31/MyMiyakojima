@@ -84,6 +84,19 @@ body {
 .cta {
     margin-top: 16px;
 }
+
+.cta-small {
+   margin-top: 10px;
+    font-size: 1.0em;
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 720px;
+}
+
+.cta-small.jp {
+    font-size: 0.9em;
+}
+
 /*Email Button*/
 .email-btn {  
     display: inline-block;
