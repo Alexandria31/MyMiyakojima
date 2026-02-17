@@ -186,7 +186,7 @@ nav a:hover {
     font-size: 16px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #f2e6d5
+    color: #1f4f4c;
     margin-bottom: 25px;
 }
 
@@ -208,4 +208,19 @@ nav a:hover {
     margin-top: 8px;
     letter-spacing: 2px;
     color: #6b7f7c;
+}
+
+.section-text {
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.photo-grid img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,128,128,0.25);
 }
