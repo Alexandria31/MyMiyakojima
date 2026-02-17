@@ -2,50 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Miyakojima</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png.png">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMYZ8E1EYN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+</head>
 
-      gtag('config', 'G-VMYZ8E1EYN');
-    </script>
-    </head>
 <body>
-    <!-- Wave Animation -->
-    <div class="wave"></div>
 
-    <!-- Foregound content-->
-    <main class="container">
-    <!-- Logo Image -->
-     
-    <img src="Ocean2.png" alt="My Miyakojima logo" class="logo"/>
-    <!--coming soon-->
-    <h1 class="coming-soon">Coming Soon</h1>
-    <h2 class="coming-soon jp">近日公開</h2>
-    <!--teaser copy-->
-    <p class="teaser">
-        A personal space to share my love for Miyakojima<br/>
-        Its people, its pace, its way of life.<br/><br/>
-        If you feel the same, let's connect.
-    </p>
-    <p class="teaser jp">
-         宮古島への想いを、少しずつ大切に伝えていく場所です。<br/>
-        人、暮らしのペース、島の空気感。<br/><br/>
-        もし共感していただけたら、ぜひつながりましょう。
-    </p>
-    <!--call to action-->
-        <div class="cta">
-            <p class="cta-small">
-             I also enjoy collaborating with local businesses who love this island.</p>
-            <p class="cta-small jp">
-                宮古島を大切に想う地元事業者の方とのご縁やコラボも大歓迎です。</p>
-            <a href="mailto:hello@mymiyakojima.com" class="email-btn">  Say hello / お話ししませんか</a>
-            </div>
-            </main>
+<header>
+    <div class="logo-container">
+        <img src="Ocean2.png" alt="My Miyakojima Logo" class="main-logo">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1 class="fade-in">Welcome</h1>
+    <p class="fade-in delay">A quiet journal from the island.</p>
+</section>
+
+<section class="content fade-in">
+    <h2>Why this site exists</h2>
+   <p>
+        This site was created with good intentions — a personal space to talk about a place that changed my perception of life.
+        </p>
+
+        <p>
+        Miyakojima has a quiet rhythm. A softness in its people. A way of living that teaches you to slow down, to breathe deeper, and to appreciate what truly matters.
+        </p>
+
+        <p>
+        This is not meant to be a tourism guide. It is a journal. A reflection. A space to share stories, memories, friendships, and the culture that makes this island what it is.
+        </p>
+
+        <p>
+        If you are someone who cares to read, to understand, and to respect this place — then you are welcome here.
+        </p>
+
+        <hr>
+
+        <p class="jp">
+        このサイトは、良い気持ちから生まれました。
+        人生の見方を変えてくれたこの場所について、静かに綴っていく個人的な記録です。
+        </p>
+
+        <p class="jp">
+        宮古島には、ゆっくりと流れる時間と、人の温かさ、そして暮らしの美しさがあります。
+        </p>
+
+        <p class="jp">
+        これは観光サイトではありません。
+        この島の文化や人々への敬意を込めた、小さなジャーナルです。
+        </p>
+
+        <p class="jp">
+        もしこの場所を理解し、大切にしたいと思ってくださるなら、ここはあなたのための場所です。
+        </p>
+
+    </div>
+</section>
+
+    <div class="gallery">
+        <img src="images/beach1.jpg" alt="Beach 1">
+        <img src="images/beach2.jpeg" alt="Beach 2">
+        <img src="images/beach3.jpeg" alt="Beach 3">
+        <img src="images/beach4.jpeg" alt="Beach 4">
+        <img src="images/beach5.jpeg" alt="Beach 5">
+    </div>
+</section>
+
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: 0.3
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting){
+                return;
+            } else {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+
 </body>
+</html>
