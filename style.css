@@ -105,7 +105,7 @@ nav a:hover {
 .content h2 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #00f2ff;
+    color: #1f4f4c
 }
 
 /* GALLERY */
@@ -163,4 +163,49 @@ nav a:hover {
 .email-button:hover {
     background-color: #2f7f7b;
     transform: translateY(-3px);
+}
+
+.intro {
+    text-align: center;
+    padding: 120px 20px 80px;
+}
+
+.welcome-title {
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #1e5f5c;
+    margin-bottom: 20px;
+}
+
+.accent-dot {
+    color: cdbb9f;
+}
+
+.welcome-sub {
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #f2e6d5
+    margin-bottom: 25px;
+}
+
+.wave-line {
+    width: 80px;
+    height: 2px;
+    background-color: #cdbb9f;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.jp-title {
+    display:block;
+    font-size: 18px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+    color: #6b7f7c;
 }
