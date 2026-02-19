@@ -34,6 +34,7 @@ header {
 
 .logo-container {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .main-logo {
@@ -60,7 +61,8 @@ nav {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -74,6 +76,9 @@ nav a:hover {
     color: #00f2ff;
 }
 
+
+
+    
 /* HERO */
 
 .hero {
@@ -179,7 +184,7 @@ nav a:hover {
 }
 
 .accent-dot {
-    color: cdbb9f;
+    color: #cdbb9f;
 }
 
 .welcome-sub {
@@ -333,9 +338,7 @@ html {
   text-align: center;
 }
 
-.logo-container {
-  margin-bottom: 10px;
-}
+
 
 .site-logo {
   width: 220px;   /* adjust if needed */
@@ -395,7 +398,9 @@ html {
     text-align: left;
     line-height: 1.9;
     color: #f4f4f4;
+    background-color: #6fb3b8;
 }
+
 
 .collab-intro h1 {
     text-align: center;
@@ -423,19 +428,20 @@ html {
     background-color: rgba(255, 255, 255, 0.02);
 }
 
-.collab-intro{
-   background-color: #6fb3b8;
-}
-
-@media (max-width: 600px) {
-    .social-links {
-        padding: 0 20px;
+@media (max-width: 768px) {
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 14px;
     }
-}
-
-.social-links a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: 12px 0;
+    
+    .journal-container,
+    .journal-article,
+    .content {
+        width: 90%;
+        
+    }
+    .journal-article {
+        margin: 40px auto;
+    }
 }
