@@ -61,8 +61,8 @@ nav {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    gap: 40px;
+   
 }
 
 nav a {
