@@ -426,3 +426,16 @@ html {
 .collab-intro{
    background-color: #6fb3b8;
 }
+
+@media (max-width: 600px) {
+    .social-links {
+        padding: 0 20px;
+    }
+}
+
+.social-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 12px 0;
+}
