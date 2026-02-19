@@ -445,3 +445,11 @@ html {
         margin: 40px auto;
     }
 }
+
+.jp {
+    display: block;
+    font-size: 0.7rem;
+    color: #2f6f73;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
