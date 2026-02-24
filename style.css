@@ -454,3 +454,100 @@ html {
     letter-spacing: 1px;
     margin-top: 2px;
 }
+
+/* Japanese nav styling */
+.main-nav .jp {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* Intro styling */
+.recommended-intro {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* Japanese blocks */
+.jp-block {
+  margin-top: 30px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.jp-sub {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* Section layout */
+.recommended-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Teal headings */
+.recommended-section h2 {
+  color: #008080;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Warm brown body */
+.recommended-section p {
+  color: #5c4a3d;
+}
+
+/* Sand card */
+.recommend-card {
+  margin-top: 20px;
+  padding: 25px;
+  background-color: #f4efe6;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Soft link */
+.soft-link {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #8a6f5a;
+}
+
+.soft-link:hover {
+  opacity: 0.7;
+}
+
+/* Soft divider */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e5ddd2;
+  margin: 60px auto;
+  width: 60%;
+}
+
+.jp-link {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
