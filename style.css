@@ -688,3 +688,18 @@ footer {
   font-size: 14px;
   font-weight: bold;
 }
+
+.jp-month,
+.jp-name,
+.jp-link {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.jp-description {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
