@@ -356,13 +356,11 @@ html {
 
 .preview-image {
   width: 100%;
-  max-width: 600px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 10px;
   border: 4px solid #e6d3b3;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+ 
 }
 
 .journal-article h1 { 
@@ -429,12 +427,19 @@ html {
 }
 
 @media (max-width: 768px) {
-    nav {
+
+    .main-nav {
         flex-direction: column;
         align-items: center;
         gap: 15px;
         font-size: 14px;
     }
+
+    .preview-image {
+        height: 220px;
+    }
+
+}
     
     .journal-container,
     .journal-article,
@@ -445,7 +450,7 @@ html {
     .journal-article {
         margin: 40px auto;
     }
-}
+
 
 .jp {
     display: block;
@@ -551,3 +556,4 @@ hr {
   opacity: 0.8;
   margin-top: 2px;
 }
+
