@@ -174,7 +174,27 @@ nav a:hover {
 
 .intro {
     text-align: center;
-    padding: 120px 20px 80px;
+    padding: 160px 20px 120px;
+    position: relative;
+    background: 
+    linear-gradient(rgba(244, 239, 230, 0.45), rgba(244, 239, 230, 0.55)),
+    url("images/MY1.jpeg") center/cover no-repeat;
+    
+   
+}
+
+.intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+.intro * {
+    position: relative;
+    z-index: 1;
 }
 
 .welcome-title {
@@ -193,7 +213,7 @@ nav a:hover {
     font-size: 16px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #1f4f4c;
+    color: rgba(255,255,255,0.9);
     margin-bottom: 25px;
 }
 
@@ -214,7 +234,7 @@ nav a:hover {
     font-size: 18px;
     margin-top: 8px;
     letter-spacing: 2px;
-    color: #6b7f7c;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .section-text {
@@ -434,6 +454,19 @@ html {
 
     .preview-image {
         height: 220px;
+    }
+
+    .mm-gallery {
+        grid-template-columns: repeat(1fr);
+        padding: 40px 20px;
+    }
+
+     .mm-gallery img {
+        height: 200px;
+    }
+
+     .journal-article {
+        width: 90%;
     }
 
 }
@@ -702,4 +735,125 @@ footer {
   opacity: 0.8;
   margin-top: -5px;
   margin-bottom: 15px;
+}
+
+/* ===== Refined Homepage Layout ===== */
+
+.mm-hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(to bottom, #6aa7a1, #89c3bd);
+  color: #2e2e2e;
+}
+
+.mm-hero h1 {
+  font-size: 48px;
+  letter-spacing: 3px;
+}
+
+.mm-tagline {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.mm-subline {
+  margin-top: 15px;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.mm-explore {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 70px 20px;
+  background: #f4efe6;
+}
+
+.mm-card {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 2px solid #e6d3b3;
+  transition: all 0.3s ease;
+}
+
+.mm-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  border-color: #4aada8;
+}
+
+.mm-card h2 {
+  margin-bottom: 10px;
+}
+
+.mm-card a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #2f5d62;
+}
+
+.mm-intention {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.mm-intention h2 {
+  margin-bottom: 20px;
+}
+
+.mm-footer {
+  text-align: center;
+  padding: 30px;
+  background: #6aa7a1;
+  color: white;
+}
+
+.mm-jp {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.mm-link-jp {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.mm-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 60px 40px;
+  background: #ffffff;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.mm-gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+ 
+}
+
+.en {
+  margin-bottom: 10px;
+}
+
+
+.jp-title {
+  font-size: 18px;
+  opacity: 0.7;
+  margin-bottom: 40px;
 }
