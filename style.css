@@ -582,9 +582,10 @@ hr {
 
 .jp-link {
   display: block;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  margin-top: 2px;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-top: 4px;
+  color: #ffffff;
 }
 
 /* ===== CREATIVE SPOTLIGHT ===== */
@@ -862,4 +863,89 @@ footer {
   font-size: 0.9rem;
   opacity: 0.8;
   font-weight: normal;
+}
+
+.latest-update {
+  background-color: #efe8de;
+  padding: 50px 20px;
+}
+
+.latest-update-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 42px 32px;
+  border-radius: 20px;
+  text-align: center;
+  
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f6efe5 100%
+  );
+  
+  border: 3px solid #e3c9a6;
+
+  box-shadow:
+  0 18px 40px rgba(0,0,0,0.12),
+  0 6px 12px rgba(0,0,0,0,06);
+
+  transition: all 0.35s ease;
+}
+
+.latest-update-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+  0 28px 60px rgba(0,0,0,0,18),
+  0 10px 20px rgba(0,0,0,0,1);
+}
+
+.latest-update-card h2 {
+  font-size: 28px;
+  color: #1f7a7a;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.jp-subtitle-home {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.jp-block-home {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.latest-update-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  
+  background-color: #2f8f8f;
+  color: #ffffff;
+  
+font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0,0.15);
+
+  transition: all 0.25s ease;
+}
+
+.latest-update-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.latest-update-card::before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #1f7a7a;
+  margin: 0 auto 18px auto;
+  border-radius: 3px;
 }
