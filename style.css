@@ -342,6 +342,14 @@ html {
   text-decoration: none;
   font-weight: 600;
   text-align: center;
+  transition: all 0.25s ease;
+}
+
+.main-nav a:hover {
+  background-color: rgba(255,255,255,0.18);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
 .main-nav span{
@@ -422,8 +430,9 @@ html {
 @media (max-width: 768px) {
 
     .main-nav {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 15px;
         font-size: 14px;
     }
@@ -649,7 +658,7 @@ footer {
 }
 
 .spotlight-page {
-  background: #f7f4ee;
+  background: linear-gradient(to bottom, #4aada8 0% #6fc7c2 40%, #f3efe6 100%);
 }
 
 /* ===== Spotlight Card ===== */
