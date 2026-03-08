@@ -26,28 +26,7 @@ body:not(.spotlight-page)::before {
     pointer-events: none;
 }
 
-/* HEADER */
 
-header {
-    background: rgba(74,173,168);
-    backdrop-filter: blur(8px);
-    padding: 30px 0;
-}
-
-.logo-container {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.main-logo {
-    width: 220px;
-    animation: float 4s ease-in-out infinite;
-    transition: 0.4s ease;
-}
-
-.main-logo:hover {
-    transform: scale(1.05);
-}
 
 /* FLOAT ANIMATION */
 
@@ -57,26 +36,7 @@ header {
     100% { transform: translateY(0px); }
 }
 
-/* NAV */
 
-nav {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-   
-}
-
-nav a {
-    text-decoration: none;
-    color: #f6f3eb;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-nav a:hover {
-    color: #00f2ff;
-}
 
 
 
@@ -106,7 +66,7 @@ nav a:hover {
     border-radius: 30px;
     width: 85%;
     margin: 80px auto;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
 .content h2 {
@@ -355,25 +315,41 @@ html {
 
 .site-header {
   background-color: rgba(74,173,168);
-  padding-top: 15px;
-  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
   text-align: center;
 }
 
 
 
 .site-logo {
-  width: 220px;   /* adjust if needed */
+  width: 150px;   /* adjust if needed */
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
 .main-nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-nav span{
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-top: 3px;
+ 
 }
 
 .preview-image {
@@ -888,7 +864,7 @@ footer {
 
   box-shadow:
   0 18px 40px rgba(0,0,0,0.12),
-  0 6px 12px rgba(0,0,0,0,06);
+  0 6px 12px rgba(0,0,0,0.06);
 
   transition: all 0.35s ease;
 }
@@ -896,8 +872,8 @@ footer {
 .latest-update-card:hover {
   transform: translateY(-6px);
   box-shadow:
-  0 28px 60px rgba(0,0,0,0,18),
-  0 10px 20px rgba(0,0,0,0,1);
+  0 28px 60px rgba(0,0,0,0.18),
+  0 10px 20px rgba(0,0,0,0.1);
 }
 
 .latest-update-card h2 {
