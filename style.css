@@ -315,9 +315,10 @@ html {
 
 .site-header {
   background-color: rgba(74,173,168);
-  padding-top: 10px;
-  padding-bottom: 8px;
-  text-align: center;
+  padding-top: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -325,8 +326,7 @@ html {
 .site-logo {
   width: 150px;   /* adjust if needed */
   height: auto;
-  display: block;
-  margin: 0 auto;
+  
 }
 
 .main-nav {
@@ -427,14 +427,31 @@ html {
     background-color: rgba(255,255,255,0.4);
 }
 
+.menu-toggle{
+display:none;
+font-size:18px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
 @media (max-width: 768px) {
 
+  .menu-toggle{
+    display: block;
+  }
+
     .main-nav {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        font-size: 14px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    .main-nav.active{
+      display: flex;
     }
 
     .preview-image {
@@ -985,3 +1002,4 @@ font-weight: 600;
   font-size:0.8rem;
   color:#777;
 }
+
