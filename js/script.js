@@ -20,3 +20,14 @@ window.addEventListener("scroll", function () {
     header.style.backgroundColor = "rgba(74,173,168,0.8)";
   }
 });
+
+const comingSection = document.querySelector('.coming-soon');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+  const top = comingSection.getBoundingClientRect().top;
+
+  if (top < trigger) {
+    comingSection.classList.add('show');
+  }
+});

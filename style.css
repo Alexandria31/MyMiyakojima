@@ -1284,3 +1284,78 @@ margin-top:4px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.8);
   transition:all 0.25s ease;
 }
+
+/* ===== Coming Soon Section ===== */
+
+.coming-soon {
+  text-align: center;
+  max-width: 520px;
+  margin: 80px auto;
+  color: #2f3e3e;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+/* Fade-in when visible */
+.coming-soon.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divider (matches your design system) */
+.coming-divider {
+  width: 40px;
+  height: 3px;
+  background: #4aada8;
+  margin: 0 auto 15px;
+  border-radius: 2px;
+}
+
+.coming-soon h2 {
+  font-size: 22px;
+  color: #4aada8;
+  margin-bottom: 5px;
+  letter-spacing: 1.5px;
+}
+
+.coming-sub {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 25px;
+}
+
+/* List styling */
+
+.coming-list {
+  display: inline-block;
+  text-align: left;
+}
+
+.coming-list p {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.coming-list span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+/* Footer text */
+.coming-footer {
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.coming-footer span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.6;
+}
