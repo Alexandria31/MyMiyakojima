@@ -456,7 +456,18 @@ cursor:pointer;
     }
 
     .main-nav.active{
-      display: flex;
+       display: flex;
+  position: absolute;
+  top: 60px; /* adjust based on your header height */
+  left: 0;
+  width: 100%;
+  background-color: rgba(74,173,168,0.95);
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 999;
+}
+
     }
 
     .preview-image {
@@ -476,7 +487,7 @@ cursor:pointer;
         width: 90%;
     }
 
-}
+
     
     .journal-container,
     .journal-article,
