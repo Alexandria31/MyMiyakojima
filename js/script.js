@@ -3,7 +3,11 @@
 // =========================
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("active");
+  if (!menu) {
+    console.log("Menu not found");
+  } else {
+    menu.classList.toggle("open");
+  }
 }
 
 
