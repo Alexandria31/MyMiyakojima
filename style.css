@@ -159,6 +159,14 @@ body::before {
    
 }
 
+.intro .jp {
+    
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    line-height: 1.7;
+}
+
 .intro::before {
     content: "";
     position: absolute;
@@ -546,7 +554,7 @@ MOBILE NAV
 .jp {
     display: block;
     font-size: 0.95rem;
-    color: #222;
+    color: #555;
     letter-spacing: 1px;
     margin-top: 4px;
     line-height: 1.7;
@@ -559,7 +567,7 @@ MOBILE NAV
     margin-bottom: 10px;
     letter-spacing: 2px;
     color: #2f4f4f;
-    opacity: 0.085;
+    
 }
 
 h2 .jp {
