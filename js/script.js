@@ -23,3 +23,18 @@ window.addEventListener('scroll', () => {
     comingSection.classList.add('show');
   }
 });
+
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+
+const elements = document.querySelectorAll('.fade-up');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) {
+      el.classList.add('show');
+    } 
+  });
+});
