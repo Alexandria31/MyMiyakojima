@@ -1,9 +1,16 @@
+// =========================
+// MOBILE MENU TOGGLE
+// =========================
 function toggleMenu() {
   const menu = document.getElementById("MobileMenu");
   menu.classList.toggle("open");
 }
 
-window.addEventListener("scroll", function () {
+
+// =========================
+// HEADER SCROLL COLOR
+// =========================
+window.addEventListener("scroll", () => {
   const header = document.querySelector(".site-header");
 
   if (window.scrollY > 50) {
@@ -13,28 +20,24 @@ window.addEventListener("scroll", function () {
   }
 });
 
-const comingSection = document.querySelector('.coming-soon');
 
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
-  const top = comingSection.getBoundingClientRect().top;
+// =========================
+// FADE-UP ANIMATION (FIXED)
+// =========================
+const elements = document.querySelectorAll(".fade-up");
 
-  if (top < trigger) {
-    comingSection.classList.add('show');
-  }
-});
-
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-const elements = document.querySelectorAll('.fade-up');
-
-window.addEventListener('scroll', () => {
+function revealElements() {
   elements.forEach(el => {
     const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight * 0.85) {
-      el.classList.add('show');
-    } 
+
+    if (top < window.innerHeight * 0.9) {
+      el.classList.add("show");
+    }
   });
-});
+}
+
+// RUN ON LOAD (IMPORTANT)
+window.addEventListener("load", revealElements);
+
+// RUN ON SCROLL
+window.addEventListener("scroll", revealElements);
