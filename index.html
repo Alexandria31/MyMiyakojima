@@ -13,13 +13,15 @@
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
 
 <img src="Ocean2.png" class="site-logo" alt="My Miyakojima">
 
-<button class="menu-toggle">☰ MENU</button>
+<!-- ✅ JS HOOK HERE -->
+<button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
 
-<nav class="main-nav">
+<nav class="main-nav" id="mobileMenu">
 
 <a href="index.html">Home<span class="jp">ホーム</span></a>
 <a href="journal.html">Journal<span class="jp">ジャーナル</span></a>
@@ -46,6 +48,22 @@ WELCOME<span class="accent-dot">.</span>
 </p>
 
 <div class="wave-line"></div>
+
+<!-- ✅ YOUR ORIGINAL BUTTON STYLE (REUSED) -->
+<div style="margin-top:30px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+
+<a href="recommended.html" class="collab-button">
+View Recommendations →
+<br><span>おすすめを見る</span>
+</a>
+
+
+<a href="creative-cesca.html" class="collab-button">
+  Creative Spotlight クリエイター特集 →
+  <br><span>Cesca Dai</span>
+</a>
+
+</div>
 
 </section>
 
@@ -74,8 +92,8 @@ businesses, and stories rooted in Miyakojima’s culture.
 
 </section>
 
-<!-- 🔥 BENEFITS (RESTORED + STRONG BUT RESPECTFUL) -->
- <section class="collab-benefits-section">
+<!-- BENEFITS (YOUR SEO VERSION KEPT) -->
+<section class="collab-benefits-section">
 
 <div class="collab-benefits-card">
 
@@ -83,13 +101,12 @@ businesses, and stories rooted in Miyakojima’s culture.
 <p class="jp-title">宮古島の事業者・クリエイターの皆さまへ</p>
 
 <p>
-My Miyakojima is not just a website — it is a long-term discovery platform.
-It helps your business get found by people who are already searching for Miyakojima.
+My Miyakojima is not just a website — it is a long-term discovery platform designed to help your business be found through Google search by people already interested in Miyakojima.
 </p>
 
 <p class="jp-text">
 My Miyakojima は単なるウェブサイトではなく、
-「宮古島を探している人」に見つけてもらうための
+宮古島に興味を持つ人にGoogle検索を通して見つけてもらうための
 長期的な発信プラットフォームです。
 </p>
 
@@ -98,98 +115,123 @@ My Miyakojima は単なるウェブサイトではなく、
 <div class="benefit-box">
 <h3>🔎 Google Search Visibility (SEO)</h3>
 <p>
-Your business becomes searchable on Google, not just seen on social media.
-This means people actively searching “Miyakojima restaurants”, “salon”, or “things to do”
-can find you directly.
+Your business becomes searchable on Google — not just visible on Instagram.
+This means people actively searching “Miyakojima restaurants”, “salon”, “things to do”
+can discover your business naturally.
 </p>
 <p class="jp-text">
-Instagramだけでなく、Google検索から直接見つけてもらえるようになります。
-「宮古島 レストラン」などの検索に対応。
+Instagramだけでなく、Google検索から直接見つけてもらえます。
+「宮古島 レストラン」「サロン」「観光」などの検索に対応。
 </p>
 </div>
 
 <div class="benefit-box">
-<h3>📈 Long-Term Traffic (Not Temporary)</h3>
+<h3>📈 Long-Term Traffic (Unlike Social Media)</h3>
 <p>
-Unlike Instagram posts that disappear in a day,
-your feature stays online and continues bringing visitors over time.
+Instagram posts disappear within hours.
+Your feature on My Miyakojima stays online and continues bringing visitors over time.
 </p>
 <p class="jp-text">
 SNS投稿と違い、掲載ページは残り続け、
-長期間アクセスが見込めます。
+長期間にわたってアクセスが期待できます。
 </p>
 </div>
 
 <div class="benefit-box">
-<h3>🌏 Bilingual Reach (Tourists + Locals)</h3>
+<h3>🌏 Bilingual Exposure (Tourists + Locals)</h3>
 <p>
-Your business is introduced in English and Japanese,
-connecting you to both international travelers and local customers.
+Your business is introduced in both English and Japanese,
+allowing you to reach international travelers and local customers at the same time.
 </p>
 <p class="jp-text">
 英語と日本語で紹介することで、
-観光客と地元客の両方に届きます。
+観光客と地元客の両方にアプローチできます。
 </p>
 </div>
 
 <div class="benefit-box">
-<h3>✨ Strong Positioning (Not Buried)</h3>
+<h3>✨ Curated Platform (Higher Value Exposure)</h3>
 <p>
 This is not a crowded listing site.
-Each feature is curated, allowing your business to stand out clearly.
+Only selected places are featured, allowing your business to stand out clearly.
 </p>
 <p class="jp-text">
 一覧サイトではなく厳選掲載のため、
-他に埋もれずしっかり目立ちます。
+他に埋もれずしっかり目立つことができます。
 </p>
 </div>
 
 <div class="benefit-box">
-<h3>🧭 Guided Customer Flow</h3>
+<h3>🧭 Designed to Convert Visitors into Customers</h3>
 <p>
-Pages are designed to guide visitors toward action —
-visiting your shop, making reservations, or contacting you.
+Pages are structured to guide users toward real action —
+visiting your store, making a reservation, or contacting you.
 </p>
 <p class="jp-text">
-来店・予約・問い合わせにつながる導線設計をしています。
+閲覧だけでなく、来店・予約・問い合わせにつながる設計になっています。
 </p>
 </div>
 
 <div class="benefit-box">
-<h3>🚀 SEO Strategy Support</h3>
+<h3>🚀 SEO Strategy Built-In</h3>
 <p>
-We structure content, keywords, and internal links to improve visibility on Google.
-This helps your business appear more easily in search results over time.
+Content is structured with keywords, internal linking, and page flow
+to improve your visibility on Google over time.
 </p>
 <p class="jp-text">
 キーワード設計や内部リンクにより、
-検索で見つかりやすくなる構成にしています。
+検索結果で見つかりやすくなる構成にしています。
 </p>
 </div>
 
 <div class="benefit-box">
 <h3>🤝 Early Partner Advantage</h3>
 <p>
-As the platform grows, early featured businesses gain stronger authority and visibility.
-Being part of the early stage gives you an advantage.
+As the platform grows, early featured businesses gain stronger visibility and authority.
+Joining early gives you a long-term advantage.
 </p>
 <p class="jp-text">
-初期掲載により、今後の成長とともに
+初期掲載により、サイト成長とともに
 より強い露出効果が期待できます。
 </p>
 </div>
 
 <div class="benefit-box">
-<h3>🏝️ Ideal for Miyakojima Businesses</h3>
+<h3>🏝️ Built for Miyakojima Businesses</h3>
 <p>
 Perfect for restaurants, salons, guesthouses, rentals, and experiences
-that want to be discovered beyond Instagram.
+that want to attract customers beyond Instagram.
 </p>
 <p class="jp-text">
 飲食店、サロン、宿泊施設、レンタカー、体験など、
 Instagram以外で集客したい方に最適です。
 </p>
 </div>
+
+<div class="benefit">
+  <h3>📍 Location-Based Discovery</h3>
+  <p>
+    Your business can be found by people already planning their trip to Miyakojima.
+    We target search intent — not random scrolling — meaning higher quality visitors.
+  </p>
+  <p class="jp">
+    宮古島に来る予定の人に向けて、
+    「探している人」に届く導線を作ります。
+  </p>
+</div>
+
+<div class="benefit">
+  <h3>💼 Brand Positioning (Not Just Promotion)</h3>
+  <p>
+    Your business is presented as part of Miyakojima’s lifestyle and culture —
+    creating trust, story, and long-term brand value beyond simple advertising.
+  </p>
+  <p class="jp">
+    単なる宣伝ではなく、
+    宮古島のストーリーの一部として紹介することで信頼感を高めます。
+  </p>
+</div>
+
 
 </div>
 
@@ -207,23 +249,7 @@ Contact Us →
 
 </section>
 
-<!-- 🔥 FEATURED -->
-<section class="featured-line">
-
-<p><strong>Featured on My Miyakojima</strong></p>
-<p class="jp-title">ご紹介した方々</p>
-
-<p class="featured-names">
-Pizza Doraku ・ Cesca Dai ・ More coming soon
-</p>
-
-<p class="featured-names-jp">
-ピザ道楽 ・ Cesca Dai ・ 他
-</p>
-
-</section>
-
-<!-- 🔥 APRIL (NOT BENEFITS STYLE) -->
+<!-- APRIL -->
 <section class="coming-soon">
 
 <div class="coming-divider"></div>
@@ -233,26 +259,17 @@ Pizza Doraku ・ Cesca Dai ・ More coming soon
 
 <div class="coming-list">
 
-<p>• Curated stays in Miyakojima<br><span>宿泊施設のご紹介</span></p>
-
-<p>• Local car rental recommendations<br><span>レンタカー情報</span></p>
-
-<p>• Restaurant & food features<br><span>飲食店・グルメ特集</span></p>
-
-<p>• Island experiences & tours<br><span>体験・ツアー</span></p>
-
-<p>• Creative profiles<br><span>クリエイター紹介</span></p>
+<p>• Stays<br><span>宿泊施設</span></p>
+<p>• Transportation<br><span>移動手段</span></p>
+<p>• Restaurants<br><span>飲食店</span></p>
+<p>• Experiences<br><span>体験</span></p>
+<p>• Creatives<br><span>クリエイター</span></p>
 
 </div>
 
-<p class="coming-footer">
-A growing collection, shaped with intention.<br>
-<span>少しずつ広がっていく内容をお楽しみください。</span>
-</p>
-
 </section>
 
-<!-- 🔥 YOUR 6 IMAGES BACK -->
+<!-- IMAGES -->
 <section class="mm-gallery">
 <img src="images/MY1.jpeg">
 <img src="images/MY2.jpeg">
@@ -265,6 +282,9 @@ A growing collection, shaped with intention.<br>
 <footer>
 © 2026 My Miyakojima
 </footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
 
 </body>
 </html>

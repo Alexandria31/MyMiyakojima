@@ -2,8 +2,8 @@
 // MOBILE MENU TOGGLE
 // =========================
 function toggleMenu() {
-  const menu = document.getElementById("MobileMenu");
-  menu.classList.toggle("open");
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
 }
 
 

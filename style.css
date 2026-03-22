@@ -1268,17 +1268,24 @@ font-weight: 500;
 }
 
 .collab-button {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 90px;
   margin-top: 18px;
+  margin-right: 10px;
   background: #5aaeb3;
   color: white;
   text-decoration: none;
-  padding: 18px 42px;
+  padding: 10px;
   border-radius: 999px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, background 0.25s ease;
+  text-align: center;
 }
 
 .collab-button span {
