@@ -478,29 +478,28 @@ MOBILE NAV
   }
 
     .main-nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 18px;
         padding: 20px 0;
         width: 100%;
+        position: absolute;
+        top: 100%; /* adjust based on your header height */
+        left: 0;
+        background-color: rgba(74,173,168,0.95);
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.35s ease;
          
         
     }
 
     .main-nav.open{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-      position: absolute;
-      top: 100%; /* adjust based on your header height */
-      left: 0;
-      width: 100%;
-      background-color: rgba(74,173,168,0.95);
-      padding: 20px 0;
-      z-index: 999;
-      height: auto;
-      max-height: none;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
       
 }
 
