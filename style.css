@@ -203,6 +203,13 @@ body::before {
     margin: 0 auto;
 }
 
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .photo-grid img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -985,11 +992,11 @@ font-weight: 600;
 }
 
 .gallery-image {
-  width: 60%;
-  max-width: 500px;
-  border-radius: 10px;
-  margin: 20px auto;
-  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+
 }
 
 
