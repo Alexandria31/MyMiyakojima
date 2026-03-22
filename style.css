@@ -193,8 +193,10 @@ body::before {
     display:block;
     font-size: 18px;
     margin-top: 8px;
+    margin-bottom: 10px;
     letter-spacing: 2px;
-    color: #0f5e5a
+    color: #2f4f4f;
+    opacity: 0.085;
 }
 
 .section-text {
@@ -323,7 +325,7 @@ html {
 .site-header {
   background-color: rgba(74,173,168,0.95);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding-top: 10px 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -466,17 +468,17 @@ cursor:pointer;
         padding: 20px 0;
     }
 
-    .main-nav.active{
+    .main-nav.open{
        display: flex;
-  position: absolute;
-  top: 60px; /* adjust based on your header height */
-  left: 0;
-  width: 100%;
-  background-color: rgba(74,173,168,0.95);
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  z-index: 999;
+      position: absolute;
+      top: 60px; /* adjust based on your header height */
+      left: 0;
+      width: 100%;
+      background-color: rgba(74,173,168,0.95);
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      z-index: 999;
 }
 
     }
@@ -486,7 +488,7 @@ cursor:pointer;
     }
 
     .mm-gallery {
-        grid-template-columns: repeat(1fr);
+        grid-template-columns: repeat(1, 1fr);
         padding: 40px 20px;
     }
 
@@ -709,7 +711,7 @@ footer {
 }
 
 .spotlight-page {
-  background: linear-gradient(to bottom, #4aada8 0% #6fc7c2 40%, #f3efe6 100%);
+  background: linear-gradient(to bottom, #4aada8 0%, #6fc7c2 40%, #f3efe6 100%);
 }
 
 /* ===== Spotlight Card ===== */
@@ -890,11 +892,7 @@ footer {
 }
 
 
-.jp-title {
-  font-size: 18px;
-  opacity: 0.7;
-  margin-bottom: 40px;
-}
+
 
 .jp-inline {
   font-size: 0.9rem;
@@ -967,7 +965,7 @@ font-weight: 600;
   border-radius: 40px;
   text-decoration: none;
 
-  box-shadow: 0 6px 16px rgba(0,0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 
   transition: all 0.25s ease;
 }

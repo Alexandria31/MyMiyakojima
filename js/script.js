@@ -1,15 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".main-nav");
-
-if (menuToggle && nav) {
-menuToggle.addEventListener("click", function () {
-nav.classList.toggle("active");
-});
+function toggleMenu() {
+  const menu = document.getElementById("MobileMenu");
+  menu.classList.toggle("open");
 }
-
-});
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".site-header");

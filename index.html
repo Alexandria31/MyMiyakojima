@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Miyakojima | 宮古島のライフスタイル・おすすめ情報 & Curated Island Guide</title>
-<meta name="viewport" content="My Miyakojima is a curated bilingual lifestyle space sharing selected places, creatives, and local recommendations rooted in 宮古島 (Miyakojima). Discover thoughtful travel, food, and island culture.">
-<link rel="stylesheet" href="style.css">
+
+<title>My Miyakojima | 宮古島のライフスタイル・おすすめ情報</title>
+
+<meta name="description" content="My Miyakojima is a curated bilingual lifestyle space sharing selected places, creatives, and local recommendations rooted in Miyakojima.">
+
+<link rel="stylesheet" href="style.css?v=10">
+
 </head>
 
 <body>
@@ -14,9 +19,9 @@
 
 <img src="Ocean2.png" class="site-logo" alt="My Miyakojima">
 
-<button class="menu-toggle">☰ MENU</button>
+<button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
 
-<nav class="main-nav">
+<nav class="main-nav" id="mobileMenu">
 
 <a href="index.html">
 Home
@@ -28,7 +33,10 @@ Journal
 <span class="jp">ジャーナル</span>
 </a>
 
-<a href="discover-miyakojima.html">Discover Miyakojima<br><span class="jp">宮古島ガイド</span></a>
+<a href="discover-miyakojima.html">
+Discover Miyakojima<br>
+<span class="jp">宮古島ガイド</span>
+</a>
 
 <a href="collaborations.html">
 Collaborations
@@ -49,6 +57,7 @@ Contact
 
 </header>
 
+<!-- HERO -->
 <section class="intro">
   <h1 class="welcome-title">
     WELCOME<span class="accent-dot">.</span>
@@ -58,238 +67,149 @@ Contact
   <div class="wave-line"></div>
 </section>
 
+<!-- INTENTION -->
 <section class="content">
+
   <h2 class="section-title">
     A Quiet Intention
     <span class="jp-title">静かな想い</span>
   </h2>
 
   <div class="section-text">
+
     <p>
       A curated bilingual lifestyle space featuring selected creatives, businesses, and stories rooted in Miyakojima’s culture.
     </p>
 
     <p class="jp-block">
-     宮古島の文化に根ざした、
-
-    厳選されたクリエイターやお店、ストーリーを紹介する
-
-    バイリンガルのキュレーション型ライフスタイル空間です。
-
-
+      宮古島の文化に根ざした、厳選されたクリエイターやお店、ストーリーを紹介する
+      バイリンガルのキュレーション型ライフスタイル空間です。
     </p>
 
-   
   </div>
+
 </section>
 
+<!-- COLLAB -->
 <section class="collab-benefits-section">
 
-  <div class="collab-benefits-card">
-    <h2>Why Collaborate With Us?</h2>
-    <p class="jp-title">宮古島の事業者の皆さまへ</p>
+<div class="collab-benefits-card">
 
-    <p>
-      My Miyakojima is a bilingual platform introducing selected places, people, and stories connected to the island.
-      We aim to share Miyakojima’s culture, businesses, and lifestyle with visitors from Japan and around the world.
-    </p>
+<h2>Why Collaborate With Us?</h2>
+<p class="jp-title">宮古島の事業者の皆さまへ</p>
 
-    <p class="jp-text">
-      My Miyakojima は、宮古島に関わる場所・人・ストーリーを丁寧に紹介する
-      バイリンガルのウェブサイトです。
-      国内外の方々に向けて、宮古島の魅力あるお店や活動を発信しています。
-    </p>
+<p>
+My Miyakojima is a bilingual platform introducing selected places, people, and stories connected to the island.
+</p>
 
-    <div class="benefits-grid">
+<p class="jp-text">
+My Miyakojima は、宮古島に関わる場所・人・ストーリーを丁寧に紹介するバイリンガルのウェブサイトです。
+</p>
 
-      <div class="benefit-box">
-        <h3>🌍 Reach International Visitors</h3>
-        <p>Your business can be discovered by travelers searching for Miyakojima in English and Japanese.</p>
-        <p class="jp-text">英語と日本語の両方で発信することで、国内外の旅行者にお店を知ってもらえます。</p>
-      </div>
+<!-- CTA -->
+<div class="collab-cta">
+<p class="cta-line">Interested in collaborating or being featured?</p>
+<p class="jp-text">掲載やコラボにご興味がありましたら、お気軽にご連絡ください。</p>
 
-      <div class="benefit-box">
-        <h3>🔎 SEO Visibility</h3>
-        <p>Being featured on a website can help your business become easier to find through search engines over time.</p>
-        <p class="jp-text">ウェブサイトで紹介されることで、検索を通して見つけてもらいやすくなる可能性があります。</p>
-      </div>
+<a href="contact.html" class="collab-button">
+Contact Us →
+<br><span>お問い合わせ</span>
+</a>
+</div>
 
-      <div class="benefit-box">
-        <h3>🌐 Bilingual Exposure</h3>
-        <p>Your business will be introduced in both English and Japanese, helping connect with a wider audience.</p>
-        <p class="jp-text">英語と日本語の両方で紹介することで、より幅広い方に魅力を届けられます。</p>
-      </div>
+</div>
 
-      <div class="benefit-box">
-        <h3>📍 Long-Term Online Presence</h3>
-        <p>Unlike social media posts, a feature on the website can remain visible and continue to be discovered over time.</p>
-        <p class="jp-text">SNS投稿と違い、ウェブサイト上の紹介ページは長く残り、継続的に見てもらえる可能性があります。</p>
-      </div>
-
-      <div class="benefit-box">
-        <h3>⭐ Thoughtful Presentation</h3>
-        <p>Businesses are introduced with care, focusing on atmosphere, story, and authenticity rather than simple listings.</p>
-        <p class="jp-text">単なる店舗一覧ではなく、お店の雰囲気や想いも含めて丁寧にご紹介します。</p>
-      </div>
-
-      <div class="benefit-box">
-        <h3>📣 Social Media Support</h3>
-        <p>Featured businesses may also be shared through My Miyakojima’s social media channels.</p>
-        <p class="jp-text">掲載された内容は、My Miyakojima のSNSでもご紹介する場合があります。</p>
-      </div>
-
-      <div class="benefit-box">
-        <h3>🤝 Community-Focused Promotion</h3>
-        <p>The goal is to celebrate Miyakojima and support the people and businesses that make the island special.</p>
-        <p class="jp-text">宮古島の魅力を、地域の方々や事業者の皆さまと一緒に発信していくことを大切にしています。</p>
-      </div>
-
-      <div class="benefit-box">
-        <h3>💡 A Trusted, Curated Platform</h3>
-        <p>My Miyakojima is designed as a calm and intentional space, helping featured businesses appear in a more meaningful context.</p>
-        <p class="jp-text">My Miyakojima は、落ち着いた世界観の中で丁寧に紹介する場として作られており、より信頼感のある形で見てもらえることを目指しています。</p>
-      </div>
-
-    </div>
-
-    <div class="collab-cta">
-      <p class="cta-line">Interested in collaborating or being featured?</p>
-      <p class="jp-text">掲載やコラボにご興味がありましたら、お気軽にご連絡ください。</p>
-      <a href="contact.html" class="collab-button">Contact Us →<br><span>お問い合わせ</span></a>
-    </div>
-  </div>
-
- <div class="featured-line">
-
+<div class="featured-line">
 <p><strong>Featured on My Miyakojima</strong></p>
-
 <p class="jp-title">My Miyakojimaでご紹介した方々</p>
 
-<p class="featured-names">
-Pizza Doraku ・ Cesca Dai ・ More coming soon
-</p>
+<p>Pizza Doraku ・ Cesca Dai ・ More coming soon</p>
+<p class="featured-names-jp">ピザ道楽 ・ Cesca Dai ・ 他</p>
+</div>
 
-<p class="featured-names-jp">
-ピザ道楽 ・ Cesca Dai ・ 他
-</p>
+</section>
+
+<!-- COMING -->
+<section class="coming-soon">
+
+<div class="coming-divider"></div>
+
+<h2>Coming in April</h2>
+<p class="coming-sub">4月の新しいコンテンツ</p>
+
+<div class="coming-list">
+
+<p>• Curated stays in Miyakojima<br><span>宮古島のおすすめ宿泊施設</span></p>
+<p>• Local car rental recommendations<br><span>レンタカーのご紹介</span></p>
+<p>• A new creative profile<br><span>新しいクリエイティブプロフィール</span></p>
+<p>• More journal stories<br><span>島の日常を綴るジャーナル</span></p>
 
 </div>
 
 </section>
 
-<section class="coming-soon">
-
-  <div class="coming-divider"></div>
-
-  <h2>Coming in April</h2>
-  <p class="coming-sub">4月の新しいコンテンツ</p>
-
-  <div class="coming-list">
-
-    <p>• Curated stays in Miyakojima<br>
-    <span>宮古島のおすすめ宿泊施設</span></p>
-
-    <p>• Local car rental recommendations<br>
-    <span>レンタカーのご紹介</span></p>
-
-    <p>• A new creative profile<br>
-    <span>新しいクリエイティブプロフィール</span></p>
-
-    <p>• More journal stories from the island<br>
-    <span>島の日常を綴るジャーナル</span></p>
-
-  </div>
-
-  <p class="coming-footer">
-    A growing collection, shaped with intention.<br>
-    <span>少しずつ広がっていく内容を、ぜひご覧ください。</span>
-  </p>
-
-</section>
-
-
-
+<!-- UPDATE -->
 <section class="latest-update">
 
-  <div class="latest-update-card">
+<div class="latest-update-card">
 
-    <h2>New Recommendation</h2>
-    <p class="jp-subtitle-home">新しいおすすめ</p>
+<h2>New Recommendation</h2>
+<p class="jp-subtitle-home">新しいおすすめ</p>
 
-    <p>
-      A new local food feature has been added to the Recommended page.
-    </p>
+<p>Discover Pizza Doraku, one of Miyakojima’s longest-running pizza restaurants.</p>
 
-    <p>
-      Discover Pizza Doraku, one of Miyakojima’s longest-running pizza restaurants.
-    </p>
+<div class="jp-block-home">
+<p>おすすめページに新しいローカルフードを追加しました。</p>
+<p>ピザ道楽をご紹介しています。</p>
+</div>
 
-    <div class="jp-block-home">
-      <p>
-        おすすめページに、新しいローカルフードの紹介を追加しました。
-      </p>
+<a href="recommended.html" class="latest-update-link">
+View Recommendation →
+<span class="jp-link">おすすめを見る</span>
+</a>
 
-      <p>
-        宮古島で長く愛されているピザ道楽をご紹介しています。
-      </p>
-    </div>
-
-    <a href="recommended.html" class="latest-update-link">
-      View Recommendation →
-      <span class="jp-link">おすすめを見る</span>
-    </a>
-
-  </div>
+</div>
 
 </section>
 
+<!-- EXPLORE -->
 <section class="mm-explore">
 
-  <div class="mm-card">
-    <h2>Journal</h2>
-    <p class="mm-jp"></p>島の暮らしと、静かな記録。</p>
-    <p>Personal reflections and island life.</p>
-    <a href="journal.html">
-      Explore →
-      <div class="mm-link-jp">読む</div>
-    </a>
-  </div>
+<div class="mm-card">
+<h2>Journal</h2>
+<p class="mm-jp">島の暮らしと、静かな記録。</p>
+<p>Personal reflections and island life.</p>
+<a href="journal.html">Explore →<div class="mm-link-jp">読む</div></a>
+</div>
 
-  <div class="mm-card">
-    <h2>Creative Spotlight</h2>
-    <p class="mm-jp">クリエイティブ・スポットライト</p>
-    <p class="mm-jp">宮古島にゆかりのある人々</p>
-    <p>Featured people connected to Miyakojima.</p>
-    <a href="collaborations.html">
-      View →
-      <div class="mm-link-jp">見る</div>
-    </a>
-  </div>
+<div class="mm-card">
+<h2>Creative Spotlight</h2>
+<p class="mm-jp">宮古島にゆかりのある人々</p>
+<p>Featured people connected to Miyakojima.</p>
+<a href="collaborations.html">View →<div class="mm-link-jp">見る</div></a>
+</div>
 
-  <div class="mm-card">
-    <h2>Places to stay, eat, and experience</h2>
-    <p class="mm-jp">泊まる・食べる・暮らす</p>
-    <p>Places and things worth knowing.</p>
-    <a href="recommended.html">
-      Discover →
-      <div class="mm-link-jp">見る</div>
-    </a>
-  </div>
+<div class="mm-card">
+<h2>Places</h2>
+<p class="mm-jp">泊まる・食べる・暮らす</p>
+<p>Places and things worth knowing.</p>
+<a href="recommended.html">Discover →<div class="mm-link-jp">見る</div></a>
+</div>
 
 </section>
 
-
+<!-- GALLERY -->
 <section class="mm-gallery">
-  <img src="images/MY1.jpeg">
-  <img src="images/MY2.jpeg">
-  <img src="images/MY3.jpg">
-  <img src="images/MY4.jpg">
-  <img src="images/MY5.jpg">
-  <img src="images/MY6.jpg">
+<img src="images/MY1.jpeg">
+<img src="images/MY2.jpeg">
+<img src="images/MY3.jpg">
+<img src="images/MY4.jpg">
+<img src="images/MY5.jpg">
+<img src="images/MY6.jpg">
 </section>
 
 <footer>
-  © 2026 My Miyakojima
+© 2026 My Miyakojima
 </footer>
 
 <script src="js/script.js"></script>
