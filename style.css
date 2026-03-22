@@ -1356,7 +1356,7 @@ margin-top:4px;
   max-width: 520px;
   margin: 80px auto;
   color: #2f3e3e;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(20px);
   transition: all 0.8s ease;
 }
