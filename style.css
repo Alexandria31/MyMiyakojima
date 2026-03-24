@@ -344,25 +344,61 @@ HEADER & NAV
 ==========================*/
 
 .site-header {
-  position: relative;
-  background-color: rgba(74,173,168,0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 15px 30px;
+  position: sticky;
+  top: 20px; /* FLOATING */
+  z-index: 1000;
+
+  margin: 0 auto;
+  width: calc(100% - 40px);
+  max-width: 1100px;
+
+  padding: 14px 24px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(74,173,168,0.65),
+    rgba(111,199,194,0.55),
+    rgba(243,239,230,0.45)
+  );
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+
+  transition: all 0.35s ease;
 }
 
+.site-header.scrolled {
+  top: 10px;
 
+  background: linear-gradient(
+    135deg,
+    rgba(74,173,168,0.9),
+    rgba(111,199,194,0.85),
+    rgba(243,239,230,0.75)
+  );
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
 
 .site-logo {
   width: 150px;   /* adjust if needed */
   height: auto;
+  transition: transform 0.3s ease;
   
+}
+
+.site-logo:hover {
+  transform: scale(1.05);
 }
 
 .main-nav {
@@ -372,25 +408,63 @@ HEADER & NAV
 }
 
 .main-nav a {
+  position: relative;
   color: white;
   text-decoration: none;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 500;
+
+  padding: 6px 10px;
+
   transition: all 0.25s ease;
+  transform: translateY(0);
+}
+
+
+
+/* SOFT UNDERLINE GLOW */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: rgba(255,255,255,0.8);
+
+  transition: width 0.3s ease;
 }
 
 .main-nav a:hover {
-  background-color: rgba(255,255,255,0.18);
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  transform: translateY(-2px);
 }
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+
 
 .main-nav span{
   display: block;
-  font-size: 0.8rem;
-  opacity: 0.85;
-  margin-top: 3px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+ 
+}
+
+.main-nav a.active {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+.main-nav a.active::after {
+  width: 100%;
  
 }
 
@@ -1276,34 +1350,46 @@ font-weight: 500;
 }
 
 .collab-button {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 260px;
+  width: 280px;
   height: 90px;
   margin-top: 18px;
-  margin-right: 10px;
-  background: #5aaeb3;
-  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  color: #2f5f5e;
   text-decoration: none;
   padding: 10px;
   border-radius: 999px;
   font-size: 1rem;
   font-weight: 600;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, background 0.25s ease;
   text-align: center;
 }
 
 .collab-button span {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 4px;
 }
 
 .collab-button:hover {
-  background: #4a9ca1;
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 @media (max-width: 768px) {
@@ -1474,3 +1560,30 @@ margin-top:4px;
   font-weight: 600;
 }
 
+.contact-center {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #f3efe6;
+  color: #4a6f73;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+
+  border: 1px solid #e0d7c6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+}
+
+.contact-center:hover {
+  background: #eae4d8;
+  transform: translateY(-2px);
+  
+}
+
+.contact-center span {
+  
+  font-size: 0.85rem;
+  opacity: 0.8;
+  
+}

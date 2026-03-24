@@ -11,18 +11,7 @@ function toggleMenu() {
 }
 
 
-// =========================
-// HEADER SCROLL COLOR
-// =========================
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".site-header");
 
-  if (window.scrollY > 50) {
-    header.style.backgroundColor = "rgba(74,173,168,1)";
-  } else {
-    header.style.backgroundColor = "rgba(74,173,168,0.8)";
-  }
-});
 
 
 // =========================
@@ -45,3 +34,13 @@ window.addEventListener("load", revealElements);
 
 // RUN ON SCROLL
 window.addEventListener("scroll", revealElements);
+
+window.addEventListener("scroll", function () {
+  const header = document.querySelector(".site-header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
