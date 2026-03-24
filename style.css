@@ -12,7 +12,7 @@
 }
 
 body {
-  padding-top: 100px;
+  padding-top: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to bottom, #4aada8 0%, #6fc7c2 40%, #f3efe6 100%);
     color: #2f3e3e;
@@ -346,14 +346,14 @@ HEADER & NAV
 
 .site-header {
   position: sticky;
-  top: 20px; /* FLOATING */
+  top: 10px; /* FLOATING */
   z-index: 1000;
 
   margin: 0 auto;
   width: calc(100% - 40px);
   max-width: 1100px;
 
-  padding: 14px 24px;
+  padding: 10px 18px;
 
   display: flex;
   align-items: center;
