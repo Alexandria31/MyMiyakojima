@@ -1597,3 +1597,26 @@ margin-top:4px;
   
   padding: 90px;
 }
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: #f3efe6;
+  opacity: 1;
+  animation: bounce 1.8s infinite;
+  z-index: 10;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* 👇 PUT IT RIGHT AFTER */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
