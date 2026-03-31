@@ -1452,7 +1452,7 @@ font-weight: 500;
   text-decoration: none;
   padding: 10px;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -1871,4 +1871,39 @@ margin-top:4px;
   font-size: 11px;
   margin-top: 4px;
   opacity: 0.8;
+}
+
+/* ===== MOBILE FIX: COLLABORATIONS CARDS ===== */
+
+@media (max-width: 768px) {
+
+  /* Force cards into ONE column */
+  .current-spotlight {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Make cards full width */
+  .spotlight-card {
+    width: 100%;
+  }
+
+  /* Fix text readability */
+  .spotlight-month {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .spotlight-name {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .spotlight-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
 }
