@@ -6,7 +6,7 @@ function toggleMenu() {
   if (!menu) {
     console.log("Menu not found");
   } else {
-    menu.classList.toggle("open");
+    menu.classList.toggle("show");
   }
 }
 
@@ -44,3 +44,9 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+
+const nav = document.querySelector(".main-nav");
+const overlay = document.querySelector(".menu-overlay");
+
+nav.classList.toggle("open");
+overlay.classList.toggle("show");
