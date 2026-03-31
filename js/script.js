@@ -1,52 +1,57 @@
-// =========================
-// MOBILE MENU TOGGLE
-// =========================
+// =============================
+// MOBILE MENU TOGGLE (CLEAN)
+// =============================
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-  if (!menu) {
-    console.log("Menu not found");
-  } else {
-    menu.classList.toggle("show");
-  }
+  if (!menu) return;
+
+  menu.classList.toggle("show");
 }
 
+// =============================
+// CLOSE MENU WHEN LINK CLICKED
+// (IMPORTANT FOR MOBILE)
+// =============================
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.getElementById("mobileMenu");
+    if (menu) {
+      menu.classList.remove("show");
+    }
+  });
+});
 
-
-
-
-// =========================
-// FADE-UP ANIMATION (FIXED)
-// =========================
-const elements = document.querySelectorAll(".fade-up");
+// =============================
+// FADE-UP ANIMATION
+// =============================
+const elements = document.querySelectorAll('.fade-up');
 
 function revealElements() {
   elements.forEach(el => {
     const top = el.getBoundingClientRect().top;
 
     if (top < window.innerHeight * 0.9) {
-      el.classList.add("show");
+      el.classList.add('show');
     }
   });
 }
 
-// RUN ON LOAD (IMPORTANT)
-window.addEventListener("load", revealElements);
+// Run on load
+window.addEventListener('load', revealElements);
 
-// RUN ON SCROLL
-window.addEventListener("scroll", revealElements);
+// Run on scroll
+window.addEventListener('scroll', revealElements);
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".site-header");
+// =============================
+// HEADER SCROLL EFFECT
+// =============================
+window.addEventListener('scroll', function () {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
 
   if (window.scrollY > 50) {
-    header.classList.add("scrolled");
+    header.classList.add('scrolled');
   } else {
-    header.classList.remove("scrolled");
+    header.classList.remove('scrolled');
   }
 });
-
-const nav = document.querySelector(".main-nav");
-const overlay = document.querySelector(".menu-overlay");
-
-nav.classList.toggle("open");
-overlay.classList.toggle("show");

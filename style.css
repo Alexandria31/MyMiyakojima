@@ -384,6 +384,8 @@ HEADER & NAV
   box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 
   transition: all 0.35s ease;
+
+  pointer-events: auto;
 }
 
 .site-header.scrolled {
@@ -440,7 +442,10 @@ HEADER & NAV
   background: none;
   backdrop-filter: none;
   box-shadow: none;
+  pointer-events: auto;
 }
+
+
 
 /* SOFT UNDERLINE GLOW */
 .main-nav a::after {
@@ -614,9 +619,11 @@ MOBILE NAV
 
     transition: all 0.4s ease;
     z-index: 1000;
+    pointer-events: none;
   }
 
   .main-nav.show {
+    pointer-events: auto;
     opacity: 1;
     
     transform: translateX(-50%) scale(1);
@@ -932,9 +939,12 @@ footer {
 /* ===== Spotlight Card ===== */
 
 .current-spotlight {
+  position: relative;
+  margin-top: 80px;
+  z-index: 1;
   display: flex;
   justify-content: center;
-  padding: 40px 20px 60px;
+  padding-top: 120px;
 }
 
 .spotlight-card {
@@ -948,12 +958,20 @@ footer {
   width: 420px;
   box-shadow: var(--shadow-soft);
   transition: 0.3s ease;
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
 }
+
+ 
 
 .spotlight-card:hover {
   box-shadow: var(--shadow-strong);
   transform: translate(-6px) scale(1.02);
 }
+
+
+
 
 .spotlight-month {
   font-size: 22px;
@@ -975,6 +993,8 @@ footer {
 .spotlight-link {
   font-size: 14px;
   font-weight: bold;
+  pointer-events: auto;
+  
 }
 
 .jp-month,
@@ -1734,10 +1754,12 @@ margin-top:4px;
 
     transition: opacity 0.4s ease;
     z-index: 900;
+    pointer-events: none;
 }
 
 .menu-overlay.show {
     opacity: 1;
+    pointer-events: auto;
    
 }
 
@@ -1887,7 +1909,10 @@ margin-top:4px;
 
   /* Make cards full width */
   .spotlight-card {
+    position: relative;
     width: 100%;
+    pointer-events: auto;
+    
   }
 
   /* Fix text readability */
@@ -1906,4 +1931,11 @@ margin-top:4px;
     line-height: 1.6;
   }
 
+  .spotlight-link {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+  }
+
 }
+
