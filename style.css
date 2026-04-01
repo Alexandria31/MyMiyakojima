@@ -2033,3 +2033,10 @@ margin-top:4px;
 html {
   scroll-behavior: smooth;
 }
+
+body.menu-open .category-nav {
+  top: 140px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}

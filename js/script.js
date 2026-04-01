@@ -6,7 +6,12 @@ function toggleMenu() {
   if (!menu) return;
 
   menu.classList.toggle("show");
+
+document.body.classList.toggle("menu-open");
+
 }
+
+
 
 // =============================
 // CLOSE MENU WHEN LINK CLICKED
