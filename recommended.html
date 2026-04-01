@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recommended | My Miyakojima</title>
-  <meta name="description" content="A curated collection of places, products, and services aligned with thoughtful living in Miyakojima.">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VMYZ8E1EYN"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMYZ8E1EYN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -19,241 +20,213 @@
 
 <body>
 
-  
-
+<!-- HEADER -->
 <header class="site-header">
+  <img src="Ocean2.png" class="site-logo">
 
-<img src="Ocean2.png" class="site-logo" alt="My Miyakojima">
+  <button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
 
-<button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
-
-<nav class="main-nav" id="mobileMenu">
-
-<a href="index.html">
-Home
-<span class="jp">ホーム</span>
-</a>
-
-<a href="journal.html">
-Journal
-<span class="jp">ジャーナル</span>
-</a>
-
-<a href="discover-miyakojima.html">Discover Miyakojima<br><span class="jp">宮古島ガイド</span></a>
-
-<a href="collaborations.html">
-Collaborations
-<span class="jp">コラボレーション</span>
-</a>
-
-<a href="recommended.html" class="active">
-Recommended
-<span class="jp">おすすめ</span>
-</a>
-
-<a href="contact.html">
-Contact
-<span class="jp">お問い合わせ</span>
-</a>
-
-</nav>
-
+  <nav class="main-nav" id="mobileMenu">
+    <a href="index.html">Home<span class="jp">ホーム</span></a>
+    <a href="journal.html">Journal<span class="jp">ジャーナル</span></a>
+    <a href="discover-miyakojima.html">Discover<span class="jp">宮古島ガイド</span></a>
+    <a href="collaborations.html">Collaborations<span class="jp">コラボ</span></a>
+    <a href="recommended.html">Recommended<span class="jp">おすすめ</span></a>
+    <a href="contact.html">Contact<span class="jp">お問い合わせ</span></a>
+  </nav>
 </header>
 
-<div class="recommended-title"></div>
-<section class="page-title">
-  <h1>Recommended</h1>
-  <p class="japanese-title">おすすめ</p>
-</section>
+<main>
+
+<!-- CATEGORY NAV -->
+<div class="category-nav">
+  <a href="#food">🍽 Food<span class="jp">フード</span></a>
+  <a href="#marine">🌊 Marine<span class="jp">マリン</span></a>
+  <a href="#transport">🚗 Transport<span class="jp">移動・レンタル</span></a>
+  <a href="#wellness">🌿 Wellness<span class="jp">ウェルネス</span></a>
 </div>
 
-<section class="recommended-intro">
+<!-- ================= FOOD ================= -->
+<section id="food" class="recommended-section fade-up">
 
-  <p>
-    A curated space for places, products, and services that align with thoughtful living and meaningful experiences.
-  </p>
+  <h2>Local Food <span class="jp">ローカルフード</span></h2>
 
-  <p>
-    Everything shared here is chosen intentionally.
-  </p>
-
-  <p class="disclaimer">
-    Some links may be affiliate links or partnerships.
-  </p>
-
-  <div class="jp-block">
-    <p>
-      ここは、丁寧な暮らしや心地よい体験に寄り添う場所や商品、サービスを紹介するためのスペースです。
-    </p>
-
-    <p>
-      ご紹介するものは、すべて想いを持って選んでいます。
-    </p>
-
-    <p class="disclaimer">
-      ※このページにはアフィリエイトリンクや今後のパートナーリンクが含まれる場合があります。
-    </p>
-  </div>
-
-</section>
-
-<hr>
-
-<section class="recommended-section">
-
-  <h2>Local Food</h2>
-  <p>
+  <p class="section-description">
     Long-standing local kitchens and restaurants that reflect the everyday flavors of Miyakojima.
   </p>
 
-  <p class="jp-sub">
+  <p class="section-description jp">
     宮古島で長く愛されてきた、地域の味を感じられるお店。
   </p>
 
-  <div class="recommend-card">
+  <div class="recommend-grid full-width">
 
-  <div class="recommend-icon">
-    <span>🍕</span>
+    <div class="recommend-card fade-up">
+
+      <div class="recommend-icon">🍕</div>
+
+      <h3>
+        Pizza Doraku
+        <span class="jp">ピザ道楽</span>
+      </h3>
+
+      <p>
+        One of the oldest pizza restaurants in Miyakojima, run by a dedicated local owner who continues to serve the community with care.
+      </p>
+
+      <p class="jp">
+        宮古島で長く親しまれているピザのお店。店主が今も丁寧に焼き上げています。
+      </p>
+
+      <a href="pizza-doraku.html" class="learn-more">
+        Learn more →
+        <span class="jp-link">詳しく見る</span>
+      </a>
+
+    </div>
+
   </div>
-
-  <h2>Pizza Doraku <span class="jp">ピザ道楽</span></h2>
-
-  <p>
-    One of the oldest pizza restaurants in Miyakojima, run by a dedicated local owner who continues to serve the community with care.
-  </p>
-
-  <p class="jp">
-    宮古島で長く親しまれているピザのお店。店主が今も丁寧に焼き上げています。
-  </p>
-
-  <a href="pizza-doraku.html" class="learn-more">
-    Learn more →
-    <span class="jp">詳しく見る</span>
-  </a>
-
-</div>
-
-
 </section>
 
-<hr>
+<!-- ================= MARINE ================= -->
+<section id="marine" class="recommended-section fade-up">
 
-<section class="recommended-section">
+  <h2>Marine Activities <span class="jp">マリンアクティビティ</span></h2>
 
-  <h2>Wellness</h2>
-  <p>
+  <p class="section-description">
+    Ocean experiences and marine activities in Miyakojima.
+  </p>
+
+  <p class="section-description jp">
+    宮古島の海を楽しむマリンアクティビティ。
+  </p>
+
+  <div class="recommend-grid full-width">
+
+    <div class="recommend-card fade-up">
+
+      <div class="recommend-icon">🌊</div>
+
+      <h3>
+        NII Marine
+        <span class="jp">NIIマリン</span>
+      </h3>
+
+      <p>
+        Jet ski rentals and marine activities to experience Miyakojima’s ocean.
+      </p>
+
+      <p class="jp">
+        宮古島の海を楽しめるジェットスキーやマリン体験。
+      </p>
+
+      <a href="nii-marine.html" class="learn-more">
+        Learn more →
+        <span class="jp-link">詳しく見る</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= TRANSPORT ================= -->
+<section id="transport" class="recommended-section fade-up">
+
+  <h2>Transportation <span class="jp">移動・レンタル</span></h2>
+
+  <p class="section-description">
+    Getting around and exploring Miyakojima with ease.
+  </p>
+
+  <p class="section-description jp">
+    宮古島での移動やアクティビティをサポートするサービス。
+  </p>
+
+  <div class="recommend-grid">
+
+    <!-- Coral -->
+    <div class="recommend-card fade-up">
+      <div class="recommend-icon">🚗</div>
+
+      <h3>
+        Coral Rent a Car
+        <span class="jp">コーラルレンタカー</span>
+      </h3>
+
+      <p>Affordable rental cars for exploring Miyakojima freely and comfortably.</p>
+
+      <p class="jp">宮古島を自由に巡るためのレンタカーサービス。</p>
+
+      <a href="coral-rent.html" class="learn-more">
+        Learn more →
+        <span class="jp-link">詳しく見る</span>
+      </a>
+    </div>
+
+    <!-- Pine -->
+    <div class="recommend-card fade-up">
+      <div class="recommend-icon">🚙</div>
+
+      <h3>
+        Pine Rent a Car
+        <span class="jp">パインレンタカー</span>
+      </h3>
+
+      <p>Reliable and flexible rental options for your stay in Miyakojima.</p>
+
+      <p class="jp">宮古島での滞在に合わせた柔軟なレンタカーサービス。</p>
+
+      <a href="pine-rentacar.html" class="learn-more">
+        Learn more →
+        <span class="jp-link">詳しく見る</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WELLNESS ================= -->
+<section id="wellness" class="recommended-section fade-up">
+
+  <h2>Wellness <span class="jp">ウェルネス</span></h2>
+
+  <p class="section-description">
     Wellness tools and daily supports that promote balance and focus.
   </p>
 
-  <p class="jp-sub">
-    バランスや集中力をサポートするウェルネスアイテム。
+  <p class="section-description jp">
+    心と体のバランスを整えるウェルネスアイテム。
   </p>
 
-  <div class="recommend-card">
-    <div class="recommend-icon">
-      <span>🌿</span>
+  <div class="recommend-grid full-width">
+
+    <div class="recommend-card fade-up">
+
+      <div class="recommend-icon">🌿</div>
+
+      <h3>
+        Lifewave
+        <span class="jp">ライフウェーブ</span>
+      </h3>
+
+      <p>Simple wellness tools designed to support energy, recovery, and daily balance.</p>
+
+      <p class="jp">日々のバランスや回復をサポートするウェルネスアイテム。</p>
+
+      <a href="https://lifewave.com/3860839" target="_blank" class="learn-more">
+        Learn more →
+        <span class="jp-link">詳しく見る</span>
+      </a>
+
     </div>
-    <h2>
-  Lifewave
-  <span class="jp">ライフウェーブ</span>
-  </h2>
-    <p>
-      A wellness product some explore for energy and clarity.
-    </p>
-    <p class="jp">
-      日々のエネルギーやクリアさを求める方が取り入れているウェルネス製品のひとつです。
-    </p>
-    <a href="https://lifewave.com/3860839" target="_blank" class="soft-link">
-      Learn more →
-      <span class="jp-link">詳しく見る</span>
-    </a>
+
   </div>
-
 </section>
 
-<hr>
-
-<section class="recommended-section">
-
-  <h2>Stays</h2>
-  <p>
-    Places that offer comfort, beauty, and a sense of calm.
-  </p>
-
-  <p class="jp-sub">
-    心地よさと美しさ、そして静けさを感じられる滞在先。
-  </p>
-
-</section>
-
-<hr>
-
-<section class="recommended-section">
-
-  <h2>
-  Transportation
-  <span class="jp">移動・レンタル</span>
-</h2>
-
-<p>
-  Getting around and experiencing Miyakojima with ease.
-</p>
-
-<p class="jp">
-  宮古島での移動やアクティビティをサポートするサービス。
-</p>
-
-
-<div class="recommend-card">
-  <div class="recommend-icon"><span>🚗</span></div>
-
-  <h2>
-    Coral Rent a Car
-    <span class="jp">コーラルレンタカー</span>
-  </h2>
-
-  <p>
-    Affordable rental cars for exploring Miyakojima freely and comfortably.
-  </p>
-
-  <p class="jp">
-    宮古島を自由に快適に巡れるレンタカーサービス。
-  </p>
-
-  <a href="coral-rent.html" class="learn-more">
-    Learn more →
-    <span class="jp">詳しく見る</span>
-  </a>
-</div>
-
-
-
-
-
-<div class="recommend-card">
-  <div class="recommend-icon"><span>🌊</span></div>
-
-  <h2>
-    NII Marine
-    <span class="jp">NIIマリン</span>
-  </h2>
-
-  <p>
-    Jet ski rentals and marine activities to experience Miyakojima’s ocean.
-  </p>
-
-  <p class="jp">
-    宮古島の海を楽しめるジェットスキーやマリン体験。
-  </p>
-
-  <a href="nii-marine.html" class="learn-more">
-    Learn more →
-    <span class="jp">詳しく見る</span>
-  </a>
-</div>
-</section>
-
+</main>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>
