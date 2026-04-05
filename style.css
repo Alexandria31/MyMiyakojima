@@ -2040,3 +2040,35 @@ body.menu-open .category-nav {
   pointer-events: none;
   transform: translateY(-10px);
 }
+
+.airport-info {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.airport-info strong {
+  display: block;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.business-logo {
+  text-align: center;
+  margin: 20px 0;
+   background: rgba(255,255,255,0.6);
+  padding: 15px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+
+.business-logo img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+
+
