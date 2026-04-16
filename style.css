@@ -1996,15 +1996,16 @@ margin-top:4px;
 /* CATEGORY NAV */
 .category-nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: calc(100% - 40px);
-  margin: 12px auto 30px;
-  max-width: 900px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 12px;
+  width: calc(100% - 24px);
+  margin: 12px auto 24px;
+  max-width: none;
   position: sticky;
-  padding: 8px 14px;
-  top: 96px;
+  padding: 8px 12px;
+  top: 88px;
   background: rgba(255,255,255,0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -2021,6 +2022,7 @@ margin-top:4px;
 }
 
 .category-nav a {
+  flex: 0 0 auto;
   display: inline-block;
   text-decoration: none;
   padding: 6px 10px;
