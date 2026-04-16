@@ -366,7 +366,7 @@ HEADER & NAV
 .site-header {
   position: sticky;
   top: 0; /* FLOATING */
-  z-index: 2000;
+  z-index: 1000;
 
   margin: 0 auto;
   width: calc(100% - 40px);
@@ -1998,16 +1998,17 @@ margin-top:4px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 20px auto;
+  gap: 10px;
+  width: calc(100% - 40px);
+  margin: 12px auto 30px;
   max-width: 900px;
   position: sticky;
-  padding: 6px 14px;
-  top: 80px;
+  padding: 8px 14px;
+  top: 96px;
   background: rgba(255,255,255,0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 998;
+  z-index: 900;
   border-radius: 20px;
   
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -2020,7 +2021,7 @@ margin-top:4px;
 }
 
 .category-nav a {
-  
+  display: inline-block;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 18px;
