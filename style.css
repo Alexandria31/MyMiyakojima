@@ -691,7 +691,6 @@ MOBILE NAV
     letter-spacing: 1px;
     margin-top: 4px;
     line-height: 1.7;
-    word-break: keep-all ;
 }
 
 .jp-title {
@@ -708,7 +707,7 @@ h2 .jp {
    
     font-size: 0.85rem;
     opacity: 0.8;
-    word-break: keep-all ;
+    
 }
 
 /* Japanese nav styling */
