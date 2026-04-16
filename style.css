@@ -5,7 +5,7 @@
     --text-dark: #2f3e3e;
     --sand-mid: #e6d3b3;
 
-    --shadow-soft: 0 8px 20px rgba(0,0,0,0,0.8);
+    --shadow-soft: 0 8px 20px rgba(0,0,0,0.08);
     --shadow-medium: 0 15px 35px rgba(0,0,0,0.12);
 
 }
@@ -164,6 +164,7 @@ body::before {
     background: 
     linear-gradient(rgba(244, 239, 230, 0.45), rgba(244, 239, 230, 0.55)),
     url("images/MY1.jpeg") center/cover no-repeat;
+    overflow: hidden;
     
     
     
@@ -364,7 +365,7 @@ HEADER & NAV
 
 .site-header {
   position: sticky;
-  top: 10px; /* FLOATING */
+  top: 0; /* FLOATING */
   z-index: 1000;
 
   margin: 0 auto;
@@ -1993,17 +1994,20 @@ margin-top:4px;
 .category-nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
-  margin: 20px auto 40px;
-  max-width: 900px;
+  margin: 20px auto;
+  max-width: 95px;
   position: sticky;
-  top: 95px;
-  background: rgba(255,255,255,0.25);
+  padding: 10px 14px;
+  top: 80px;
+  background: rgba(255,255,255,0.35);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12);
-  z-index: 1000;
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 50;
   border-radius: 30px;
+  overflow-x: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.8);
 
 }
 
@@ -2013,6 +2017,8 @@ margin-top:4px;
 }
 
 .category-nav a {
+  flex: 0 0 auto;
+  white-space: nowrap;
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 18px;
@@ -2075,6 +2081,8 @@ body.menu-open .category-nav {
 }
 
 .floating-shape {
+  pointer-events: none;
+  z-index: 0;
   position: absolute;
   width: 140px;
   height: 140px;
@@ -2121,14 +2129,14 @@ body.menu-open .category-nav {
 
   .category-nav {
     position: sticky;
-    top: 70px;
-    z-index: 5;
+    top: 75px;
+    z-index: 50;
 
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
 
-    gap: 15px;
+    gap: 12px;
     padding: 10px 15px;
   }
 
