@@ -689,9 +689,12 @@ MOBILE NAV
     display: block;
     font-size: 0.95rem;
     color: #555;
-    letter-spacing: 1px;
+    letter-spacing: 0.3em;
     margin-top: 4px;
     line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
 }
 
 .jp-title {
