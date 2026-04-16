@@ -1999,15 +1999,15 @@ margin-top:4px;
   margin: 20px auto;
   max-width: 900px;
   position: sticky;
-  padding: 10px 20px;
-  top: 120px;
+  padding: 6px 14px;
+  top: 80px;
   background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 999;
-  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 998;
+  border-radius: 20px;
   
-  box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 
 }
 
@@ -2019,7 +2019,7 @@ margin-top:4px;
 .category-nav a {
   
   text-decoration: none;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: 18px;
   background: transparent;
   color: #2f5f5b;
