@@ -691,7 +691,10 @@ MOBILE NAV
     color: #555;
     letter-spacing: 1px;
     margin-top: 4px;
-    line-height: 1.7;
+    line-height: 1.8;
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-break: auto;
    
     
     
