@@ -689,16 +689,15 @@ MOBILE NAV
     display: block;
     font-size: 0.95rem;
     color: #555;
-    letter-spacing: 1px;
+    letter-spacing: 0.3em;
     margin-top: 4px;
-    line-height: 1.8;
+    line-height: 1.7;
     word-break: normal;
-    overflow-wrap: break-word;
-    line-break: auto;
+    overflow-wrap: normal;
+    line-break: strict;
    
-    
-    
 }
+    
 
 .jp-title {
     display:block;
@@ -1571,6 +1570,10 @@ font-weight: 500;
 
   .benefit-box {
     text-align: left;
+  }
+
+  .jp {
+    letter-spacing: 0.2em;
   }
 }
 
