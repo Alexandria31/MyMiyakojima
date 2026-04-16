@@ -164,6 +164,8 @@ body::before {
     background: 
     linear-gradient(rgba(244, 239, 230, 0.45), rgba(244, 239, 230, 0.55)),
     url("images/MY1.jpeg") center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
     
    
 }
@@ -2071,4 +2073,45 @@ body.menu-open .category-nav {
   opacity: 0.95;
 }
 
+.floating-shape {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 40% 60% 60% 40% / 60% 40% 40% 60%;
+  top: 10%;
+  left: 30%;
+  animation: floatAround 28s ease-in-out infinite, morph 12s ease-in-out infinite;
+}
 
+@keyframes floatAround {
+  0% { transform: translate(0vw, 0vh); }
+  25% { transform: translate(25vw, -10vh); }
+  50% { transform: translate(45vw, 20vh) ; }
+  75% { transform: translate(15vw, 35vh) ; }
+  100% { transform: translate(0, 0) ; }
+}
+
+@keyframes morph {
+  0% { border-radius: 40% 60% 60% 40% / 60% 40% 40% 60%; }
+  50% { border-radius: 60% 40% 40% 60% / 40% 60% 60% 40%; }
+  100% { border-radius: 40% 60% 60% 40% / 60% 40% 40% 60%; };
+}
+
+.shape-2 {
+  width: 100px;
+  height: 100px;
+  top: 60%;
+  left: 70%;
+  animation: floatAround 35s ease-in-out infinite,
+             morph 14s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 80%;
+  animation: floatAround 40s ease-in-out infinite,
+             morph 16s ease-in-out infinite;
+}
