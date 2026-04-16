@@ -2116,3 +2116,29 @@ body.menu-open .category-nav {
   animation: floatAround 40s ease-in-out infinite,
              morph 16s ease-in-out infinite;
 }
+
+@media (max-width: 768px) {
+
+  .category-nav {
+    position: sticky;
+    top: 70px;
+    z-index: 5;
+
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    gap: 15px;
+    padding: 10px 15px;
+  }
+
+  .category-nav a {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .category-nav .jp {
+    display: none;
+  }
+
+}
