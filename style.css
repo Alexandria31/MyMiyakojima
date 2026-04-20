@@ -2139,13 +2139,34 @@ body.menu-open .category-nav {
 }
 
 .shape-3 {
-  width: 80px;
-  height: 80px;
-  top: 30%;
-  left: 80%;
-  animation: floatAround 40s ease-in-out infinite,
-             morph 16s ease-in-out infinite;
+  position: relative;
+  width: 110px;
+  height: 110px;
 }
 
+.ball-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  font-weight: 500;
+
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+
+  pointer-events: none; /* so animation still smooth */
+  animation: fadeSoft 4s ease-in-out infinite; 
+
+
+@keyframes fadeSoft {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+  };
+}
 
 
