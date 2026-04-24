@@ -2115,53 +2115,47 @@ body.menu-open .category-nav {
 }
 
 
+/* ============================= */
+/* GW FLOATING BUBBLE - FINAL */
+/* ============================= */
 
-/* Clickable GW bubble */
 .gw-link {
-  position: absolute;
-  left: 60%;
-  top: 40%;
-  z-index: 3;
+  position: fixed; /* KEY FIX */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
   text-decoration: none;
-  display: block;
-  animation: gwDrift 18s ease-in-out infinite;
+
+  animation: gwMove 30s linear infinite;
 }
 
-@keyframes gwDrift {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-120px, -60px); }
-  50% { transform: translate(-60px, 120px); }
-  75% { transform: translate(-180px, 40px); }
-  100% { transform: translate(0, 0px); }
-}
-
-/* The bubble itself */
+/* Bubble */
 .shape-3 {
-  position: relative;
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff6bf 0%, #f6e27a 35%, #d4af37 70%, #b88a1d 100%);
+
+  background: radial-gradient(circle at 35% 30%,
+    #fff6bf 0%,
+    #f6e27a 35%,
+    #d4af37 70%,
+    #b88a1d 100%
+  );
+
   box-shadow:
     0 0 18px rgba(255, 215, 0, 0.45),
     0 0 36px rgba(255, 215, 0, 0.25);
-  animation: gwMove 16s ease-in-out infinite, glowPulse 2.6s ease-in-out infinite;
+
+  animation: glowPulse 2.6s ease-in-out infinite;
   cursor: pointer;
 }
 
 .shape-3:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
-@keyframes gwMove {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-30px, -20px); }
-  50% { transform: translate(-10px, 30px); }
-  75% { transform: translate(-40px, 10px); }
-  100% { transform: translate(0, 0px); }
-}
-
-/* Text inside bubble */
+/* Text */
 .ball-text {
   position: absolute;
   top: 50%;
@@ -2173,20 +2167,25 @@ body.menu-open .category-nav {
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 0.5px;
+
   text-shadow:
     0 0 4px rgba(0,0,0,0.35),
     0 0 10px rgba(255,215,0,0.55);
+
   pointer-events: none;
   white-space: nowrap;
 }
 
-/* Gentle float only, not flying off-screen */
-@keyframes gwFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+/* 🔥 FULL SCREEN FLOAT */
+@keyframes gwMove {
+  0%   { transform: translate(-50%, -50%) translate(-35vw, -25vh); }
+  25%  { transform: translate(-50%, -50%) translate(30vw, -20vh); }
+  50%  { transform: translate(-50%, -50%) translate(25vw, 30vh); }
+  75%  { transform: translate(-50%, -50%) translate(-30vw, 20vh); }
+  100% { transform: translate(-50%, -50%) translate(-35vw, -25vh); }
 }
 
-/* Golden pulse */
+/* Glow */
 @keyframes glowPulse {
   0%, 100% {
     box-shadow:
@@ -2200,24 +2199,36 @@ body.menu-open .category-nav {
   }
 }
 
-/* Tap feedback */
+/* Tap */
 .gw-link:active .shape-3 {
   transform: scale(0.96);
 }
 
-/* Mobile adjustment */
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
 @media (max-width: 768px) {
-  .gw-link {
-    right: 4%;
-    top: 30%;
-  }
 
   .shape-3 {
-    width: 88px;
-    height: 88px;
+    width: 80px;
+    height: 80px;
   }
 
   .ball-text {
     font-size: 10px;
   }
+
+  .gw-link {
+    animation: gwMoveMobile 35s linear infinite;
+  }
+
+  @keyframes gwMoveMobile {
+    0%   { transform: translate(-50%, -50%) translate(-30vw, -20vh); }
+    25%  { transform: translate(-50%, -50%) translate(25vw, -15vh); }
+    50%  { transform: translate(-50%, -50%) translate(20vw, 25vh); }
+    75%  { transform: translate(-50%, -50%) translate(-25vw, 15vh); }
+    100% { transform: translate(-50%, -50%) translate(-30vw, -20vh); }
+  }
+
 }
