@@ -69,3 +69,17 @@ window.addEventListener('scroll', function () {
     nav.classList.remove('scrolled');
   }
 });
+
+function toggleSound() {
+  const video = document.getElementById("umiotoVideo");
+  const button = document.querySelector(".sound-toggle");
+
+  if (video.muted) {
+    video.muted = false;
+    video.play();
+    button.innerHTML = "🔊";
+  } else {
+    video.muted = true;
+    button.innerHTML = "🔇";
+  }
+}
