@@ -2168,3 +2168,83 @@ body.menu-open .category-nav {
     }
   }
 }
+
+.spotlight-intro-text {
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 60px auto 40px;
+  padding: 25px 30px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.8;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.spotlight-intro-text .jp {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+  word-break: keep-all;
+}
+
+.spotlight-intro-text::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #6bb3b3, transparent);
+  margin: 18px auto 0;
+}
+
+.mica-images {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.mica-images img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* FEATURE VIDEO (Umioto Log) */
+
+.feature-video {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+
+  /* soft premium shadow */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* video itself */
+.feature-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* soft fade into sandy background */
+.feature-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 65%,
+    rgba(245, 242, 235, 0.8) 90%,
+    rgba(245, 242, 235, 1) 100%
+  );
+}

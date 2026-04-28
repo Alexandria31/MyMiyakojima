@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Coming Soon | My Miyakojima</title>
+  <title>Umioto Log | My Miyakojima</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=10">
+
+  <meta name="description" content="Umioto Log — a calm log house stay in Miyakojima surrounded by nature. A private, relaxing experience with ocean views.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMYZ8E1EYN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VMYZ8E1EYN');
+  </script>
+
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <img src="Ocean2.png" class="site-logo">
 
@@ -27,33 +39,150 @@
 
 <main>
 
-<section class="content" style="margin-top:120px; text-align:center;">
+<!-- OVERVIEW -->
+<section id="overview" class="overview-section">
 
-  <h1 style="font-size:32px; margin-bottom:10px;">
-    Coming Soon
-  </h1>
+  <!-- LOGO -->
+  <div class="business-logo">
+    <img src="images/umioto-logo.jpg" alt="Umioto Log Logo">
+  </div>
 
-  <p class="jp-title">
-    準備中
+  <!-- VIDEO -->
+  <div class="feature-video">
+    <video autoplay muted loop playsinline>
+      <source src="videos/umioto.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <h1>Umioto Log</h1>
+  <p class="jp">ウミオトログ</p>
+
+  <p class="overview-text">
+    Umioto Log is a private log house stay surrounded by nature in Miyakojima.
+    With ocean views, open space, and a relaxed atmosphere, it offers a peaceful escape from everyday life.
   </p>
 
-  <div class="wave-line" style="margin:20px auto 40px;"></div>
-
-  <h2 style="font-size:22px; margin-bottom:15px;">
-    3 places worth your time
-  </h2>
-
-  <p class="jp-block">
-    あなたの時間を過ごす価値のある、3つの場所
+  <p class="overview-text jp">
+    ウミオトログは、宮古島の自然に囲まれたログハウス型の宿泊施設です。
+    海を感じる開放的な空間の中で、
+    日常を離れてゆったりとした時間を過ごすことができます。
   </p>
 
-  <p style="margin-top:30px; max-width:500px; margin-left:auto; margin-right:auto; line-height:1.8;">
-    A small collection is on the way — thoughtfully chosen spaces that reflect a quieter side of Miyakojima.
+</section>
+
+<!-- NAV -->
+<div class="page-nav">
+  <a href="#overview">Overview<span class="jp">概要</span></a>
+  <a href="#photos">Photos<span class="jp">写真</span></a>
+  <a href="#location">Location<span class="jp">場所</span></a>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="overview-section">
+
+  <p class="overview-text">
+    Designed for families, friends, and small groups, Umioto Log creates a space where people can gather,
+    relax, and enjoy time together — whether it’s a quiet morning, a sunset BBQ, or a night under the stars.
   </p>
 
-  <p class="jp-block">
-    宮古島の静かな魅力を感じられる、厳選した場所を紹介予定です。
+  <p class="overview-text jp">
+    家族や友人同士での滞在にぴったりの空間で、
+    朝の静かな時間から、夕暮れのBBQ、夜のひとときまで、
+    大切な人とゆっくり過ごすことができます。
   </p>
+
+  <p class="overview-text">
+    With features like a pool, BBQ space, and karaoke, it offers more than just a place to stay —
+    it becomes part of the experience of Miyakojima itself.
+  </p>
+
+  <p class="overview-text jp">
+    プールやBBQスペース、カラオケなども完備されており、
+    「泊まる場所」を超えた、
+    宮古島での特別な時間を楽しめる滞在となっています。
+  </p>
+
+</section>
+
+<!-- PHOTOS -->
+<section id="photos" class="photos-section">
+
+  <h2>Photos <span class="jp">写真</span></h2>
+
+  <div class="photo-grid">
+    <img src="images/umioto2.jpg" class="gallery-image">
+    <img src="images/umioto3.jpg" class="gallery-image">
+    <img src="images/umioto4.jpg" class="gallery-image">
+    <img src="images/umioto5.jpg" class="gallery-image">
+    <img src="images/umioto6.jpg" class="gallery-image">
+    <img src="images/umioto7.jpg" class="gallery-image">
+  </div>
+
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="location-section">
+
+  <h2>Location <span class="jp">場所</span></h2>
+
+  <div class="location-card">
+
+    <p>
+      <strong>Address</strong><br>
+      394-32 Nagama, Gusukube, Miyakojima, Okinawa 906-0105
+    </p>
+
+    <p class="jp">
+      〒906-0105<br>
+      沖縄県宮古島市城辺字長間394-32
+    </p>
+
+    <p>
+      <strong>Phone</strong><br>
+      080-1496-2700
+    </p>
+
+    <p class="jp">
+      電話番号：080-1496-2700
+    </p>
+
+    <!-- CALL -->
+    <a href="tel:08014962700" class="map-button">
+      📞 Call Now
+      <span>電話する</span>
+    </a>
+
+    <!-- MAP -->
+    <a href="https://maps.google.com/?q=宮古島市城辺字長間394-32"
+       target="_blank"
+       class="map-button">
+
+      📍 Googleマップで見る
+      <span>Open in Google Maps</span>
+
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a href="https://www.instagram.com/umioto_log/"
+       target="_blank"
+       class="map-button">
+
+      📷 Instagram
+      <span>インスタグラム</span>
+
+    </a>
+
+    <!-- WEBSITE -->
+    <a href="https://umioto-log.com"
+       target="_blank"
+       class="map-button">
+
+      🌐 Website
+      <span>公式サイト</span>
+
+    </a>
+
+  </div>
 
 </section>
 
