@@ -2199,16 +2199,21 @@ body.menu-open .category-nav {
 }
 
 .mica-images {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  max-width: 900px;
+  margin: 30px auto;
 }
 
 .mica-images img {
-  width: 300px;
-  height: auto;
-  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 14px;
   object-fit: cover;
+  display: block;
 }
 
 /* FEATURE VIDEO (Umioto Log) */
@@ -2272,3 +2277,4 @@ body.menu-open .category-nav {
 .sound-toggle:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
