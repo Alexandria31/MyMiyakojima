@@ -2174,8 +2174,10 @@ body.menu-open .category-nav {
   margin: 60px auto;
   padding: 30px 26px;
 
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.55);
+  
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   border-radius: 18px;
 
@@ -2183,15 +2185,15 @@ body.menu-open .category-nav {
   line-height: 1.9;
   color: #333;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 
 .intro-en {
-  font-size: 15.5px;
-  letter-spacing: 0.3px;
-  margin-bottom: 18px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
 
   /* clean wrapping */
   overflow-wrap: break-word;
@@ -2202,6 +2204,7 @@ body.menu-open .category-nav {
   font-size: 13px;
   color: #666;
   line-height: 1.8;
+  opacity: 0.85;
 
   letter-spacing: 0.5px;
 
