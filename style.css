@@ -953,7 +953,7 @@ footer {
 }
 
 .spotlight-card {
-  background-color: #f4efe6; /* soft sandy beige */
+  background-color: transparent;
   border: 2px solid #e6d3b3; /* sandy border */
   padding: 35px 50px;
   border-radius: 12px;
@@ -966,6 +966,11 @@ footer {
   pointer-events: auto;
   position: relative;
   z-index: 2;
+}
+
+.spotlight-card-bg {
+  position: relative;
+  overflow: hidden;
 }
 
 .spotlight-card:hover {
@@ -2442,3 +2447,26 @@ body.menu-open .category-nav {
   }
 }
 
+/* background image */
+.spotlight-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  
+}
+
+/* soft overlay */
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(243,239,230,0.45);
+  z-index: 1;
+}
+
+/* keep text above */
+.spotlight-card > *:not(.spotlight-bg):not(.spotlight-overlay) {
+  position: relative;
+  z-index: 2;
+}
