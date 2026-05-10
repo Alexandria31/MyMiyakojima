@@ -2037,47 +2037,171 @@ body.menu-open .category-nav {
 }
 
 
-.mother-link {
+/* RAINY SEASON FLOAT */
+
+.rain-link{
   position: fixed;
-  right: 20px;
-  bottom: 100px;
+  right: 18px;
+  bottom: 95px;
   z-index: 999;
   text-decoration: none;
 }
 
-.mother-flower {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #f8d7da, #f2c6cc);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.rain-cloud{
+  width: 110px;
+  height: 70px;
+
+  background: #dfe7ee;
+  border-radius: 60px;
+
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  animation: floatMother 4s ease-in-out infinite;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+
+  animation: floatRain 4s ease-in-out infinite;
 }
 
-.mother-text {
-  color: #5c4a4a;
-  font-size: 13px;
+/* CLOUD PUFFS */
+
+.rain-cloud::before{
+  content:'';
+  position:absolute;
+
+  width:48px;
+  height:48px;
+
+  background:#dfe7ee;
+  border-radius:50%;
+
+  top:-18px;
+  left:14px;
+
+  z-index:1;
+}
+
+.rain-cloud::after{
+  content:'';
+  position:absolute;
+
+  width:58px;
+  height:58px;
+
+  background:#dfe7ee;
+  border-radius:50%;
+
+  top:-28px;
+  right:12px;
+
+  z-index:1;
+}
+
+/* TEXT */
+
+.rain-text{
+  position: relative;
+  z-index: 2;
+
+  font-size: 12px;
+  line-height: 1.3;
   text-align: center;
-  line-height: 1.5;
-  font-weight: 500;
+
+  color: #4b6475;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
 }
 
-@keyframes floatMother {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+/* RAINDROPS */
+
+.raindrop{
+  position:absolute;
+
+  width:5px;
+  height:12px;
+
+  background:#7bb8e8;
+
+  border-radius:10px;
+
+  opacity:0;
+
+  animation: rainDrop 1.8s infinite;
 }
-  
 
+.drop1{
+  left:24px;
+  bottom:-14px;
+}
 
-  
+.drop2{
+  left:50px;
+  bottom:-18px;
+  animation-delay:0.4s;
+}
 
+.drop3{
+  right:24px;
+  bottom:-14px;
+  animation-delay:0.8s;
+}
 
+/* RAIN ANIMATION */
+
+@keyframes rainDrop{
+
+  0%{
+    opacity:0;
+    transform:translateY(0);
+  }
+
+  40%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(14px);
+  }
+
+}
+
+/* FLOATING CLOUD */
+
+@keyframes floatRain{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-7px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .rain-link{
+    right:14px;
+    bottom:90px;
+  }
+
+  .rain-cloud{
+    transform: scale(0.9);
+  }
+
+}
 
 
 .spotlight-intro-text {
