@@ -987,16 +987,28 @@ HEADER & NAV
 }
 
 .site-header.scrolled {
+
   top: 10px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(74, 173, 168, 0.9),
-    rgba(111, 199, 194, 0.85),
-    rgba(243, 239, 230, 0.75)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(74, 173, 168, 0.82),
+      rgba(111, 199, 194, 0.72),
+      rgba(243, 239, 230, 0.62)
+    );
 
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.32);
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.12);
+
+  transform:
+    translateY(0);
 }
 
 .site-logo {
