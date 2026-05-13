@@ -9,6 +9,10 @@ function toggleMenu() {
 
 document.body.classList.toggle("menu-open");
 
+
+document
+  .getElementById("menuToggle")
+  .classList.toggle("active");
 }
 
 

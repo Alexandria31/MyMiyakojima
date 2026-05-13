@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="icon" type="image/png" href="favicon.png">
+
 <title>My Miyakojima | 宮古島のライフスタイル・おすすめ情報</title>
 
 <meta name="description" content="My Miyakojima is a curated bilingual lifestyle space sharing selected places, creatives, and local recommendations rooted in Miyakojima.">
@@ -31,8 +33,13 @@
 <img src="Ocean2.png" class="site-logo" alt="My Miyakojima">
 
 <!-- ✅ JS HOOK HERE -->
-<button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
+<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
 
+  <span class="menu-icon">☰</span>
+
+  <span class="menu-text">MENU</span>
+
+</button>
 <nav class="main-nav" id="mobileMenu">
 
 <a href="index.html" class="active">Home<span class="jp">ホーム</span></a>

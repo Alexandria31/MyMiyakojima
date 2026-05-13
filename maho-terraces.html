@@ -6,6 +6,8 @@
   <title>Mahho Terrace | My Miyakojima</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <meta name="description" content="
 Mahho Terrace — a cafe & hostel in the heart of Miyakojima. A relaxed, thoughtfully designed stay that blends travel, daily life, and comfort.
 ">
@@ -27,8 +29,13 @@ Mahho Terrace — a cafe & hostel in the heart of Miyakojima. A relaxed, thought
 <header class="site-header">
   <img src="Ocean2.png" class="site-logo">
 
-  <button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
 
+  <span class="menu-icon">☰</span>
+
+  <span class="menu-text">MENU</span>
+
+</button>
   <nav class="main-nav" id="mobileMenu">
     <a href="index.html">Home<span class="jp">ホーム</span></a>
     <a href="journal.html">Journal<span class="jp">ジャーナル</span></a>
