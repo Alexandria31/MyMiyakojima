@@ -1,29 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://mymiyakojima.com/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <url>
-    <loc>https://mymiyakojima.com/journal.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://mymiyakojima.com/collaborations.html</loc>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://mymiyakojima.com/recommended.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/discover-miyakojima.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://mymiyakojima.com/collaborations.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/journal.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://mymiyakojima.com/contact.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
-
+  <url>
+    <loc>https://mymiyakojima.com/pizza-doraku.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/tonkatsu-ichiban-miyakojima.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/burwood-donuts.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/nii-marine.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/umioto-log.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/maho-terraces.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/coral-rent.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/pine-rentacar.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/laso-laso.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/creative-saninsalon.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/creative-blupantu.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/creative-cesca.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/May-2026.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/April-2026.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/March-2026.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/February-2026.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
 </urlset>

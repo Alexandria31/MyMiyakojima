@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mymiyakojima.com/Sitemap.xml
+Sitemap: https://mymiyakojima.com/sitemap.xml
