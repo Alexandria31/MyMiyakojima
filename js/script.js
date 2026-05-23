@@ -24,13 +24,8 @@ document
 document.querySelectorAll('.main-nav a').forEach(link => {
   link.addEventListener('click', () => {
     const menu = document.getElementById("mobileMenu");
-    const toggle = document.getElementById("menuToggle");
     if (menu) {
       menu.classList.remove("show");
-    }
-    document.body.classList.remove("menu-open");
-    if (toggle) {
-      toggle.classList.remove("active");
     }
   });
 });
@@ -88,10 +83,10 @@ function toggleSound() {
   if (video.muted) {
     video.muted = false;
     video.play();
-    button.innerHTML = "矧";
+    button.innerHTML = "🔊";
   } else {
     video.muted = true;
-    button.innerHTML = "這";
+    button.innerHTML = "🔇";
   }
 }
 
