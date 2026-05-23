@@ -1,0 +1,15 @@
+{
+  "name": "My Miyakojima",
+  "short_name": "My Miyakojima",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#4aada8",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
