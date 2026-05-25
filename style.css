@@ -301,6 +301,180 @@
   color:#5c4a3d;
 }
 
+.weather-page{
+  max-width:1120px;
+  margin:0 auto;
+  padding:120px 20px 40px;
+  text-align:left;
+}
+
+.weather-hero{
+  max-width:780px;
+  margin:0 0 36px;
+}
+
+.weather-hero h1{
+  font-size:clamp(2.4rem, 5vw, 4.2rem);
+  line-height:1.08;
+  color:#1f5f5b;
+  margin-bottom:18px;
+}
+
+.weather-hero p,
+.weather-note p,
+.weather-plan p{
+  max-width:700px;
+  color:#4f5d5c;
+  line-height:1.85;
+}
+
+.weather-current-card{
+  display:grid;
+  grid-template-columns:1.25fr 0.75fr;
+  gap:24px;
+  align-items:end;
+  padding:34px;
+  border-radius:22px;
+  background:
+    linear-gradient(135deg, rgba(31,95,91,0.9), rgba(74,173,168,0.68)),
+    url('images/yonaha-maehama.jpg');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  box-shadow:0 24px 65px rgba(0,0,0,0.16);
+  overflow:hidden;
+}
+
+.weather-current-card .jp,
+.weather-current-card p,
+.weather-current-card h2{
+  color:#fff;
+}
+
+.weather-card-label{
+  font-size:0.78rem;
+  font-weight:800;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.9;
+}
+
+.weather-current-card h2{
+  font-size:clamp(3rem, 7vw, 5.6rem);
+  line-height:1;
+  margin:12px 0;
+}
+
+.weather-current-extra{
+  justify-self:end;
+  padding:18px;
+  min-width:220px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.16);
+  border:1px solid rgba(255,255,255,0.28);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+.weather-note,
+.weather-plan{
+  margin:34px 0;
+  padding:30px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.66);
+  border:1px solid rgba(255,255,255,0.72);
+  box-shadow:0 16px 45px rgba(0,0,0,0.07);
+}
+
+.weather-forecast{
+  margin:46px 0 34px;
+}
+
+.weather-forecast h2,
+.weather-plan h2{
+  color:#1f5f5b;
+  font-size:clamp(1.8rem, 3.4vw, 2.8rem);
+  margin-bottom:22px;
+}
+
+.forecast-grid{
+  display:grid;
+  grid-template-columns:repeat(7, minmax(0, 1fr));
+  gap:14px;
+}
+
+.forecast-card{
+  min-height:190px;
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.72);
+  border:1px solid rgba(255,255,255,0.78);
+  box-shadow:0 12px 32px rgba(0,0,0,0.07);
+}
+
+.forecast-date{
+  font-size:0.78rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  color:#1f6f69;
+  text-transform:uppercase;
+}
+
+.forecast-card h3{
+  margin:14px 0 8px;
+  color:#1f4f4c;
+  font-size:1.25rem;
+}
+
+.forecast-card p{
+  color:#5c4a3d;
+  line-height:1.5;
+}
+
+.forecast-details{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin-top:14px;
+  font-size:0.78rem;
+  color:#5c7775;
+}
+
+.weather-loading{
+  grid-column:1 / -1;
+  padding:24px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.65);
+  color:#4f5d5c;
+}
+
+.weather-plan-button{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin-top:18px;
+  padding:14px 28px;
+  border-radius:999px;
+  background:#2f8f8b;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 14px 34px rgba(0,0,0,0.12);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-plan-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 46px rgba(0,0,0,0.16);
+}
+
+.weather-plan-button .jp{
+  color:#fff;
+  font-size:0.78rem;
+  opacity:0.86;
+}
+
 @keyframes floatWeather{
   0%{ transform:translateY(0); }
   50%{ transform:translateY(-7px); }
@@ -336,6 +510,24 @@
 
   .weather-pearl strong{
     font-size:0.86rem;
+  }
+
+  .weather-page{
+    padding:96px 16px 28px;
+  }
+
+  .weather-current-card{
+    grid-template-columns:1fr;
+    padding:26px;
+  }
+
+  .weather-current-extra{
+    justify-self:stretch;
+    min-width:0;
+  }
+
+  .forecast-grid{
+    grid-template-columns:1fr;
   }
 }
 
