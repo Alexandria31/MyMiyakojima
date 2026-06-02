@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://mymiyakojima.com/journal.html</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -129,6 +129,12 @@
   <url>
     <loc>https://mymiyakojima.com/creative-cesca.html</loc>
     <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://mymiyakojima.com/June-2026.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
