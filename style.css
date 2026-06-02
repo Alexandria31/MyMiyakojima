@@ -1475,6 +1475,74 @@ body::before {
   font-size:0.95rem;
 }
 
+.guide-feature-card .featured-overlay{
+  align-items:flex-start;
+  text-align:left;
+  padding:56px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18,55,53,0.88) 0%,
+      rgba(18,55,53,0.70) 42%,
+      rgba(18,55,53,0.28) 72%,
+      rgba(18,55,53,0.10) 100%
+    );
+}
+
+.guide-feature-card .featured-category{
+  color:rgba(255,255,255,0.86);
+}
+
+.guide-feature-card .new-badge{
+  background:rgba(255,255,255,0.20);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.36);
+}
+
+.guide-feature-card .featured-overlay h2{
+  max-width:620px;
+  margin:18px 0 18px;
+  font-size:clamp(2.1rem, 4.2vw, 3.8rem);
+  line-height:1.04;
+  text-shadow:0 2px 18px rgba(0,0,0,0.28);
+}
+
+.guide-feature-card .featured-description,
+.guide-feature-card .featured-jp{
+  max-width:560px;
+  margin-left:0;
+  margin-right:0;
+  text-shadow:0 1px 14px rgba(0,0,0,0.34);
+}
+
+.guide-feature-card .featured-description{
+  color:rgba(255,255,255,0.96);
+  line-height:1.75;
+}
+
+.guide-feature-card .featured-jp{
+  color:rgba(255,255,255,0.86);
+  margin-bottom:26px;
+}
+
+.guide-feature-card .featured-read{
+  display:inline-flex;
+  flex-direction:column;
+  gap:3px;
+  padding:11px 15px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.16);
+  border:1px solid rgba(255,255,255,0.34);
+  color:#fff;
+  line-height:1.2;
+}
+
+.guide-feature-card .featured-read .jp-read{
+  display:block;
+  margin-top:0;
+  color:rgba(255,255,255,0.84);
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -1506,6 +1574,33 @@ body::before {
   .featured-jp{
     font-size:0.8rem;
     line-height:1.9;
+  }
+
+  .guide-feature-card .featured-overlay{
+    padding:32px 24px;
+    background:
+      linear-gradient(
+        to top,
+        rgba(18,55,53,0.88) 0%,
+        rgba(18,55,53,0.72) 50%,
+        rgba(18,55,53,0.22) 100%
+      );
+  }
+
+  .guide-feature-card .featured-overlay h2{
+    font-size:clamp(1.9rem, 9vw, 2.65rem);
+  }
+
+  .guide-feature-card .featured-description,
+  .guide-feature-card .featured-jp{
+    max-width:100%;
+  }
+
+  .guide-feature-card .featured-read{
+    width:100%;
+    max-width:280px;
+    text-align:center;
+    align-items:center;
   }
 
 }
