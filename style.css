@@ -2227,8 +2227,10 @@ HEADER & NAV
 }
 
 .site-logo {
-  width: 150px; /* adjust if needed */
+  width: clamp(170px, 18vw, 230px);
+  max-height: 42px;
   height: auto;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
@@ -5818,7 +5820,8 @@ body.spotlight-page .spotlight-hero h2 {
 
 @media (max-width: 1040px) and (min-width: 769px) {
   .site-logo {
-    width: 118px;
+    width: 150px;
+    max-height: 36px;
   }
 
   .main-nav {
@@ -5837,6 +5840,11 @@ body.spotlight-page .spotlight-hero h2 {
 }
 
 @media (max-width: 768px) {
+  .site-logo {
+    width: 168px;
+    max-height: 38px;
+  }
+
   .site-header {
     width: calc(100% - 28px);
   }
