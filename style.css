@@ -2179,6 +2179,7 @@ HEADER & NAV
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 18px;
 
   border-radius: 18px;
 
@@ -2228,8 +2229,9 @@ HEADER & NAV
 
 .site-logo {
   width: clamp(170px, 18vw, 230px);
-  max-height: 42px;
+  max-height: 36px;
   height: auto;
+  display: block;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -2256,6 +2258,7 @@ HEADER & NAV
   justify-content: center;
   align-items: center;
   gap: 40px;
+  align-self: center;
 
   position: static;
   transform: none;
@@ -4113,19 +4116,53 @@ section[id] {
   margin: 0 auto;
 }
 
+.category-guide{
+  width:min(100% - 28px, 980px);
+  max-width:980px;
+  margin:0 auto 18px;
+  position:sticky;
+  top:92px;
+  z-index:900;
+}
+
+.category-guide > p{
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 7px;
+  padding:5px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.48);
+  color:#2f5f5b;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+}
+
+.category-guide > p span{
+  display:block;
+  margin-top:2px;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.04em;
+  text-transform:none;
+  opacity:0.72;
+}
+
 /* CATEGORY NAV */
 .category-nav {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 12px;
-  width: calc(100% - 24px);
-  margin: 12px auto 24px;
-  max-width: none;
-  position: sticky;
-  padding: 8px 12px;
-  top: 120px;
+  gap: 8px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 980px;
+  position: relative;
+  padding: 7px 10px;
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -4137,20 +4174,20 @@ section[id] {
 
 .category-nav.scrolled {
   background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .category-nav a {
   flex: 0 0 auto;
   display: inline-flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   text-decoration: none;
-  padding: 8px 12px 8px 9px;
-  border-radius: 18px;
+  padding: 7px 10px 7px 8px;
+  border-radius: 16px;
   background: transparent;
   color: #2f5f5b;
-  font-size: 14px;
+  font-size: 13px;
   transition: 0.3s ease;
   white-space: nowrap;
 }
@@ -4163,8 +4200,8 @@ section[id] {
 }
 
 .cat-symbol{
-  width:22px;
-  height:22px;
+  width:20px;
+  height:20px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -4180,6 +4217,7 @@ section[id] {
   position:absolute;
 }
 
+.cat-all .cat-symbol::before{width:4px;height:4px;border-radius:50%;background:currentColor;box-shadow:-6px 0 0 currentColor,6px 0 0 currentColor,0 -6px 0 currentColor,0 6px 0 currentColor;}
 .cat-food .cat-symbol::before{width:10px;height:10px;border:1.5px solid currentColor;border-radius:50%;}
 .cat-food .cat-symbol::after{height:14px;border-left:1.5px solid currentColor;right:6px;}
 .cat-marine .cat-symbol::before{width:13px;height:7px;border-bottom:2px solid currentColor;border-radius:0 0 12px 12px;}
@@ -4193,24 +4231,102 @@ section[id] {
 
 .category-nav .jp {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   opacity: 0.7;
 }
 
-.category-nav a:hover {
+.category-nav a:hover,
+.category-nav a.is-active {
   background: rgba(255, 255, 255, 0.3);
   color: #1f4f4b;
+}
+
+.category-nav a.is-active{
+  background:rgba(74,173,168,0.18);
+  border-color:rgba(47,127,123,0.2);
+  box-shadow:inset 0 0 0 1px rgba(47,127,123,0.14), 0 6px 16px rgba(47,127,123,0.08);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body.menu-open .category-nav {
+body.menu-open .category-guide {
   top: 140px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .category-guide{
+    top: 68px;
+    width: calc(100% - 20px);
+    margin: 4px auto 10px;
+  }
+
+  .category-guide > p{
+    margin-bottom:5px;
+    padding:4px 10px;
+    font-size:10px;
+  }
+
+  .category-guide > p span{
+    font-size:9px;
+  }
+
+  .category-nav {
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    padding: 6px 8px;
+    gap: 6px;
+    border-radius: 16px;
+    overflow-x: visible;
+  }
+
+  .category-nav a {
+    justify-content:center;
+    min-width:0;
+    padding: 6px 9px 6px 7px;
+    gap: 5px;
+    font-size: 11.5px;
+    border-radius: 14px;
+  }
+
+  .category-nav a:first-child {
+    grid-column:span 2;
+  }
+
+  .category-nav a:nth-child(6),
+  .category-nav a:nth-child(7) {
+    grid-column:auto;
+  }
+
+  .cat-label{
+    align-items:center;
+    text-align:center;
+  }
+
+  .category-nav .jp {
+    font-size: 9px;
+  }
+
+  .cat-symbol {
+    width: 18px;
+    height: 18px;
+  }
+
+  .recommended-section {
+    margin: 34px auto;
+  }
+
+  .category-nav + .recommended-section {
+    margin-top: 22px;
+  }
+
+  body.menu-open .category-guide {
+    top: 84px;
+  }
 }
 
 .airport-info {
@@ -5821,7 +5937,7 @@ body.spotlight-page .spotlight-hero h2 {
 @media (max-width: 1040px) and (min-width: 769px) {
   .site-logo {
     width: 150px;
-    max-height: 36px;
+    max-height: 32px;
   }
 
   .main-nav {
@@ -5842,7 +5958,7 @@ body.spotlight-page .spotlight-hero h2 {
 @media (max-width: 768px) {
   .site-logo {
     width: 168px;
-    max-height: 38px;
+    max-height: 34px;
   }
 
   .site-header {

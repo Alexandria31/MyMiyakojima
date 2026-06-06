@@ -77,6 +77,37 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// =============================
+// RECOMMENDATIONS CATEGORY STATE
+// =============================
+const categoryLinks = document.querySelectorAll('.category-nav a[href^="#"]');
+const categorySections = Array.from(categoryLinks)
+  .map(link => {
+    const id = link.getAttribute('href');
+    return id && id !== '#recommendations-top' ? document.querySelector(id) : null;
+  })
+  .filter(Boolean);
+
+function updateCategoryActiveState() {
+  if (!categoryLinks.length) return;
+
+  let activeId = '#recommendations-top';
+  const checkpoint = window.scrollY + Math.min(window.innerHeight * 0.38, 260);
+
+  categorySections.forEach(section => {
+    if (section.offsetTop <= checkpoint) {
+      activeId = `#${section.id}`;
+    }
+  });
+
+  categoryLinks.forEach(link => {
+    link.classList.toggle('is-active', link.getAttribute('href') === activeId);
+  });
+}
+
+window.addEventListener('load', updateCategoryActiveState);
+window.addEventListener('scroll', updateCategoryActiveState);
+
 function toggleSound() {
   const video = document.getElementById("umiotoVideo");
   const button = document.querySelector(".sound-toggle");
