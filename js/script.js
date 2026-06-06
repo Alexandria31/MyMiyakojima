@@ -41,6 +41,7 @@ function revealElements() {
 
     if (top < window.innerHeight * 0.9) {
       el.classList.add('show');
+      el.classList.add('active');
     }
   });
 }
@@ -99,6 +100,7 @@ const observer = new IntersectionObserver((entries) => {
     if(entry.isIntersecting){
 
       entry.target.classList.add('active');
+      entry.target.classList.add('show');
 
     }
 
