@@ -3847,6 +3847,95 @@ section[id] {
   margin-top: 4px;
 }
 
+.pono-contact-card {
+  max-width: 760px;
+}
+
+.contact-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.location-card .contact-link-button {
+  width: 100%;
+  min-height: 136px;
+  margin: 0;
+  padding: 16px 12px;
+  gap: 6px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #173f43 !important;
+  border: 1px solid rgba(47, 129, 122, 0.18);
+  box-shadow: 0 10px 24px rgba(31, 79, 76, 0.08);
+}
+
+.location-card .contact-link-button strong {
+  color: #173f43;
+  font-size: 0.95rem;
+}
+
+.location-card .contact-link-button span:not(.contact-icon) {
+  margin-top: 0;
+  color: #667f80;
+  opacity: 1;
+  font-weight: 500;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: #e9f5f2;
+  color: #2f817a;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.instagram-link .contact-icon {
+  background: #fff0f5;
+  color: #b24b78;
+}
+
+.map-link .contact-icon {
+  background: #edf6ff;
+  color: #31799c;
+}
+
+.location-card .contact-link-button:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  border-color: rgba(47, 129, 122, 0.36);
+}
+
+@media (max-width: 720px) {
+  .contact-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card .contact-link-button {
+    min-height: 104px;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 14px 18px;
+  }
+
+  .contact-icon {
+    flex: 0 0 auto;
+    margin: 0 6px 0 0;
+  }
+}
+
 .contact-center {
   display: inline-block;
   padding: 14px 32px;
@@ -5199,6 +5288,67 @@ body.menu-open .category-guide {
   color: #1f7a83;
 }
 
+.creative-card.pono-home-card {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(26px, 4vw, 46px);
+  background:
+    linear-gradient(145deg, rgba(250, 252, 248, 0.98), rgba(255, 247, 241, 0.98));
+  border: 1px solid rgba(82, 136, 121, 0.14);
+  overflow: hidden;
+}
+
+.creative-card.pono-home-card .creative-image {
+  aspect-ratio: 4 / 3;
+  align-self: center;
+  background: #eef6ef;
+  max-height: 460px;
+  min-width: 0;
+}
+
+.creative-card.pono-home-card .creative-content {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.creative-card.pono-home-card .creative-label {
+  color: #2f817a;
+}
+
+.creative-card.pono-home-card .jp-name {
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  line-height: 1.45;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.creative-card.pono-home-card .pono-jp-name span {
+  display: block;
+}
+
+.creative-card.pono-home-card .creative-image img {
+  object-position: center center;
+  display: block;
+}
+
+.pono-feature-image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media(max-width:768px){
+  .creative-card.pono-home-card {
+    grid-template-columns: 1fr;
+  }
+
+  .creative-card.pono-home-card .creative-image {
+    width: 100%;
+    max-height: none;
+  }
+}
+
 .contribute-page {
   width: min(1120px, calc(100% - 40px));
   margin: 70px auto 0;
@@ -5980,5 +6130,101 @@ body.spotlight-page .spotlight-hero h2 {
   .main-nav .jp,
   .main-nav span.jp {
     font-size: 0.76rem;
+  }
+}
+
+/* Shared lively contact badges for business feature pages */
+.location-card .map-button:not(.contact-link-button),
+body.spotlight-page .map-button:not(.contact-link-button) {
+  display: inline-grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  grid-auto-rows: auto;
+  align-items: center;
+  justify-items: start;
+  column-gap: 12px;
+  width: min(100%, 340px);
+  min-height: 72px;
+  margin: 10px 8px 0 0;
+  padding: 12px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(47, 129, 122, 0.2);
+  background: rgba(255, 255, 255, 0.88);
+  color: #173f43 !important;
+  box-shadow: 0 10px 24px rgba(31, 79, 76, 0.08);
+  text-align: left;
+  line-height: 1.35;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.location-card .map-button:not(.contact-link-button)::before,
+body.spotlight-page .map-button:not(.contact-link-button)::before {
+  content: "WEB";
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e9f5f2;
+  color: #2f817a;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.location-card .map-button:not(.contact-link-button) span,
+body.spotlight-page .map-button:not(.contact-link-button) span {
+  grid-column: 2;
+  margin-top: 2px;
+  color: #667f80;
+  opacity: 1;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.location-card .map-button[href^="tel:"]:not(.contact-link-button)::before,
+body.spotlight-page .map-button[href^="tel:"]:not(.contact-link-button)::before {
+  content: "CALL";
+  background: #eef8ee;
+  color: #3b8a4f;
+}
+
+.location-card .map-button[href*="instagram.com"]:not(.contact-link-button)::before,
+body.spotlight-page .map-button[href*="instagram.com"]:not(.contact-link-button)::before {
+  content: "IG";
+  background: #fff0f5;
+  color: #b24b78;
+}
+
+.location-card .map-button[href*="maps.google"]:not(.contact-link-button)::before,
+.location-card .map-button[href*="google.com/maps"]:not(.contact-link-button)::before,
+body.spotlight-page .map-button[href*="maps.google"]:not(.contact-link-button)::before,
+body.spotlight-page .map-button[href*="google.com/maps"]:not(.contact-link-button)::before {
+  content: "MAP";
+  background: #edf6ff;
+  color: #31799c;
+}
+
+.location-card .map-button[href*="lin.ee"]:not(.contact-link-button)::before,
+body.spotlight-page .map-button[href*="lin.ee"]:not(.contact-link-button)::before {
+  content: "LINE";
+  background: #effbea;
+  color: #2f8f44;
+}
+
+.location-card .map-button:not(.contact-link-button):hover,
+body.spotlight-page .map-button:not(.contact-link-button):hover {
+  transform: translateY(-3px);
+  border-color: rgba(47, 129, 122, 0.38);
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(31, 79, 76, 0.12);
+}
+
+@media (max-width: 720px) {
+  .location-card .map-button:not(.contact-link-button),
+  body.spotlight-page .map-button:not(.contact-link-button) {
+    width: 100%;
+    margin-right: 0;
   }
 }
