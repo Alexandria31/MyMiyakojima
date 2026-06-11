@@ -3263,6 +3263,10 @@ footer {
   font-weight: 500;
 }
 
+.page-nav > .nav-scroll-hint {
+  display: none !important;
+}
+
 .section-anchor,
 section[id] {
   scroll-margin-top: 130px;
@@ -3362,6 +3366,54 @@ section[id] {
   .page-nav a {
     min-width: 118px;
     flex: 0 0 auto;
+  }
+
+  .page-nav.has-scroll-cue {
+    position: sticky;
+    padding-right: 34px;
+    scrollbar-width: none;
+  }
+
+  .page-nav.has-scroll-cue::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-nav.has-scroll-cue::after {
+    content: "";
+    position: sticky;
+    right: -34px;
+    align-self: stretch;
+    flex: 0 0 34px;
+    margin: -8px -34px -8px 0;
+    border-radius: 0 8px 8px 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(246, 252, 251, 0.96) 68%);
+    pointer-events: none;
+  }
+
+  .page-nav > .nav-scroll-hint {
+    display: inline-flex !important;
+    flex: 0 0 auto;
+    min-width: 106px;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px dashed rgba(47, 122, 131, 0.22);
+    color: #2f6f72;
+    background: rgba(241, 250, 249, 0.76);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.2;
+    pointer-events: none;
+  }
+
+  .nav-scroll-hint .jp {
+    margin-top: 3px;
+    color: #5a7679;
+    font-size: 0.72rem;
+    line-height: 1.2;
   }
 
   .client-inquiry-cta {
@@ -6226,5 +6278,178 @@ body.spotlight-page .map-button:not(.contact-link-button):hover {
   body.spotlight-page .map-button:not(.contact-link-button) {
     width: 100%;
     margin-right: 0;
+  }
+}
+
+/* Japanese readability lift */
+.jp,
+.jp-title,
+.jp-name,
+.jp-description,
+.jp-link,
+.jp-month,
+.featured-jp,
+.creative-jp,
+.overview-text.jp,
+.footer-note.jp,
+.masa-lede.jp,
+.masa-story .jp p,
+.masa-feature-strip .jp,
+.masa-schedule .jp,
+.why-recommend p.jp,
+.spotlight-card .jp-description,
+.client-inquiry-cta .jp {
+  color: #435f63;
+  line-height: 1.92;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+p.jp,
+.overview-text.jp,
+.featured-jp,
+.creative-jp,
+.jp-description,
+.why-recommend p.jp,
+.spotlight-card .jp-description,
+.client-inquiry-cta .jp,
+.recommend-card .jp,
+.update-card .jp,
+.feature-copy .jp,
+.journal-post-preview .jp,
+.business-intro .jp,
+.location-card .jp,
+.contact-panel .jp {
+  font-size: 1rem;
+}
+
+.jp-title,
+.jp-name,
+.recommended-section h2 .jp,
+.spotlight-section h2 .jp,
+.section-heading .jp,
+.client-inquiry-cta h2 .jp {
+  color: #38585d;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  font-weight: 650;
+}
+
+.recommend-card .jp {
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  color: #526f73;
+  line-height: 1.78;
+}
+
+.location-card .map-button:not(.contact-link-button) span,
+body.spotlight-page .map-button:not(.contact-link-button) span,
+.jp-link,
+.jp-read {
+  color: #516f72;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.category-nav .jp {
+  font-size: 11px;
+  color: #526c70;
+  opacity: 0.9;
+  line-height: 1.25;
+}
+
+.overview-section .overview-text.jp,
+.story-section .jp,
+.location-section .jp,
+.location-card .jp,
+.why-recommend p.jp,
+body.spotlight-page .why-recommend p.jp,
+body.spotlight-page .location-card .jp,
+body.spotlight-page .overview-text.jp,
+body.spotlight-page .jp-description {
+  color: #344f54;
+  opacity: 1;
+  font-weight: 500;
+  line-height: 1.95;
+}
+
+.location-card p.jp,
+.location-card p .jp,
+.location-card strong .jp,
+.location-card .map-button span.jp,
+.contact-link-button span.jp,
+body.spotlight-page .location-card p.jp,
+body.spotlight-page .location-card p .jp {
+  color: #31565a;
+  opacity: 1;
+  font-weight: 550;
+}
+
+.main-nav .jp,
+.main-nav span.jp {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+@media (max-width: 768px) {
+  p.jp,
+  .overview-text.jp,
+  .featured-jp,
+  .creative-jp,
+  .jp-description,
+  .why-recommend p.jp,
+  .spotlight-card .jp-description,
+  .client-inquiry-cta .jp,
+  .recommend-card .jp,
+  .update-card .jp,
+  .feature-copy .jp,
+  .journal-post-preview .jp,
+  .business-intro .jp,
+  .location-card .jp,
+  .contact-panel .jp {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .jp-title,
+  .jp-name,
+  .recommended-section h2 .jp,
+  .spotlight-section h2 .jp,
+  .section-heading .jp,
+  .client-inquiry-cta h2 .jp {
+    font-size: 1.05rem;
+  }
+
+  .category-nav .jp {
+    font-size: 10px;
+  }
+
+  .overview-section .overview-text.jp,
+  .story-section .jp,
+  .location-section .jp,
+  .location-card .jp,
+  .why-recommend p.jp,
+  body.spotlight-page .why-recommend p.jp,
+  body.spotlight-page .location-card .jp,
+  body.spotlight-page .overview-text.jp,
+  body.spotlight-page .jp-description {
+    color: #2d494e;
+    font-size: 1.04rem;
+    font-weight: 550;
+    line-height: 1.95;
+  }
+
+  .location-card p.jp,
+  .location-card p .jp,
+  .location-card strong .jp,
+  .location-card .map-button span.jp,
+  .contact-link-button span.jp,
+  body.spotlight-page .location-card p.jp,
+  body.spotlight-page .location-card p .jp {
+    color: #2a5054;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
