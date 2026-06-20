@@ -616,6 +616,225 @@
   }
 }
 
+.island-calendar {
+  width: min(1120px, calc(100% - 36px));
+  margin: 56px auto 92px;
+}
+
+.island-calendar-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.island-calendar-header .freshness-kicker {
+  margin: 0 0 8px;
+}
+
+.island-calendar-header h2 {
+  margin: 0;
+  color: #1f5f5b;
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.island-calendar-header h2 .jp-title {
+  display: block;
+  margin-top: 7px;
+  color: #38585d;
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+
+.island-calendar-updated {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #60777a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.island-calendar-updated span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.island-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.island-event {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(42, 107, 104, 0.14);
+  border-radius: 16px;
+  background: rgba(250, 253, 252, 0.88);
+  box-shadow: 0 12px 30px rgba(31, 79, 76, 0.07);
+}
+
+.island-event-now {
+  border-color: rgba(196, 137, 75, 0.26);
+  background: linear-gradient(145deg, rgba(255, 250, 241, 0.95), rgba(247, 253, 251, 0.96));
+}
+
+.island-event-date {
+  display: flex;
+  height: 88px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e8f3f1;
+  color: #245f5c;
+  text-align: center;
+}
+
+.island-event-now .island-event-date {
+  background: #f6e8d5;
+  color: #805334;
+}
+
+.island-event-date span,
+.island-event-date small {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.island-event-date strong {
+  margin: 2px 0;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.island-event-copy {
+  min-width: 0;
+}
+
+.island-event-status {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 9px;
+  color: #8a5a35;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.island-event-status span {
+  color: #60777a;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.island-event h3 {
+  margin: 0 0 10px;
+  color: #203f42;
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.island-event h3 span {
+  display: block;
+  margin-top: 5px;
+  color: #365d5f;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.island-event p {
+  margin: 0 0 7px;
+  color: #526769;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.island-event p.jp {
+  color: #3c5d5f;
+  font-size: 0.9rem;
+  font-weight: 550;
+  line-height: 1.75;
+}
+
+.island-event a {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 5px;
+  color: #1f6f69;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.island-event a span {
+  color: #587372;
+  font-size: 0.8rem;
+}
+
+.island-calendar-note {
+  margin: 14px 4px 0;
+  color: #687b7d;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.island-calendar-note .jp {
+  display: block;
+  color: #536e70;
+  font-size: 0.82rem;
+  font-weight: 550;
+}
+
+@media (max-width: 900px) {
+  .island-calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .island-calendar {
+    width: calc(100% - 28px);
+    margin: 44px auto 72px;
+  }
+
+  .island-calendar-header {
+    display: block;
+  }
+
+  .island-calendar-updated {
+    margin-top: 12px;
+    text-align: left;
+  }
+
+  .island-event {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 13px;
+    padding: 17px;
+  }
+
+  .island-event-date {
+    height: 82px;
+  }
+}
+
 /* ===== TOPPURI OPENING CAMPAIGN ===== */
 
 .toppuri-home-teaser{
@@ -5052,6 +5271,36 @@ body.menu-open .category-guide {
   display: block;
   width: min(220px, 62vw);
   max-width: 100%;
+}
+
+body.captain-marian-page .jp,
+body.captain-marian-page .jp-title {
+  word-break: normal;
+  word-break: auto-phrase;
+  overflow-wrap: normal;
+  line-break: strict;
+  text-wrap: pretty;
+}
+
+body.captain-marian-page h1 .jp-title,
+body.captain-marian-page h2 .jp {
+  text-wrap: balance;
+}
+
+body.captain-marian-page .subtitle.jp {
+  width: min(720px, calc(100% - 40px));
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 8px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body.captain-marian-page .subtitle.jp {
+    width: calc(100% - 28px);
+    font-size: 0.98rem;
+    line-height: 1.85;
+  }
 }
 
 
