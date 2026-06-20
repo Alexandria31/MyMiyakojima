@@ -5037,6 +5037,23 @@ body.menu-open .category-guide {
   opacity: 0.95;
 }
 
+.captain-marian-logo {
+  display: block;
+  width: max-content;
+  max-width: min(260px, calc(100% - 48px));
+  margin: 26px auto 18px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px rgba(31, 79, 76, 0.08);
+}
+
+.captain-marian-logo img {
+  display: block;
+  width: min(220px, 62vw);
+  max-width: 100%;
+}
+
 
 /* RAINY SEASON FLOAT */
 
@@ -5920,6 +5937,148 @@ body.menu-open .category-guide {
 .creative-card.pono-home-card .creative-image img {
   object-position: center center;
   display: block;
+}
+
+.captain-home-feature {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px 96px;
+}
+
+.captain-feature-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(22px, 4vw, 42px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 34px);
+  border: 1px solid rgba(133, 92, 55, 0.16);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 245, 0.98), rgba(245, 252, 250, 0.98));
+  box-shadow: 0 18px 46px rgba(35, 83, 82, 0.08);
+  overflow: hidden;
+}
+
+.captain-feature-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f2eadf;
+}
+
+.captain-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.captain-feature-copy {
+  min-width: 0;
+}
+
+.captain-feature-kicker {
+  margin: 0 0 12px;
+  color: #8a5a35;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.captain-feature-kicker span {
+  display: block;
+  margin-top: 5px;
+  color: #6a8585;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.captain-feature-copy h2 {
+  margin: 14px 0 16px;
+  color: #234548;
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.captain-feature-copy h2 span {
+  display: block;
+  margin-top: 9px;
+  color: #426568;
+  font-size: clamp(1rem, 1.8vw, 1.28rem);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.captain-feature-copy p {
+  max-width: 600px;
+  margin: 0 0 14px;
+  color: #485b5c;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.captain-feature-copy .jp {
+  color: #415f61;
+  font-size: 0.98rem;
+  font-weight: 560;
+  line-height: 1.95;
+}
+
+.captain-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 8px;
+  padding: 11px 17px;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 111, 105, 0.16);
+  background: rgba(31, 111, 105, 0.09);
+  color: #1f6f69;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.captain-feature-link span {
+  color: #54716f;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+@media (max-width: 860px) {
+  .captain-home-feature {
+    padding: 0 16px 78px;
+  }
+
+  .captain-feature-shell {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .captain-feature-image {
+    aspect-ratio: 16 / 11;
+    border-radius: 18px;
+  }
+
+  .captain-feature-copy {
+    text-align: left;
+  }
+
+  .captain-feature-copy p,
+  .captain-feature-copy .jp {
+    max-width: none;
+  }
+
+  .captain-feature-link {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .pono-feature-image {
