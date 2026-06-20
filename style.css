@@ -2196,13 +2196,13 @@ box-shadow:
 
   background:
     linear-gradient(
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.55)
+      rgba(18, 77, 85, 0.18),
+      rgba(8, 44, 51, 0.36)
     ),
-    url('images/MY2.jpeg');
+    url('images/slider4.jpg');
 
   background-size:cover;
-  background-position:center;
+  background-position:center 54%;
 
   overflow:hidden;
 }
@@ -2214,10 +2214,16 @@ box-shadow:
   inset:0;
 
   background:
+    linear-gradient(
+      90deg,
+      rgba(4, 32, 38, 0.12),
+      rgba(255, 255, 255, 0.04),
+      rgba(4, 32, 38, 0.12)
+    ),
     radial-gradient(
       circle at center,
-      rgba(255,255,255,0.04),
-      rgba(0,0,0,0.35)
+      rgba(255,255,255,0.1),
+      rgba(8,44,51,0.24)
     );
 
   z-index:0;
@@ -2230,6 +2236,21 @@ box-shadow:
   max-width:850px;
 }
 
+.hero-content::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(760px, 94vw);
+  height:min(430px, 54vh);
+  transform:translate(-50%, -50%);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(9, 48, 54, 0.32), rgba(9, 48, 54, 0.14) 48%, rgba(9, 48, 54, 0) 72%);
+  filter:blur(5px);
+  z-index:-1;
+  pointer-events:none;
+}
+
 /* small top text */
 
 .hero-kicker{
@@ -2237,7 +2258,8 @@ box-shadow:
   letter-spacing:4px;
   text-transform:uppercase;
 
-  color:rgba(255,255,255,0.72);
+  color:rgba(238, 248, 245, 0.88);
+  text-shadow:0 3px 14px rgba(0,0,0,0.36);
 
   margin-bottom:18px;
 }
@@ -2252,12 +2274,26 @@ box-shadow:
   font-weight:600;
   letter-spacing:-2px;
 
-  color:#ffffff;
+  color:#f7f3e9 !important;
 
   margin-bottom:28px;
 
   text-shadow:
-    0 8px 30px rgba(0,0,0,0.35);
+    0 3px 14px rgba(0,0,0,0.42),
+    0 10px 28px rgba(0,0,0,0.22);
+}
+
+.welcome-title .jp-title{
+  display:block;
+  margin:12px auto 0;
+  color:rgba(237, 246, 241, 0.96);
+  font-size:clamp(1.08rem, 2.3vw, 1.42rem);
+  font-weight:650;
+  letter-spacing:0.18em;
+  line-height:1.55;
+  text-shadow:
+    0 3px 14px rgba(0,0,0,0.46),
+    0 10px 24px rgba(0,0,0,0.24);
 }
 
 .accent-dot{
@@ -2274,7 +2310,10 @@ box-shadow:
   font-size:1.1rem;
   line-height:1.9;
 
-  color:rgba(255,255,255,0.9);
+  color:rgba(232, 246, 242, 0.9);
+  text-shadow:
+    0 3px 13px rgba(0,0,0,0.38),
+    0 9px 24px rgba(0,0,0,0.2);
 
   letter-spacing:0.3px;
 }
@@ -2292,10 +2331,11 @@ box-shadow:
   margin-top:24px;
 
   color:
-    rgba(225, 240, 236, 0.96);
+    rgba(232, 246, 242, 0.92);
 
   text-shadow:
-    0 2px 14px rgba(0,0,0,0.45);
+    0 3px 13px rgba(0,0,0,0.4),
+    0 9px 24px rgba(0,0,0,0.22);
 
   position:relative;
 
@@ -2307,10 +2347,11 @@ box-shadow:
 .jp-title.hero-jp{
 
   color:
-  rgba(208, 226, 222, 0.88) !important;
+  rgba(232, 246, 242, 0.9) !important;
 
   text-shadow:
-    0 2px 14px rgba(0,0,0,0.45);
+    0 3px 13px rgba(0,0,0,0.4),
+    0 9px 24px rgba(0,0,0,0.22);
 
   opacity:1;
 }
@@ -2355,10 +2396,18 @@ box-shadow:
   .intro{
     padding:140px 20px 100px;
     min-height:90vh;
+    background-position:center 52%;
+  }
+
+  .hero-content::before{
+    width:min(390px, 96vw);
+    height:430px;
+    background:radial-gradient(circle, rgba(9, 48, 54, 0.36), rgba(9, 48, 54, 0.16) 50%, rgba(9, 48, 54, 0) 74%);
   }
 
   .welcome-title{
     font-size:3.2rem;
+    color:#f7f3e9 !important;
   }
 
   .welcome-sub{
@@ -6960,7 +7009,10 @@ body.spotlight-page .location-card p .jp {
   }
 
   .welcome-title .jp-title {
-    margin-top: 8px;
+    margin-top: 10px;
+    font-size: 1.14rem;
+    line-height: 1.5;
+    letter-spacing: 0.14em;
   }
 
   .welcome-sub {
