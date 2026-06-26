@@ -5303,6 +5303,63 @@ body.captain-marian-page .subtitle.jp {
   }
 }
 
+body.ggs-page .ggs-logo img {
+  max-width: 180px;
+  border-radius: 18px;
+}
+
+body.ggs-page .jp,
+body.ggs-page .jp-title {
+  word-break: normal;
+  word-break: auto-phrase;
+  overflow-wrap: normal;
+  line-break: strict;
+  text-wrap: pretty;
+}
+
+body.ggs-page h1 .jp-title,
+body.ggs-page h2 .jp,
+body.ggs-page .subtitle.jp {
+  text-wrap: balance;
+}
+
+body.ggs-page .subtitle.jp {
+  width: min(720px, calc(100% - 40px));
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 8px;
+  text-align: center;
+}
+
+body.ggs-page .feature-image {
+  object-position: center 48%;
+}
+
+body.ggs-page .info-grid span {
+  display: block;
+  margin-top: 8px;
+  color: #526b6f;
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+.mini-tag .jp {
+  display: block;
+  margin-top: 4px;
+  color: #66777a;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  body.ggs-page .subtitle.jp {
+    width: calc(100% - 28px);
+    font-size: 0.98rem;
+    line-height: 1.85;
+  }
+}
+
 
 /* RAINY SEASON FLOAT */
 
