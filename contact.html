@@ -66,7 +66,7 @@
 
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
-<link rel="stylesheet" href="style.css?v=79">
+<link rel="stylesheet" href="style.css?v=80">
 </head>
 
 <body class="contact-page">
@@ -198,13 +198,18 @@ Contact
         <p class="freshness-kicker">Feature Inquiry<span class="jp">掲載についてのご相談</span></p>
         <h2 id="business-inquiry-title">For Miyakojima Business Owners<span class="jp-title">宮古島の事業者さまへ</span></h2>
         <p>
-            If you would like My Miyakojima to learn about your business, please share a few details below. The form will open your email app with the message prepared, so you can review everything before sending.
+            If you would like My Miyakojima to learn about your business, please share a few details below. Your inquiry will be sent directly to My Miyakojima.
         </p>
         <p class="jp">
-            My Miyakojimaでの掲載に興味がある事業者さまは、下記フォームから概要をお知らせください。入力内容はメールアプリで確認してから送信できます。
+            My Miyakojimaでの掲載に興味がある事業者さまは、下記フォームから概要をお知らせください。お問い合わせはMy Miyakojimaへ直接送信されます。
         </p>
 
-        <form id="businessInquiryForm" class="business-inquiry-form">
+        <form id="businessInquiryForm" class="business-inquiry-form" action="https://formsubmit.co/hello@mymiyakojima.com" method="POST">
+            <input type="hidden" name="_subject" value="New My Miyakojima business inquiry">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://mymiyakojima.com/contact.html?inquiry=sent#business-inquiry">
+            <input type="text" name="_honey" class="business-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-grid">
                 <label>
                     Your Name
@@ -251,9 +256,9 @@ Contact
                 </label>
 
                 <label>
-                    Best Contact
-                    <span class="jp">連絡先</span>
-                    <input type="text" name="contact" autocomplete="email" placeholder="Email, LINE, Instagram DM">
+                    Email Address
+                    <span class="jp">メールアドレス</span>
+                    <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="name@example.com" required>
                 </label>
             </div>
 
@@ -264,13 +269,15 @@ Contact
             </label>
 
             <button type="submit" class="business-form-button">
-                Prepare Email
-                <span>メールを作成する</span>
+                <span class="business-form-button-en">Send Inquiry</span>
+                <span class="business-form-button-jp">お問い合わせを送信</span>
             </button>
 
+            <p id="businessFormStatus" class="business-form-status" role="status" aria-live="polite"></p>
+
             <p class="business-form-note">
-                This form does not send automatically. Your email app will open first.
-                <span class="jp">このフォームは自動送信ではありません。メールアプリで内容を確認してから送信できます。</span>
+                Your details are used only to respond to this inquiry.
+                <span class="jp">ご入力いただいた情報は、お問い合わせへの返信にのみ使用します。</span>
             </p>
         </form>
     </section>
@@ -288,38 +295,23 @@ Contact
   const businessInquiryForm = document.getElementById("businessInquiryForm");
 
   if (businessInquiryForm) {
-    businessInquiryForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+    const businessFormStatus = document.getElementById("businessFormStatus");
+    const businessFormButton = businessInquiryForm.querySelector(".business-form-button");
+    const inquiryWasSent = new URLSearchParams(window.location.search).get("inquiry") === "sent";
 
-      const formData = new FormData(businessInquiryForm);
-      const name = formData.get("name") || "";
-      const business = formData.get("business") || "";
-      const category = formData.get("category") || "";
-      const language = formData.get("language") || "";
-      const link = formData.get("link") || "";
-      const contact = formData.get("contact") || "";
-      const message = formData.get("message") || "";
+    if (inquiryWasSent) {
+      businessFormStatus.className = "business-form-status is-success";
+      businessFormStatus.innerHTML = "Thank you. Your inquiry has been sent to My Miyakojima.<span class=\"jp\">ありがとうございます。お問い合わせをMy Miyakojimaへ送信しました。</span>";
+      window.history.replaceState({}, document.title, `${window.location.pathname}#business-inquiry`);
+    }
 
-      const subject = `My Miyakojima feature inquiry: ${business || name}`;
-      const body = [
-        "Hello My Miyakojima,",
-        "",
-        "I would like to inquire about a possible feature.",
-        "",
-        `Name: ${name}`,
-        `Business name: ${business}`,
-        `Category: ${category}`,
-        `Preferred language: ${language}`,
-        `Instagram or website: ${link}`,
-        `Best contact: ${contact}`,
-        "",
-        "Message:",
-        message,
-        "",
-        "Thank you."
-      ].join("\n");
-
-      window.location.href = `mailto:hello@mymiyakojima.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    businessInquiryForm.addEventListener("submit", function () {
+      businessFormButton.disabled = true;
+      businessFormButton.setAttribute("aria-busy", "true");
+      businessFormButton.querySelector(".business-form-button-en").textContent = "Sending...";
+      businessFormButton.querySelector(".business-form-button-jp").textContent = "送信中...";
+      businessFormStatus.className = "business-form-status is-sending";
+      businessFormStatus.innerHTML = "Sending your inquiry.<span class=\"jp\">お問い合わせを送信しています。</span>";
     });
   }
 </script>

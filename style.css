@@ -1858,6 +1858,16 @@
   margin-top: 24px;
 }
 
+.business-form-honey {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 .business-inquiry-form .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1928,6 +1938,65 @@
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.82rem;
   font-weight: 600;
+}
+
+.business-form-button .business-form-button-en {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.business-form-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.business-form-status {
+  display: none;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 13px 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.business-form-status:not(:empty) {
+  display: block;
+}
+
+.business-form-status .jp {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.business-form-status.is-sending {
+  border-color: rgba(31, 111, 105, 0.2);
+  background: rgba(234, 246, 244, 0.9);
+  color: #285d5a;
+}
+
+.business-form-status.is-success {
+  border-color: rgba(42, 119, 82, 0.25);
+  background: #eff8f2;
+  color: #245f42;
+}
+
+.business-form-status.is-error {
+  border-color: rgba(164, 73, 64, 0.25);
+  background: #fff4f1;
+  color: #873f37;
+}
+
+.business-form-status a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .business-form-note {
