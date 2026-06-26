@@ -66,7 +66,7 @@
 
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
-<link rel="stylesheet" href="style.css?v=70">
+<link rel="stylesheet" href="style.css?v=73">
 </head>
 
 <body class="contact-page">
@@ -194,6 +194,87 @@ Contact
 
     </div>
 
+    <section id="business-inquiry" class="business-inquiry-section fade-up" aria-labelledby="business-inquiry-title">
+        <p class="freshness-kicker">Feature Inquiry<span class="jp">掲載についてのご相談</span></p>
+        <h2 id="business-inquiry-title">For Miyakojima Business Owners<span class="jp-title">宮古島の事業者さまへ</span></h2>
+        <p>
+            If you would like My Miyakojima to learn about your business, please share a few details below. The form will open your email app with the message prepared, so you can review everything before sending.
+        </p>
+        <p class="jp">
+            My Miyakojimaでの掲載に興味がある事業者さまは、下記フォームから概要をお知らせください。入力内容はメールアプリで確認してから送信できます。
+        </p>
+
+        <form id="businessInquiryForm" class="business-inquiry-form">
+            <div class="form-grid">
+                <label>
+                    Your Name
+                    <span class="jp">お名前</span>
+                    <input type="text" name="name" autocomplete="name" required>
+                </label>
+
+                <label>
+                    Business Name
+                    <span class="jp">お店・事業名</span>
+                    <input type="text" name="business" required>
+                </label>
+
+                <label>
+                    Category
+                    <span class="jp">カテゴリー</span>
+                    <select name="category" required>
+                        <option value="">Please choose / 選択してください</option>
+                        <option value="Food / 飲食">Food / 飲食</option>
+                        <option value="Stay / 宿泊">Stay / 宿泊</option>
+                        <option value="Shop / ショップ">Shop / ショップ</option>
+                        <option value="Wellness / ウェルネス">Wellness / ウェルネス</option>
+                        <option value="Activity / 体験">Activity / 体験</option>
+                        <option value="Transport / 移動">Transport / 移動</option>
+                        <option value="Creative / クリエイティブ">Creative / クリエイティブ</option>
+                        <option value="Other / その他">Other / その他</option>
+                    </select>
+                </label>
+
+                <label>
+                    Preferred Language
+                    <span class="jp">希望言語</span>
+                    <select name="language" required>
+                        <option value="Japanese / 日本語">Japanese / 日本語</option>
+                        <option value="English / 英語">English / 英語</option>
+                        <option value="Either / どちらでも">Either / どちらでも</option>
+                    </select>
+                </label>
+
+                <label>
+                    Instagram or Website
+                    <span class="jp">Instagram・ウェブサイト</span>
+                    <input type="text" name="link" inputmode="url" placeholder="@account or https://">
+                </label>
+
+                <label>
+                    Best Contact
+                    <span class="jp">連絡先</span>
+                    <input type="text" name="contact" autocomplete="email" placeholder="Email, LINE, Instagram DM">
+                </label>
+            </div>
+
+            <label>
+                Message
+                <span class="jp">お問い合わせ内容</span>
+                <textarea name="message" rows="6" required placeholder="Tell My Miyakojima what you would like visitors to know."></textarea>
+            </label>
+
+            <button type="submit" class="business-form-button">
+                Prepare Email
+                <span>メールを作成する</span>
+            </button>
+
+            <p class="business-form-note">
+                This form does not send automatically. Your email app will open first.
+                <span class="jp">このフォームは自動送信ではありません。メールアプリで内容を確認してから送信できます。</span>
+            </p>
+        </form>
+    </section>
+
 </section>
 
 <footer class="site-footer">
@@ -203,6 +284,45 @@ Contact
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
 <script src="js/script.js"></script>
+<script>
+  const businessInquiryForm = document.getElementById("businessInquiryForm");
+
+  if (businessInquiryForm) {
+    businessInquiryForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(businessInquiryForm);
+      const name = formData.get("name") || "";
+      const business = formData.get("business") || "";
+      const category = formData.get("category") || "";
+      const language = formData.get("language") || "";
+      const link = formData.get("link") || "";
+      const contact = formData.get("contact") || "";
+      const message = formData.get("message") || "";
+
+      const subject = `My Miyakojima feature inquiry: ${business || name}`;
+      const body = [
+        "Hello My Miyakojima,",
+        "",
+        "I would like to inquire about a possible feature.",
+        "",
+        `Name: ${name}`,
+        `Business name: ${business}`,
+        `Category: ${category}`,
+        `Preferred language: ${language}`,
+        `Instagram or website: ${link}`,
+        `Best contact: ${contact}`,
+        "",
+        "Message:",
+        message,
+        "",
+        "Thank you."
+      ].join("\n");
+
+      window.location.href = `mailto:hello@mymiyakojima.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
+</script>
 
 </body>
 </html>

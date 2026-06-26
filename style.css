@@ -1529,7 +1529,7 @@
   margin:22px auto 60px;
   padding:0 20px;
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:14px;
 }
 
@@ -1718,6 +1718,233 @@
 @media(max-width:520px){
   .guide-pathways{
     grid-template-columns:1fr;
+  }
+}
+
+.island-area-guide,
+.curation-note,
+.business-inquiry-section {
+  width: min(100% - 40px, 980px);
+  margin: 58px auto;
+  padding: 34px;
+  text-align: center;
+  border: 1px solid rgba(96, 135, 132, 0.22);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.94), rgba(244,251,249,0.9));
+  box-shadow: 0 18px 46px rgba(27, 71, 76, 0.08);
+}
+
+.island-area-guide h2,
+.curation-note h2,
+.business-inquiry-section h2 {
+  margin: 0 0 14px;
+  color: #1f5f5b;
+  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  line-height: 1.2;
+}
+
+.island-area-guide > p,
+.curation-note > p,
+.business-inquiry-section > p {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #425b5f;
+  line-height: 1.85;
+}
+
+.area-guide-grid,
+.curation-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.area-guide-grid article,
+.curation-points div {
+  min-width: 0;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid rgba(103, 132, 128, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.area-guide-grid article > span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: #2f8f8b;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.area-guide-grid h3,
+.curation-points strong {
+  display: block;
+  margin: 0 0 10px;
+  color: #163f43;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.area-guide-grid h3 .jp,
+.curation-points strong .jp {
+  display: block;
+  margin-top: 5px;
+  color: #386267;
+  font-size: 0.95rem;
+}
+
+.area-guide-grid p,
+.curation-points p {
+  margin: 0 0 8px;
+  color: #526a6d;
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.area-guide-grid p.jp,
+.curation-points p.jp {
+  color: #365d5f;
+  font-size: 0.96rem;
+  font-weight: 550;
+  line-height: 1.85;
+}
+
+.business-inquiry-form {
+  display: grid;
+  gap: 18px;
+  max-width: 820px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 24px;
+}
+
+.business-inquiry-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.business-inquiry-form label {
+  display: grid;
+  gap: 7px;
+  color: #1d464a;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.business-inquiry-form label .jp {
+  color: #526f73;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.business-inquiry-form input,
+.business-inquiry-form select,
+.business-inquiry-form textarea {
+  width: 100%;
+  border: 1px solid rgba(64, 105, 108, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #183f43;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 12px 13px;
+}
+
+.business-inquiry-form textarea {
+  resize: vertical;
+}
+
+.business-inquiry-form input:focus,
+.business-inquiry-form select:focus,
+.business-inquiry-form textarea:focus {
+  border-color: rgba(47, 143, 139, 0.72);
+  box-shadow: 0 0 0 3px rgba(47, 143, 139, 0.12);
+  outline: none;
+}
+
+.business-form-button {
+  justify-self: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 12px 22px;
+  border: 1px solid rgba(31, 95, 91, 0.3);
+  border-radius: 999px;
+  background: #1f6f69;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.business-form-button span {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.business-form-note {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #5e7477;
+  font-size: 0.84rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.business-form-note .jp {
+  display: block;
+  color: #3f6468;
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+
+@media(max-width:768px){
+  .island-area-guide,
+  .curation-note,
+  .business-inquiry-section {
+    width: calc(100% - 28px);
+    margin: 38px auto;
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .island-area-guide > p,
+  .curation-note > p,
+  .business-inquiry-section > p {
+    text-align: left;
+  }
+
+  .area-guide-grid,
+  .curation-points,
+  .business-inquiry-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-guide-grid article,
+  .curation-points div {
+    padding: 18px;
+  }
+
+  .business-form-button {
+    width: 100%;
+  }
+
+  .business-form-note {
+    text-align: left;
   }
 }
 /* ===========================
