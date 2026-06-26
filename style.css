@@ -4609,6 +4609,10 @@ section[id] {
 
 .business-teaser-jp {
   color: #3f5554;
+  max-width: 680px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
 }
 
 .jp-text {
@@ -4794,6 +4798,11 @@ section[id] {
 
   .collab-benefits-card h2 {
     font-size: 1.78rem;
+  }
+
+  .business-teaser-jp {
+    max-width: 21em;
+    line-height: 1.95;
   }
 
   .benefits-grid {
