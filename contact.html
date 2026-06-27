@@ -204,12 +204,9 @@ Contact
             My Miyakojimaでの掲載に興味がある事業者さまは、下記フォームから概要をお知らせください。お問い合わせはMy Miyakojimaへ直接送信されます。
         </p>
 
-        <form id="businessInquiryForm" class="business-inquiry-form" action="https://formsubmit.co/hello@mymiyakojima.com" method="POST">
+        <form id="businessInquiryForm" class="business-inquiry-form" action="https://formspree.io/f/xdargydl" method="POST">
             <input type="hidden" name="_subject" value="New My Miyakojima business inquiry">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://mymiyakojima.com/contact.html?inquiry=sent#business-inquiry">
-            <input type="text" name="_honey" class="business-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="_gotcha" class="business-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-grid">
                 <label>
                     Your Name
@@ -297,21 +294,42 @@ Contact
   if (businessInquiryForm) {
     const businessFormStatus = document.getElementById("businessFormStatus");
     const businessFormButton = businessInquiryForm.querySelector(".business-form-button");
-    const inquiryWasSent = new URLSearchParams(window.location.search).get("inquiry") === "sent";
 
-    if (inquiryWasSent) {
-      businessFormStatus.className = "business-form-status is-success";
-      businessFormStatus.innerHTML = "Thank you. Your inquiry has been sent to My Miyakojima.<span class=\"jp\">ありがとうございます。お問い合わせをMy Miyakojimaへ送信しました。</span>";
-      window.history.replaceState({}, document.title, `${window.location.pathname}#business-inquiry`);
-    }
+    businessInquiryForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    businessInquiryForm.addEventListener("submit", function () {
       businessFormButton.disabled = true;
       businessFormButton.setAttribute("aria-busy", "true");
       businessFormButton.querySelector(".business-form-button-en").textContent = "Sending...";
       businessFormButton.querySelector(".business-form-button-jp").textContent = "送信中...";
       businessFormStatus.className = "business-form-status is-sending";
       businessFormStatus.innerHTML = "Sending your inquiry.<span class=\"jp\">お問い合わせを送信しています。</span>";
+
+      try {
+        const response = await fetch(businessInquiryForm.action, {
+          method: "POST",
+          body: new FormData(businessInquiryForm),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Formspree rejected the submission.");
+        }
+
+        businessInquiryForm.reset();
+        businessFormStatus.className = "business-form-status is-success";
+        businessFormStatus.innerHTML = "Thank you. Your inquiry has been sent to My Miyakojima.<span class=\"jp\">ありがとうございます。お問い合わせをMy Miyakojimaへ送信しました。</span>";
+      } catch (error) {
+        businessFormStatus.className = "business-form-status is-error";
+        businessFormStatus.innerHTML = "The form could not send your inquiry. Please email <a href=\"mailto:hello@mymiyakojima.com\">hello@mymiyakojima.com</a>.<span class=\"jp\">送信できませんでした。メールでお問い合わせください。</span>";
+      } finally {
+        businessFormButton.disabled = false;
+        businessFormButton.removeAttribute("aria-busy");
+        businessFormButton.querySelector(".business-form-button-en").textContent = "Send Inquiry";
+        businessFormButton.querySelector(".business-form-button-jp").textContent = "お問い合わせを送信";
+      }
     });
   }
 </script>
