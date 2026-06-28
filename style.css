@@ -725,6 +725,16 @@
   background: linear-gradient(145deg, rgba(255, 250, 241, 0.95), rgba(247, 253, 251, 0.96));
 }
 
+.island-event-blupantu {
+  border-color: rgba(48, 112, 128, 0.24);
+  background: linear-gradient(145deg, rgba(242, 250, 251, 0.96), rgba(252, 248, 244, 0.94));
+}
+
+.island-event-blupantu .island-event-date {
+  background: #dfeff1;
+  color: #285f6c;
+}
+
 .island-event-date {
   display: flex;
   height: 88px;
