@@ -7390,6 +7390,216 @@ body.spotlight-page .map-button:hover {
   }
 }
 
+/* ===== Creative Spotlight Palette Amplification ===== */
+
+body.cesca-spotlight .spotlight-hero,
+body.blupantu-spotlight .spotlight-hero,
+body.mica-spotlight .spotlight-hero {
+  box-sizing: border-box;
+  padding: 38px;
+  border-radius: 8px;
+}
+
+body.cesca-spotlight .spotlight-hero {
+  background: #402b42;
+  box-shadow: 0 28px 72px rgba(64, 43, 66, 0.22);
+}
+
+body.cesca-spotlight .spotlight-hero h1 {
+  color: #e9a9d1;
+}
+
+body.cesca-spotlight .spotlight-hero h2 {
+  color: #fff9fc;
+}
+
+body.cesca-spotlight .spotlight-hero .month,
+body.cesca-spotlight .spotlight-hero .jp-title,
+body.cesca-spotlight .spotlight-hero .artist-name {
+  color: #dfc9da;
+}
+
+body.cesca-spotlight .why-recommend {
+  background: #eedce9;
+}
+
+body.cesca-spotlight .spotlight-intro,
+body.cesca-spotlight .spotlight-bio {
+  background: #fff8fc;
+}
+
+body.cesca-spotlight .spotlight-gallery {
+  padding: 18px;
+  border-radius: 8px;
+  background: #4b304b;
+  box-shadow: 0 22px 60px rgba(64, 43, 66, 0.2);
+}
+
+body.blupantu-spotlight .spotlight-hero {
+  background: #123d4a;
+  box-shadow: 0 28px 72px rgba(12, 55, 67, 0.26);
+}
+
+body.blupantu-spotlight .spotlight-hero h1 {
+  color: #52d0dc;
+}
+
+body.blupantu-spotlight .spotlight-hero h2 {
+  color: #f5ffff;
+}
+
+body.blupantu-spotlight .spotlight-hero .month,
+body.blupantu-spotlight .spotlight-hero .jp-title,
+body.blupantu-spotlight .spotlight-hero .artist-name {
+  color: #b7dde0;
+}
+
+body.blupantu-spotlight .why-recommend {
+  background: #cfeaec;
+}
+
+body.blupantu-spotlight .spotlight-intro {
+  background: #edf8f7;
+}
+
+body.blupantu-spotlight .spotlight-bio {
+  border-color: #1b5967;
+  background: #173f4b;
+}
+
+body.blupantu-spotlight .spotlight-bio h3,
+body.blupantu-spotlight .spotlight-bio p,
+body.blupantu-spotlight .spotlight-bio .jp {
+  color: #edfafa;
+}
+
+body.blupantu-spotlight .spotlight-gallery {
+  padding: 14px;
+  border-radius: 3px;
+  background: #123d4a;
+  box-shadow: 0 22px 60px rgba(12, 55, 67, 0.24);
+}
+
+body.mica-spotlight .spotlight-hero {
+  background: #365d3c;
+  box-shadow: 0 28px 72px rgba(44, 83, 49, 0.22);
+}
+
+body.mica-spotlight .spotlight-hero h1 {
+  color: #d0e8aa;
+}
+
+body.mica-spotlight .spotlight-hero h2 {
+  color: #fffdf5;
+}
+
+body.mica-spotlight .spotlight-hero .month,
+body.mica-spotlight .spotlight-hero .jp-title,
+body.mica-spotlight .spotlight-hero .artist-name,
+body.mica-spotlight .spotlight-hero .artist-name .jp {
+  color: #d7e4cd;
+}
+
+body.mica-spotlight .why-recommend {
+  border-top-color: #b0528e;
+  background: #f2dfec;
+}
+
+body.mica-spotlight .spotlight-intro {
+  border-top-color: #6d985b;
+  background: #e3edd8;
+}
+
+body.mica-spotlight .spotlight-bio {
+  border-top-color: #b0528e;
+  background: #fff7fb;
+}
+
+body.mica-spotlight .spotlight-gallery {
+  padding: 16px;
+  border-radius: 6px;
+  background: #4d7148;
+  box-shadow: 0 22px 60px rgba(44, 83, 49, 0.2);
+}
+
+body.masa-spotlight .masa-hero {
+  box-sizing: border-box;
+  padding: 38px;
+  border-radius: 8px;
+  background: #174b56;
+  box-shadow: 0 28px 74px rgba(18, 70, 81, 0.22);
+}
+
+body.masa-spotlight .masa-kicker {
+  color: #8ed9dc;
+}
+
+body.masa-spotlight .masa-hero h1 {
+  color: #ffffff;
+}
+
+body.masa-spotlight .masa-role {
+  color: #f0cd7d;
+}
+
+body.masa-spotlight .masa-role.jp,
+body.masa-spotlight .masa-lede,
+body.masa-spotlight .masa-lede.jp {
+  color: #d9e9e9;
+}
+
+body.masa-spotlight .masa-hero-actions a {
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+body.masa-spotlight .masa-hero-actions a:hover {
+  border-color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.masa-spotlight .masa-feature-strip {
+  box-sizing: border-box;
+  padding: 32px;
+  border-top: 3px solid #d5a544;
+  border-radius: 8px;
+  background: #f3dfad;
+}
+
+body.masa-spotlight .masa-gallery-section {
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 8px;
+  background: #dcefee;
+}
+
+@media (max-width: 860px) {
+  body.cesca-spotlight .spotlight-hero,
+  body.blupantu-spotlight .spotlight-hero,
+  body.mica-spotlight .spotlight-hero,
+  body.masa-spotlight .masa-hero {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  body.cesca-spotlight .spotlight-hero,
+  body.blupantu-spotlight .spotlight-hero,
+  body.mica-spotlight .spotlight-hero,
+  body.masa-spotlight .masa-hero {
+    padding: 20px 16px;
+  }
+
+  body.cesca-spotlight .spotlight-gallery,
+  body.blupantu-spotlight .spotlight-gallery,
+  body.mica-spotlight .spotlight-gallery,
+  body.masa-spotlight .masa-feature-strip,
+  body.masa-spotlight .masa-gallery-section {
+    padding: 14px;
+  }
+}
+
 /* ===== Bilingual Balance Polish ===== */
 
 .jp,
@@ -8328,4 +8538,396 @@ body.spotlight-page .location-card p .jp {
     font-weight: 600;
     line-height: 1.2;
   }
+}
+/* ===== Individual Creative Spotlight Worlds ===== */
+
+body.cesca-spotlight {
+  --profile-accent: #8b3f70;
+  --profile-accent-rgb: 139, 63, 112;
+  --profile-ink: #38283b;
+  --profile-text: #574658;
+  --profile-muted: #7b6a79;
+  --profile-surface: rgba(255, 251, 253, 0.86);
+  --profile-gallery: #eadde7;
+  --profile-radius: 8px;
+  background: linear-gradient(180deg, #f3edf3 0%, #fbf8f3 48%, #eee7ef 100%);
+}
+
+body.blupantu-spotlight {
+  --profile-accent: #087f91;
+  --profile-accent-rgb: 8, 127, 145;
+  --profile-ink: #163e4a;
+  --profile-text: #31565d;
+  --profile-muted: #56757a;
+  --profile-surface: rgba(244, 250, 249, 0.88);
+  --profile-gallery: #c5e0e2;
+  --profile-radius: 3px;
+  background: linear-gradient(180deg, #dcebed 0%, #f3f0e6 52%, #d7e4e3 100%);
+}
+
+body.mica-spotlight {
+  --profile-accent: #4d7d45;
+  --profile-accent-rgb: 77, 125, 69;
+  --profile-ink: #30462f;
+  --profile-text: #4b5d48;
+  --profile-muted: #697c65;
+  --profile-surface: rgba(252, 253, 248, 0.88);
+  --profile-gallery: #dce8d3;
+  --profile-radius: 6px;
+  --profile-secondary: #a54f87;
+  background: linear-gradient(180deg, #eaf1e4 0%, #fbf8ef 48%, #e9eee1 100%);
+}
+
+body.cesca-spotlight,
+body.blupantu-spotlight,
+body.mica-spotlight {
+  color: var(--profile-ink);
+}
+
+body.cesca-spotlight .spotlight-hero h1,
+body.blupantu-spotlight .spotlight-hero h1,
+body.mica-spotlight .spotlight-hero h1,
+body.cesca-spotlight .freshness-kicker,
+body.blupantu-spotlight .freshness-kicker,
+body.mica-spotlight .freshness-kicker {
+  color: var(--profile-accent);
+}
+
+body.cesca-spotlight .spotlight-hero h2,
+body.blupantu-spotlight .spotlight-hero h2,
+body.mica-spotlight .spotlight-hero h2,
+body.cesca-spotlight .spotlight-bio h3,
+body.blupantu-spotlight .spotlight-bio h3,
+body.mica-spotlight .spotlight-bio h3,
+body.cesca-spotlight .spotlight-contact h3,
+body.blupantu-spotlight .spotlight-contact h3,
+body.mica-spotlight .spotlight-contact h3 {
+  color: var(--profile-ink);
+}
+
+body.cesca-spotlight .spotlight-hero .jp-title,
+body.cesca-spotlight .spotlight-hero .month,
+body.cesca-spotlight .freshness-kicker .jp,
+body.blupantu-spotlight .spotlight-hero .jp-title,
+body.blupantu-spotlight .spotlight-hero .month,
+body.blupantu-spotlight .freshness-kicker .jp,
+body.mica-spotlight .spotlight-hero .jp-title,
+body.mica-spotlight .spotlight-hero .month,
+body.mica-spotlight .freshness-kicker .jp {
+  color: var(--profile-muted);
+}
+
+body.cesca-spotlight .artist-name,
+body.cesca-spotlight .spotlight-intro p,
+body.cesca-spotlight .spotlight-bio p,
+body.cesca-spotlight .spotlight-contact p,
+body.cesca-spotlight .why-recommend p,
+body.blupantu-spotlight .artist-name,
+body.blupantu-spotlight .spotlight-intro p,
+body.blupantu-spotlight .spotlight-bio p,
+body.blupantu-spotlight .spotlight-contact p,
+body.blupantu-spotlight .why-recommend p,
+body.mica-spotlight .artist-name,
+body.mica-spotlight .spotlight-intro p,
+body.mica-spotlight .spotlight-bio p,
+body.mica-spotlight .spotlight-contact p,
+body.mica-spotlight .why-recommend p {
+  color: var(--profile-text);
+}
+
+body.cesca-spotlight .why-recommend,
+body.cesca-spotlight .spotlight-intro,
+body.cesca-spotlight .spotlight-bio,
+body.cesca-spotlight .spotlight-contact,
+body.blupantu-spotlight .why-recommend,
+body.blupantu-spotlight .spotlight-intro,
+body.blupantu-spotlight .spotlight-bio,
+body.blupantu-spotlight .spotlight-contact,
+body.mica-spotlight .why-recommend,
+body.mica-spotlight .spotlight-intro,
+body.mica-spotlight .spotlight-bio,
+body.mica-spotlight .spotlight-contact {
+  border-color: rgba(var(--profile-accent-rgb), 0.2);
+  border-radius: var(--profile-radius);
+  background: var(--profile-surface);
+  box-shadow: 0 18px 50px rgba(var(--profile-accent-rgb), 0.08);
+}
+
+body.cesca-spotlight .why-recommend,
+body.cesca-spotlight .spotlight-intro,
+body.cesca-spotlight .spotlight-bio,
+body.cesca-spotlight .spotlight-contact {
+  border-top: 3px solid var(--profile-accent);
+}
+
+body.blupantu-spotlight .why-recommend,
+body.blupantu-spotlight .spotlight-intro,
+body.blupantu-spotlight .spotlight-bio,
+body.blupantu-spotlight .spotlight-contact {
+  border-left: 4px solid var(--profile-accent);
+}
+
+body.mica-spotlight .why-recommend,
+body.mica-spotlight .spotlight-intro,
+body.mica-spotlight .spotlight-bio,
+body.mica-spotlight .spotlight-contact {
+  border-top: 3px solid var(--profile-secondary);
+}
+
+body.cesca-spotlight .featured-badge,
+body.blupantu-spotlight .featured-badge,
+body.mica-spotlight .featured-badge,
+body.cesca-spotlight .language-jump a,
+body.blupantu-spotlight .language-jump a,
+body.mica-spotlight .language-jump a,
+body.cesca-spotlight .spotlight-contact a,
+body.blupantu-spotlight .spotlight-contact a,
+body.mica-spotlight .spotlight-contact a,
+body.cesca-spotlight .map-button,
+body.blupantu-spotlight .map-button,
+body.mica-spotlight .map-button {
+  border-color: rgba(var(--profile-accent-rgb), 0.32);
+  color: var(--profile-ink);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+body.cesca-spotlight .language-jump a span,
+body.blupantu-spotlight .language-jump a span,
+body.mica-spotlight .language-jump a span {
+  color: var(--profile-muted);
+}
+
+body.cesca-spotlight .intro-divider,
+body.blupantu-spotlight .intro-divider,
+body.mica-spotlight .intro-divider {
+  border-top-color: rgba(var(--profile-accent-rgb), 0.34);
+}
+
+body.cesca-spotlight .spotlight-gallery .photo-grid,
+body.cesca-spotlight .spotlight-gallery .artwork,
+body.blupantu-spotlight .spotlight-gallery .photo-grid,
+body.blupantu-spotlight .spotlight-gallery .artwork,
+body.mica-spotlight .spotlight-gallery .photo-grid,
+body.mica-spotlight .spotlight-gallery .artwork {
+  border-radius: var(--profile-radius);
+  background: var(--profile-gallery);
+}
+
+body.cesca-spotlight .artist-image img {
+  padding: 6px;
+  border: 1px solid rgba(var(--profile-accent-rgb), 0.34);
+  border-radius: 2px;
+  background: #fffafc;
+  box-shadow: 14px 18px 0 rgba(var(--profile-accent-rgb), 0.1);
+}
+
+body.cesca-spotlight .spotlight-gallery {
+  gap: 18px;
+}
+
+body.blupantu-spotlight .artist-image img {
+  border: 7px solid #173f4b;
+  border-left-color: #0b9db0;
+  border-radius: 2px;
+  background: #173f4b;
+  box-shadow: 16px 18px 0 rgba(8, 127, 145, 0.16);
+}
+
+body.blupantu-spotlight .spotlight-gallery {
+  gap: 8px;
+}
+
+body.blupantu-spotlight .spotlight-gallery img {
+  filter: saturate(1.08) contrast(1.03);
+}
+
+body.mica-spotlight .mica-images {
+  gap: 8px;
+}
+
+body.mica-spotlight .mica-images img {
+  border: 1px solid rgba(77, 125, 69, 0.26);
+  border-radius: 2px;
+  box-shadow: 12px 16px 0 rgba(165, 79, 135, 0.1);
+}
+
+body.mica-spotlight .spotlight-gallery {
+  gap: 10px;
+}
+
+body.mica-spotlight .spotlight-gallery img {
+  filter: saturate(1.05);
+}
+
+/* Masa keeps the shared shell but shifts between sea light and a live-stage mood. */
+body.masa-spotlight {
+  background: linear-gradient(180deg, #eaf7f8 0%, #fff9ed 44%, #edf5f2 100%);
+}
+
+body.masa-spotlight .masa-hero-media {
+  border-bottom: 4px solid #d9a94d;
+  box-shadow: 0 28px 72px rgba(14, 83, 98, 0.22);
+}
+
+body.masa-spotlight .masa-video-section {
+  padding: 34px;
+  border-top: 3px solid #d9a94d;
+  border-radius: 8px;
+  background: #142f36;
+  box-shadow: 0 24px 64px rgba(14, 42, 48, 0.2);
+}
+
+body.masa-spotlight .masa-video-section .masa-section-heading p,
+body.masa-spotlight .masa-video-section .masa-section-heading span {
+  color: #9bd7da;
+}
+
+body.masa-spotlight .masa-video-section .masa-section-heading h2 {
+  color: #ffffff;
+}
+
+body.masa-spotlight .masa-video-note,
+body.masa-spotlight .masa-video-note span {
+  color: #d3e4e4;
+}
+
+body.masa-spotlight .masa-story article {
+  border-top: 3px solid #5bb4bd;
+}
+
+body.masa-spotlight .masa-schedule {
+  border-top: 3px solid #d9a94d;
+}
+
+/* The archive remains neutral; these accents preview each profile world. */
+.spotlight-card-masa {
+  --archive-accent: #d9a94d;
+  --archive-wash: rgba(20, 75, 84, 0.2);
+}
+
+.spotlight-card-mica {
+  --archive-accent: #a54f87;
+  --archive-wash: rgba(67, 103, 55, 0.18);
+}
+
+.spotlight-card-blupantu {
+  --archive-accent: #0792a5;
+  --archive-wash: rgba(12, 56, 68, 0.22);
+}
+
+.spotlight-card-cesca {
+  --archive-accent: #8b3f70;
+  --archive-wash: rgba(74, 45, 72, 0.18);
+}
+
+.spotlight-card-masa,
+.spotlight-card-mica,
+.spotlight-card-blupantu,
+.spotlight-card-cesca {
+  border-color: color-mix(in srgb, var(--archive-accent) 52%, #e6d3b3);
+  border-top: 4px solid var(--archive-accent);
+}
+
+.spotlight-card-masa .spotlight-overlay,
+.spotlight-card-mica .spotlight-overlay,
+.spotlight-card-blupantu .spotlight-overlay,
+.spotlight-card-cesca .spotlight-overlay {
+  background: color-mix(in srgb, rgba(243, 239, 230, 0.58) 82%, var(--archive-wash));
+}
+
+@media (max-width: 560px) {
+  body.masa-spotlight .masa-video-section {
+    width: calc(100% - 28px);
+    padding: 22px 14px;
+  }
+
+  body.cesca-spotlight .artist-image img,
+  body.blupantu-spotlight .artist-image img,
+  body.mica-spotlight .mica-images img {
+    box-shadow: 8px 10px 0 rgba(var(--profile-accent-rgb), 0.1);
+  }
+}
+
+/* Final palette contrast overrides must follow the shared spotlight rules. */
+body.cesca-spotlight .spotlight-hero h1 {
+  color: #e9a9d1;
+}
+
+body.cesca-spotlight .spotlight-hero h2 {
+  color: #fff9fc;
+}
+
+body.cesca-spotlight .spotlight-hero .month,
+body.cesca-spotlight .spotlight-hero .jp-title,
+body.cesca-spotlight .spotlight-hero .artist-name {
+  color: #dfc9da;
+}
+
+body.cesca-spotlight .why-recommend {
+  background: #eedce9;
+}
+
+body.cesca-spotlight .spotlight-intro,
+body.cesca-spotlight .spotlight-bio {
+  background: #fff8fc;
+}
+
+body.blupantu-spotlight .spotlight-hero h1 {
+  color: #52d0dc;
+}
+
+body.blupantu-spotlight .spotlight-hero h2 {
+  color: #f5ffff;
+}
+
+body.blupantu-spotlight .spotlight-hero .month,
+body.blupantu-spotlight .spotlight-hero .jp-title,
+body.blupantu-spotlight .spotlight-hero .artist-name {
+  color: #b7dde0;
+}
+
+body.blupantu-spotlight .why-recommend {
+  background: #cfeaec;
+}
+
+body.blupantu-spotlight .spotlight-intro {
+  background: #edf8f7;
+}
+
+body.blupantu-spotlight .spotlight-bio {
+  border-color: #1b5967;
+  background: #173f4b;
+}
+
+body.blupantu-spotlight .spotlight-bio h3,
+body.blupantu-spotlight .spotlight-bio p,
+body.blupantu-spotlight .spotlight-bio .jp {
+  color: #edfafa;
+}
+
+body.mica-spotlight .spotlight-hero h1 {
+  color: #d0e8aa;
+}
+
+body.mica-spotlight .spotlight-hero h2 {
+  color: #fffdf5;
+}
+
+body.mica-spotlight .spotlight-hero .month,
+body.mica-spotlight .spotlight-hero .jp-title,
+body.mica-spotlight .spotlight-hero .artist-name,
+body.mica-spotlight .spotlight-hero .artist-name .jp {
+  color: #d7e4cd;
+}
+
+body.mica-spotlight .why-recommend {
+  background: #f2dfec;
+}
+
+body.mica-spotlight .spotlight-intro {
+  background: #e3edd8;
+}
+
+body.mica-spotlight .spotlight-bio {
+  background: #fff7fb;
 }
