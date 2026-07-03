@@ -1104,6 +1104,63 @@
   line-height:1.85;
 }
 
+.toppuri-stay-facts{
+  box-sizing:border-box;
+  width:min(1120px, calc(100% - 40px));
+  margin:38px auto 20px;
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  border:1px solid rgba(31,95,91,0.18);
+  border-radius:8px;
+  overflow:hidden;
+  background:rgba(245,251,249,0.9);
+  box-shadow:0 18px 48px rgba(24,72,69,0.08);
+}
+
+.toppuri-stay-facts > div{
+  min-width:0;
+  padding:22px 18px;
+  border-right:1px solid rgba(31,95,91,0.14);
+  text-align:left;
+}
+
+.toppuri-stay-facts > div:last-child{
+  border-right:0;
+}
+
+.toppuri-stay-facts span,
+.toppuri-stay-facts strong,
+.toppuri-stay-facts small{
+  display:block;
+}
+
+.toppuri-stay-facts span{
+  margin-bottom:7px;
+  color:#3a7d77;
+  font-size:0.7rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+.toppuri-stay-facts strong{
+  color:#273e3c;
+  font-size:1rem;
+  line-height:1.4;
+  overflow-wrap:anywhere;
+}
+
+.toppuri-stay-facts small{
+  margin-top:5px;
+  color:#60726f;
+  font-size:0.78rem;
+  font-weight:550;
+  line-height:1.5;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  line-break:strict;
+}
+
 .toppuri-room-grid{
   max-width:1180px;
   margin:34px auto 0;
@@ -1210,6 +1267,27 @@
   line-break: strict;
 }
 
+.toppuri-contact-line{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.toppuri-contact-line a{
+  padding:9px 13px;
+  border:1px solid rgba(31,95,91,0.24);
+  border-radius:7px;
+  color:#1f5f5b;
+  font-size:0.86rem;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.toppuri-contact-line a:hover{
+  background:#e7f3f0;
+}
+
 @media (max-width: 900px){
   .toppuri-home-teaser{
     margin-top:52px;
@@ -1235,6 +1313,18 @@
   .toppuri-story,
   .toppuri-gallery-strip{
     grid-template-columns:1fr;
+  }
+
+  .toppuri-stay-facts{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .toppuri-stay-facts > div:nth-child(2){
+    border-right:0;
+  }
+
+  .toppuri-stay-facts > div:nth-child(-n+2){
+    border-bottom:1px solid rgba(31,95,91,0.14);
   }
 
   .toppuri-gallery-strip img{
@@ -1265,7 +1355,30 @@
   }
 
   .toppuri-hero-content h1{
-    font-size:2.7rem;
+    max-width:100%;
+    font-size:2.15rem;
+    line-height:1.02;
+    overflow-wrap:anywhere;
+  }
+
+  .toppuri-stay-facts{
+    width:calc(100% - 28px);
+    grid-template-columns:1fr;
+  }
+
+  .toppuri-stay-facts > div{
+    padding:17px 16px;
+    border-right:0;
+    border-bottom:1px solid rgba(31,95,91,0.14);
+  }
+
+  .toppuri-stay-facts > div:last-child{
+    border-bottom:0;
+  }
+
+  .toppuri-contact-line{
+    display:grid;
+    grid-template-columns:1fr;
   }
 }
 
