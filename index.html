@@ -27,7 +27,7 @@
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
 
-<link rel="stylesheet" href="style.css?v=91">
+<link rel="stylesheet" href="style.css?v=93">
 <link rel="preload" as="image" href="images/slider4.jpg">
 </head>
 
@@ -134,26 +134,32 @@ A curated bilingual guide to Miyakojima.
   </div>
 </section>
 
-<aside class="season-now fade-up" aria-labelledby="season-now-title">
+<aside class="season-now fade-up" id="seasonNow" aria-labelledby="season-now-title">
   <div class="season-now-mark" aria-hidden="true">
-    <span>JUL</span>
-    <strong>旬</strong>
+    <span id="seasonNowMonth">JUL</span>
+    <strong id="seasonNowSymbol">旬</strong>
   </div>
   <div class="season-now-copy">
     <p class="season-now-kicker">In Season Now<span class="jp">宮古島の今の旬</span></p>
     <h2 id="season-now-title">Miyakojima Mango<span class="jp-title">宮古島マンゴー</span></h2>
-    <p>July brings one of the island's sweetest signs of summer.</p>
-    <p class="jp">7月、島はマンゴーがいちばん輝く季節を迎えます。</p>
+    <p id="seasonNowCopy">July brings one of the island's sweetest signs of summer.</p>
+    <p class="jp" id="seasonNowCopyJp">7月、島はマンゴーがいちばん輝く季節を迎えます。</p>
   </div>
-  <a href="https://www.city.miyakojima.lg.jp/kanko/tokusanhin/kudamono.html" class="season-now-link" target="_blank" rel="noopener">
-    Island Fruits
-    <span>宮古島のフルーツ</span>
+  <a href="https://www.city.miyakojima.lg.jp/kanko/tokusanhin/kudamono.html" class="season-now-link" id="seasonNowLink" target="_blank" rel="noopener">
+    <span class="season-link-en">Island Fruits</span>
+    <span class="season-link-jp">宮古島のフルーツ</span>
   </a>
 </aside>
 
 <section class="weekly-edit fade-up" aria-labelledby="weekly-edit-title">
   <div class="weekly-edit-header">
-    <p class="freshness-kicker">This Week on My Miyakojima<span class="jp">今週のマイ宮古島</span></p>
+    <div>
+      <p class="freshness-kicker">This Week on My Miyakojima<span class="jp">今週のマイ宮古島</span></p>
+      <p class="weekly-update-count" id="weeklyUpdateCount" aria-live="polite">
+        <strong>3</strong> fresh updates this week
+        <span class="jp">今週の新着情報 3件</span>
+      </p>
+    </div>
     <h2 id="weekly-edit-title"><span>Fresh Notes from the Island</span><span class="jp-title">島からの新しいお知らせ</span></h2>
   </div>
 
@@ -199,7 +205,7 @@ A curated bilingual guide to Miyakojima.
   </div>
 
   <div class="island-calendar-grid">
-    <article class="island-event island-event-now island-event-blupantu">
+    <article class="island-event island-event-now island-event-blupantu" data-event-date="2026-07-05">
       <div class="island-event-date">
         <span>JUL</span>
         <strong>05</strong>
@@ -214,7 +220,7 @@ A curated bilingual guide to Miyakojima.
       </div>
     </article>
 
-    <article class="island-event">
+    <article class="island-event" data-event-date="2026-07-05">
       <div class="island-event-date">
         <span>JUL</span>
         <strong>05</strong>
@@ -231,7 +237,7 @@ A curated bilingual guide to Miyakojima.
       </div>
     </article>
 
-    <article class="island-event">
+    <article class="island-event" data-event-date="2026-07-08">
       <div class="island-event-date">
         <span>JUL</span>
         <strong>08</strong>
@@ -246,7 +252,7 @@ A curated bilingual guide to Miyakojima.
       </div>
     </article>
 
-    <article class="island-event island-event-blupantu">
+    <article class="island-event island-event-blupantu" data-event-date="2026-07-19">
       <div class="island-event-date">
         <span>JUL</span>
         <strong>19</strong>
@@ -263,7 +269,7 @@ A curated bilingual guide to Miyakojima.
       </div>
     </article>
 
-    <article class="island-event">
+    <article class="island-event" data-event-date="2026-08-16">
       <div class="island-event-date">
         <span>AUG</span>
         <strong>16</strong>
@@ -278,7 +284,7 @@ A curated bilingual guide to Miyakojima.
       </div>
     </article>
 
-    <article class="island-event">
+    <article class="island-event" data-event-date="2026-11-03">
       <div class="island-event-date">
         <span>NOV</span>
         <strong>03</strong>
@@ -767,7 +773,7 @@ My Miyakojimaでは、宮古島の事業者さまを英語と日本語で丁寧�
   <p class="footer-note jp">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=13"></script>
+<script src="js/script.js?v=18"></script>
 
 </body>
 </html>

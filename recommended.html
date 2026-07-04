@@ -68,7 +68,7 @@
 
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
-  <link rel="stylesheet" href="style.css?v=91">
+  <link rel="stylesheet" href="style.css?v=93">
 </head>
 
 <body>
@@ -112,6 +112,46 @@
     <a href="#lifestyle" class="cat-lifestyle"><span class="cat-symbol"></span><span class="cat-label">Shops<span class="jp">ショップ</span></span></a>
   </div>
 </div>
+
+<section class="recommendation-finder" id="recommendationFinder" aria-labelledby="finder-title">
+  <div class="finder-intro">
+    <p class="freshness-kicker">A Little Help Choosing<span class="jp">おすすめ選びをお手伝い</span></p>
+    <h1 id="finder-title">Find Your Miyakojima Match<span class="jp-title">あなたに合う宮古島を探す</span></h1>
+    <p>Choose what sounds right today. My Miyakojima will suggest a few places from the curated guide.</p>
+    <p class="jp">今日の気分に近いものを選ぶと、厳選ガイドからおすすめをご提案します。</p>
+  </div>
+
+  <form class="finder-form" id="finderForm">
+    <fieldset>
+      <legend>What are you looking for?<span>何を探していますか？</span></legend>
+      <div class="finder-options">
+        <label><input type="radio" name="finderCategory" value="food"><span>Food<small>食べる</small></span></label>
+        <label><input type="radio" name="finderCategory" value="stays"><span>Stay<small>泊まる</small></span></label>
+        <label><input type="radio" name="finderCategory" value="wellness"><span>Wellness<small>整える</small></span></label>
+        <label><input type="radio" name="finderCategory" value="marine"><span>Sea<small>海で遊ぶ</small></span></label>
+        <label><input type="radio" name="finderCategory" value="lifestyle"><span>Shops<small>ショップ</small></span></label>
+        <label><input type="radio" name="finderCategory" value="transport"><span>Move<small>移動</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>What kind of day?<span>今日はどんな気分？</span></legend>
+      <div class="finder-options finder-moods">
+        <label><input type="radio" name="finderMood" value="easy"><span>Easy &amp; Relaxed<small>気軽にゆったり</small></span></label>
+        <label><input type="radio" name="finderMood" value="local"><span>Locally Loved<small>地元で愛される</small></span></label>
+        <label><input type="radio" name="finderMood" value="special"><span>Something Special<small>特別な時間</small></span></label>
+        <label><input type="radio" name="finderMood" value="active"><span>Ready to Explore<small>アクティブに楽しむ</small></span></label>
+      </div>
+    </fieldset>
+
+    <div class="finder-actions">
+      <button type="submit">Show My Matches<span>おすすめを見る</span></button>
+      <button type="reset" class="finder-reset">Reset<span>リセット</span></button>
+    </div>
+  </form>
+
+  <div class="finder-results" id="finderResults" aria-live="polite"></div>
+</section>
 
 <!-- ================= FOOD ================= -->
 <section id="food" class="recommended-section fade-up">
@@ -714,7 +754,7 @@ STAY • ENGLISH FRIENDLY
   <p class="footer-note jp">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=15"></script>
+<script src="js/script.js?v=18"></script>
 
 </body>
 </html>
