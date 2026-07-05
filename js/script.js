@@ -832,10 +832,25 @@ function updateSeasonalNote() {
   const seasonalSection = document.getElementById("seasonNow");
   if (!seasonalSection) return;
 
-  const note = seasonalNotes[new Date().getMonth()];
+  const today = new Date();
+  const isTanabataWindow = today.getMonth() === 6 && today.getDate() >= 5 && today.getDate() <= 7;
+  const tanabataNote = {
+    month: "JUL 07",
+    symbol: "星",
+    title: "Tanabata on the Island",
+    titleJp: "島の七夕",
+    copy: "On July 7, wishes are written beneath the stars. In Okinawa, an old-calendar Tanabata is also connected with preparing to welcome ancestors for Obon.",
+    copyJp: "7月7日は、星に願いを託す七夕。沖縄には旧暦の七夕もあり、旧盆を迎える準備につながる大切な日として受け継がれています。",
+    link: "discover-miyakojima.html",
+    linkLabel: "Discover Island Culture",
+    linkLabelJp: "島の文化を知る",
+    tanabata: true
+  };
+  const note = isTanabataWindow ? tanabataNote : seasonalNotes[today.getMonth()];
   const title = document.getElementById("season-now-title");
   const link = document.getElementById("seasonNowLink");
 
+  seasonalSection.classList.toggle("season-tanabata", Boolean(note.tanabata));
   document.getElementById("seasonNowMonth").textContent = note.month;
   document.getElementById("seasonNowSymbol").textContent = note.symbol;
   title.innerHTML = `${note.title}<span class="jp-title">${note.titleJp}</span>`;
