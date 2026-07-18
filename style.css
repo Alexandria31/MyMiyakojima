@@ -389,6 +389,167 @@
   border-color:rgba(47,122,131,0.32);
 }
 
+.tourism-teaser{
+  box-sizing:border-box;
+  width:min(1040px, calc(100% - 44px));
+  margin:-24px auto 50px;
+  display:grid;
+  grid-template-columns:112px minmax(0, 1fr) auto;
+  align-items:center;
+  gap:22px;
+  padding:26px 28px;
+  border-radius:24px;
+  border:1px solid rgba(74,173,168,0.26);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,255,255,0.92) 0 5%, transparent 18%),
+    radial-gradient(circle at 96% 12%, rgba(111,199,194,0.26), transparent 30%),
+    linear-gradient(135deg, rgba(240,251,249,0.92), rgba(255,255,255,0.84) 46%, rgba(250,244,234,0.82));
+  box-shadow:0 22px 58px rgba(30,72,79,0.1);
+  position:relative;
+  overflow:hidden;
+}
+
+.tourism-teaser-copy{
+  position:relative;
+  z-index:1;
+  min-width:0;
+}
+
+.tourism-teaser::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:7px;
+  background:linear-gradient(180deg, #4aada8, #d8c3a5);
+}
+
+.tourism-teaser::after{
+  content:"";
+  position:absolute;
+  right:26px;
+  bottom:-38px;
+  width:118px;
+  height:118px;
+  border:1px solid rgba(74,173,168,0.18);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(74,173,168,0.12), transparent 62%);
+  pointer-events:none;
+}
+
+.tourism-teaser-mark{
+  position:relative;
+  z-index:1;
+  width:104px;
+  height:104px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 66% 30%, rgba(255,255,255,0.95) 0 7px, transparent 8px),
+    linear-gradient(145deg, rgba(74,173,168,0.24), rgba(255,255,255,0.9));
+  border:1px solid rgba(47,122,131,0.24);
+  color:#1f5f5b;
+  text-align:center;
+  box-shadow:0 14px 32px rgba(30,72,79,0.1);
+}
+
+.tourism-teaser-mark span{
+  font-size:0.65rem;
+  font-weight:850;
+  letter-spacing:0.14em;
+}
+
+.tourism-teaser-mark strong{
+  font-size:1.65rem;
+  letter-spacing:0;
+  line-height:1;
+}
+
+.tourism-teaser-copy .freshness-kicker{
+  margin-bottom:8px;
+  color:#276f6c;
+  font-weight:850;
+}
+
+.tourism-teaser h2{
+  margin:0 0 12px;
+  color:#174f52;
+  font-size:clamp(1.72rem, 3.4vw, 2.85rem);
+  line-height:1.08;
+  overflow-wrap:anywhere;
+}
+
+.tourism-teaser h2 .jp-title{
+  display:block;
+  margin-top:8px;
+  color:#31565a;
+  font-size:clamp(1.02rem, 1.7vw, 1.24rem);
+  line-height:1.5;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  line-break:strict;
+}
+
+.tourism-teaser p{
+  margin:0 0 8px;
+  color:#4d6265;
+  line-height:1.7;
+  font-size:0.94rem;
+}
+
+.tourism-teaser p.jp{
+  margin-bottom:0;
+  color:#31565a;
+  font-size:1.02rem;
+  font-weight:550;
+  line-height:1.85;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  line-break:strict;
+}
+
+.tourism-teaser-link{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-width:170px;
+  padding:13px 19px;
+  border-radius:999px;
+  background:#1f6f69;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-size:0.82rem;
+  font-weight:800;
+  box-shadow:0 16px 34px rgba(31,111,105,0.22);
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tourism-teaser-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 42px rgba(31,111,105,0.26);
+}
+
+.tourism-teaser-link span{
+  margin-top:4px;
+  color:rgba(255,255,255,0.84);
+  font-size:0.78rem;
+  font-weight:650;
+}
+
+.weekly-note-announcement{
+  background:
+    linear-gradient(145deg, rgba(247,253,252,0.92), rgba(255,248,240,0.74));
+}
+
 @media(max-width:768px){
   .home-trust-strip{
     width:calc(100% - 28px);
@@ -452,6 +613,52 @@
   .home-trust-inner > p:not(.home-trust-kicker) .jp{
     font-size:0.94rem;
     line-height:1.66;
+  }
+
+  .tourism-teaser{
+    width:calc(100% - 28px);
+    margin:-12px auto 36px;
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:14px;
+    padding:24px 18px 22px;
+    text-align:center;
+  }
+
+  .tourism-teaser-copy .freshness-kicker{
+    text-align:center;
+  }
+
+  .tourism-teaser-mark{
+    width:86px;
+    height:86px;
+  }
+
+  .tourism-teaser p{
+    max-width:292px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow-wrap:anywhere;
+  }
+
+  .tourism-teaser h2{
+    max-width:292px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:clamp(1.48rem, 7.2vw, 1.82rem);
+    line-height:1.16;
+  }
+
+  .tourism-teaser h2 .jp-title{
+    font-size:1rem;
+  }
+
+  .tourism-teaser-copy{
+    width:100%;
+  }
+
+  .tourism-teaser-link{
+    width:min(240px, 100%);
   }
 }
 
@@ -1058,11 +1265,13 @@
   margin:0 auto;
   padding:160px 0 82px;
   color:#fff;
+  text-align:center;
 }
 
 .toppuri-logo-hero{
+  display:block;
   width:min(360px, 78vw);
-  margin-bottom:34px;
+  margin:0 auto 34px;
   filter:drop-shadow(0 12px 28px rgba(0,0,0,0.32));
 }
 
@@ -1076,6 +1285,8 @@
 
 .toppuri-hero-content p{
   max-width:680px;
+  margin-left:auto;
+  margin-right:auto;
   color:rgba(255,255,255,0.92);
   line-height:1.8;
 }
@@ -1156,6 +1367,92 @@
   font-size:0.78rem;
   font-weight:550;
   line-height:1.5;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  line-break:strict;
+}
+
+.toppuri-experience{
+  width:min(1120px, calc(100% - 40px));
+  margin:58px auto 34px;
+}
+
+.toppuri-experience-header{
+  max-width:760px;
+  margin:0 0 24px;
+  text-align:left;
+}
+
+.toppuri-experience-header h2{
+  margin:0 0 16px;
+  color:#1f5f5b;
+  font-size:clamp(1.9rem, 3.7vw, 3.2rem);
+  line-height:1.12;
+}
+
+.toppuri-experience-header p{
+  color:#4f5d5c;
+  line-height:1.85;
+}
+
+.toppuri-experience-header p.jp{
+  color:#31565a;
+  font-size:1rem;
+  font-weight:550;
+}
+
+.toppuri-experience-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:14px;
+}
+
+.toppuri-experience-grid article{
+  overflow:hidden;
+  border:1px solid rgba(31,95,91,0.14);
+  border-radius:8px;
+  background:rgba(247,252,250,0.92);
+  box-shadow:0 14px 34px rgba(24,72,69,0.08);
+}
+
+.toppuri-experience-grid img{
+  display:block;
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+
+.toppuri-experience-grid h3{
+  margin:18px 18px 8px;
+  color:#163f43;
+  font-size:1.02rem;
+  line-height:1.35;
+}
+
+.toppuri-experience-grid h3 span{
+  display:block;
+  margin-top:5px;
+  color:#365d5f;
+  font-size:0.95rem;
+  line-height:1.55;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  line-break:strict;
+}
+
+.toppuri-experience-grid p{
+  margin:0 18px 10px;
+  color:#526769;
+  font-size:0.88rem;
+  line-height:1.7;
+}
+
+.toppuri-experience-grid p.jp{
+  margin-bottom:18px;
+  color:#31565a;
+  font-size:0.96rem;
+  font-weight:550;
+  line-height:1.85;
   word-break:keep-all;
   overflow-wrap:anywhere;
   line-break:strict;
@@ -1315,6 +1612,10 @@
     grid-template-columns:1fr;
   }
 
+  .toppuri-experience-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
   .toppuri-stay-facts{
     grid-template-columns:repeat(2, minmax(0, 1fr));
   }
@@ -1351,14 +1652,43 @@
 
   .toppuri-hero-content{
     width:calc(100% - 28px);
+    padding-top:132px;
     padding-bottom:54px;
+    text-align:center;
+  }
+
+  .toppuri-logo-hero{
+    width:min(220px, 58vw);
+    margin-bottom:24px;
   }
 
   .toppuri-hero-content h1{
-    max-width:100%;
-    font-size:2.15rem;
-    line-height:1.02;
+    max-width:300px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:clamp(1.55rem, 7.6vw, 1.86rem);
+    line-height:1.08;
+    letter-spacing:0;
     overflow-wrap:anywhere;
+  }
+
+  .toppuri-hero-content h1 span{
+    font-size:1rem;
+    line-height:1.55;
+  }
+
+  .toppuri-hero-content p{
+    max-width:260px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:0.95rem;
+    overflow-wrap:break-word;
+    word-break:normal;
+  }
+
+  .toppuri-hero-content p.jp{
+    overflow-wrap:anywhere;
+    line-break:strict;
   }
 
   .toppuri-stay-facts{
@@ -1374,6 +1704,23 @@
 
   .toppuri-stay-facts > div:last-child{
     border-bottom:0;
+  }
+
+  .toppuri-experience{
+    width:calc(100% - 28px);
+    margin-top:44px;
+  }
+
+  .toppuri-experience-header{
+    text-align:left;
+  }
+
+  .toppuri-experience-grid{
+    grid-template-columns:1fr;
+  }
+
+  .toppuri-experience-grid img{
+    height:220px;
   }
 
   .toppuri-contact-line{
@@ -2930,7 +3277,9 @@ box-shadow:
   position:relative;
   z-index:2;
 
+  width:min(100%, 850px);
   max-width:850px;
+  box-sizing:border-box;
 }
 
 .hero-content::before{
@@ -6850,6 +7199,12 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
 body.menu-open .category-guide {
   top: 140px;
   opacity: 0;
@@ -9380,8 +9735,11 @@ body.spotlight-page .location-card p .jp {
   }
 
   .welcome-title {
-    font-size: 3rem;
+    max-width:100%;
+    font-size: clamp(2rem, 9.2vw, 2.32rem);
     line-height: 1.02;
+    letter-spacing:0;
+    overflow-wrap:anywhere;
   }
 
   .welcome-title .jp-title {
@@ -9392,17 +9750,20 @@ body.spotlight-page .location-card p .jp {
   }
 
   .welcome-sub {
-    max-width: 320px;
-    font-size: 0.98rem;
+    max-width: 292px;
+    font-size: 0.94rem;
     line-height: 1.65;
+    letter-spacing:0;
+    overflow-wrap:normal;
   }
 
   .hero-jp,
   .jp-title.hero-jp {
-    max-width: 330px;
+    max-width: 284px;
     margin: 18px auto 0;
     font-size: 0.98rem;
     line-height: 1.85;
+    overflow-wrap:anywhere;
   }
 
   .hero-divider {
@@ -9411,6 +9772,7 @@ body.spotlight-page .location-card p .jp {
 
   .button-wrapper {
     width: min(100%, 330px);
+    max-width: calc(100vw - 36px);
     margin: 24px auto 0;
     gap: 10px;
     grid-template-columns: 1fr;
@@ -9418,6 +9780,7 @@ body.spotlight-page .location-card p .jp {
 
   .hero-pathway {
     width: 100%;
+    box-sizing:border-box;
     min-height: 82px;
     padding: 13px 14px 13px 16px;
   }
