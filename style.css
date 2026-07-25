@@ -942,6 +942,22 @@
   color: #285f6c;
 }
 
+.island-event-matsuri {
+  border-color: rgba(196, 137, 75, 0.34);
+  background:
+    radial-gradient(circle at 92% 10%, rgba(216, 195, 165, 0.24), transparent 34%),
+    linear-gradient(145deg, rgba(255, 251, 243, 0.97), rgba(244, 253, 251, 0.94));
+}
+
+.island-event-matsuri .island-event-date {
+  background: #f3dfbd;
+  color: #76502f;
+}
+
+.island-event-matsuri .island-event-status {
+  color: #8b5d34;
+}
+
 .island-event-date {
   display: flex;
   height: 88px;
