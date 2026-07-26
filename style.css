@@ -513,6 +513,42 @@
   line-break:strict;
 }
 
+.tourism-announcement {
+  grid-template-columns: minmax(0, 1fr) auto;
+  z-index: 1000;
+  border-color: rgba(31, 111, 105, 0.32);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,255,255,0.94) 0 5%, transparent 18%),
+    radial-gradient(circle at 96% 12%, rgba(111,199,194,0.3), transparent 30%),
+    linear-gradient(135deg, rgb(236,250,248), rgb(255,255,255) 45%, rgb(248,242,232));
+}
+
+.tourism-announcement .tourism-teaser-mark {
+  background:
+    radial-gradient(circle at 66% 30%, rgba(255,255,255,0.98) 0 7px, transparent 8px),
+    linear-gradient(145deg, rgba(31,111,105,0.24), rgba(255,255,255,0.92));
+}
+
+.tourism-announcement h2 {
+  max-width: 690px;
+  font-size: clamp(1.36rem, 2.35vw, 2rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.tourism-announcement h2 .jp-title {
+  max-width: 660px;
+}
+
+.tourism-announcement .tourism-teaser-copy > p:not(.freshness-kicker) {
+  max-width: 680px;
+  text-align: left;
+}
+
+.tourism-announcement .tourism-teaser-copy > p.jp {
+  line-height: 1.9;
+}
+
 .tourism-teaser-link{
   position:relative;
   z-index:1;
@@ -651,6 +687,18 @@
 
   .tourism-teaser h2 .jp-title{
     font-size:1rem;
+  }
+
+  .tourism-announcement h2 {
+    max-width: 310px;
+    font-size: clamp(1.22rem, 5.7vw, 1.5rem);
+    line-height: 1.24;
+  }
+
+  .tourism-announcement h2 .jp-title {
+    max-width: 304px;
+    font-size: 0.98rem;
+    line-height: 1.58;
   }
 
   .tourism-teaser-copy{
@@ -2006,14 +2054,14 @@
 
   .weather-pearl{
     right:12px;
-    bottom:82px;
-    width:104px;
-    min-height:104px;
-    padding:14px 10px;
+    bottom:18px;
+    width:92px;
+    min-height:92px;
+    padding:12px 9px;
   }
 
   .weather-pearl strong{
-    font-size:0.86rem;
+    font-size:0.8rem;
   }
 
   .weather-page{
@@ -10069,9 +10117,9 @@ body.spotlight-page .location-card p .jp {
   }
 
   .weather-pearl {
-    width: 94px;
-    min-height: 94px;
-    bottom: 78px;
+    width: 86px;
+    min-height: 86px;
+    bottom: 16px;
   }
 }
 
