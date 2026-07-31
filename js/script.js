@@ -633,14 +633,14 @@ function initializePhotoLightbox() {
   dialog.setAttribute("aria-label", "Photo viewer");
   dialog.hidden = true;
   dialog.innerHTML = `
-    <button class="photo-lightbox-close" type="button" aria-label="Close photo viewer">×</button>
-    <button class="photo-lightbox-arrow photo-lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+    <button class="photo-lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+    <button class="photo-lightbox-arrow photo-lightbox-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
     <figure>
-      <img src="" alt="">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
       <figcaption></figcaption>
     </figure>
     <p class="photo-lightbox-count" aria-live="polite"></p>
-    <button class="photo-lightbox-arrow photo-lightbox-next" type="button" aria-label="Next photo">›</button>
+    <button class="photo-lightbox-arrow photo-lightbox-next" type="button" aria-label="Next photo">&rsaquo;</button>
   `;
   document.body.appendChild(dialog);
 
@@ -884,14 +884,15 @@ const curatedListings = [
   { href: "para-jiro.html", name: "Pa-ra-jiro", nameJp: "ぱーら二郎", category: "food", moods: ["easy", "local"], image: "images/parajiro-500-yen-bento.jpeg" },
   { href: "burwood-donuts.html", name: "Burwood Donuts", nameJp: "バーウッドドーナツ", category: "food", moods: ["easy", "local"], image: "images/burwood6.jpg" },
   { href: "nii-marine.html", name: "NII Marine", nameJp: "NIIマリン", category: "marine", moods: ["active", "special"], image: "images/nii4.jpeg" },
-  { href: "toppuri.html", name: "TOPPURI", nameJp: "トップリ", category: "stays", moods: ["easy", "special"], image: "images/toppuri-live-1.png" },
+  { href: "toppuri.html", name: "TOPPURI", nameJp: "トップリ", category: "stays", moods: ["easy", "special"], image: "images/toppuri-aerial-sunset.jpg" },
   { href: "umioto-log.html", name: "UMIOTO log", nameJp: "ウミオトログ", category: "stays", moods: ["easy", "special"], image: "images/umioto7.jpg" },
   { href: "maho-terraces.html", name: "MAHHO TERRACE", nameJp: "マホーテラス", category: "stays", moods: ["easy", "special"], image: "images/maho3.jpg" },
   { href: "coral-rent.html", name: "Coral Rent a Car", nameJp: "コーラルレンタカー", category: "transport", moods: ["easy", "active"], image: "images/rentacar3.jpg" },
   { href: "pine-rentacar.html", name: "Pine Rent a Car", nameJp: "パインレンタカー", category: "transport", moods: ["easy", "active"], image: "images/pine6.jpg" },
   { href: "lomilomi-pono.html", name: "Hawaiian Lomi Lomi Pono", nameJp: "ハワイアンロミロミ＆リラクゼーション ポノ", category: "wellness", moods: ["easy", "special"], image: "images/lomilomi-pono-recommend.jpg" },
   { href: "laso-laso.html", name: "Laso Laso", nameJp: "ラソラソ", category: "lifestyle", moods: ["easy", "local"], image: "images/laso6.jpg" },
-  { href: "ggs.html", name: "GGS GAKUGAKU", nameJp: "ジージーエス ガクガク", category: "lifestyle", moods: ["local", "special"], image: "images/ggs-recommend.jpg" }
+  { href: "ggs.html", name: "GGS GAKUGAKU", nameJp: "ジージーエス ガクガク", category: "lifestyle", moods: ["local", "special"], image: "images/ggs-recommend.jpg" },
+  { href: "guruguru-glass.html", name: "Guru Guru Glass", nameJp: "グルグルグラス", category: "lifestyle", moods: ["local", "special"], image: "images/guruguru-ocean-pendant.jpg" }
 ];
 
 const savedPlacesKey = "mymiyakojima-saved-places";
