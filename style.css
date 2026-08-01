@@ -524,19 +524,19 @@
 }
 
 .tourism-member-line {
-  width:min(1040px, calc(100% - 44px));
-  margin:-18px auto 44px;
+  width:min(960px, calc(100% - 44px));
+  margin:-14px auto 38px;
   grid-template-columns:minmax(0, 1fr) auto;
   align-items:center;
-  padding:24px 28px;
-  border-radius:20px;
-  box-shadow:0 18px 46px rgba(30,72,79,0.09);
+  padding:20px 24px;
+  border-radius:18px;
+  box-shadow:0 16px 38px rgba(30,72,79,0.08);
 }
 
 .tourism-announcement h2,
 .tourism-member-line h2 {
-  max-width: 690px;
-  font-size: clamp(1.28rem, 2.1vw, 1.78rem);
+  max-width: 620px;
+  font-size: clamp(1.16rem, 1.8vw, 1.52rem);
   line-height: 1.24;
   text-wrap: balance;
 }
@@ -548,13 +548,13 @@
 
 .tourism-announcement .tourism-teaser-copy > p:not(.freshness-kicker),
 .tourism-member-line .tourism-teaser-copy > p:not(.freshness-kicker) {
-  max-width: 700px;
+  max-width: 620px;
   text-align: left;
 }
 
 .tourism-announcement .tourism-teaser-copy > p.jp,
 .tourism-member-line .tourism-teaser-copy > p.jp {
-  line-height: 1.9;
+  line-height: 1.82;
 }
 
 .tourism-member-actions {
@@ -579,14 +579,14 @@
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  min-width:170px;
-  padding:13px 19px;
+  min-width:156px;
+  padding:11px 17px;
   border-radius:999px;
   background:#1f6f69;
   color:#fff;
   text-align:center;
   text-decoration:none;
-  font-size:0.82rem;
+  font-size:0.78rem;
   font-weight:800;
   box-shadow:0 16px 34px rgba(31,111,105,0.22);
   transition:transform 0.25s ease, box-shadow 0.25s ease;
@@ -600,7 +600,7 @@
 .tourism-teaser-link span{
   margin-top:4px;
   color:rgba(255,255,255,0.84);
-  font-size:0.78rem;
+  font-size:0.74rem;
   font-weight:650;
 }
 
@@ -1986,11 +1986,11 @@
 
 .weather-pearl{
   position:fixed;
-  right:18px;
-  bottom:95px;
+  right:26px;
+  bottom:72px;
   z-index:999;
-  width:128px;
-  min-height:128px;
+  width:112px;
+  min-height:112px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -2019,7 +2019,7 @@
 }
 
 .weather-pearl-status{
-  font-size:0.62rem;
+  font-size:0.58rem;
   font-weight:800;
   letter-spacing:1.4px;
   text-transform:uppercase;
@@ -2027,14 +2027,14 @@
 }
 
 .weather-pearl strong{
-  font-size:1rem;
+  font-size:0.92rem;
   line-height:1.1;
   color:#164f4c;
 }
 
 .weather-pearl span:last-child{
-  max-width:86px;
-  font-size:0.68rem;
+  max-width:78px;
+  font-size:0.64rem;
   line-height:1.25;
   color:#5c4a3d;
 }
@@ -4423,6 +4423,8 @@ h2 .jp {
 
   height:220px;
 
+  position:relative;
+
   overflow:hidden;
 
   border-radius:18px;
@@ -4442,7 +4444,7 @@ h2 .jp {
 
 /* hover zoom */
 
-.recommend-card:hover .recommend-image img{
+.recommend-card:hover .recommend-image > img{
 
   transform:scale(1.06);
 }
@@ -4451,13 +4453,13 @@ h2 .jp {
   position: absolute;
   right: 12px;
   bottom: 12px;
-  width: 86px;
-  height: 58px;
+  width: 78px;
+  height: 54px;
   padding: 6px;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.88);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.94);
   box-shadow: 0 10px 24px rgba(18, 48, 54, 0.18);
   z-index: 2;
 }
@@ -4614,6 +4616,55 @@ h2 .jp {
   align-items: stretch;
   max-width: 900px;
   margin: auto;
+}
+
+.creator-recommend-group {
+  width: min(100%, 900px);
+  margin: 34px auto 0;
+  padding: 24px;
+  border: 1px solid rgba(56, 123, 119, 0.18);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(227, 247, 244, 0.58)),
+    radial-gradient(circle at 85% 15%, rgba(74, 173, 168, 0.16), transparent 38%);
+  box-shadow: 0 18px 42px rgba(22, 79, 79, 0.08);
+  text-align: center;
+}
+
+.creator-recommend-group .freshness-kicker {
+  margin-bottom: 12px;
+  justify-content: center;
+}
+
+.creator-recommend-group h3 {
+  margin: 0 auto 12px;
+  color: #164f4f;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  line-height: 1.18;
+}
+
+.creator-recommend-group .jp-title {
+  display: block;
+  margin-top: 7px;
+  color: #496b6b;
+  font-size: 0.78em;
+  line-height: 1.55;
+}
+
+.creator-recommend-group > p:not(.freshness-kicker) {
+  max-width: 680px;
+  margin: 0 auto 8px;
+  color: #4f6666;
+  line-height: 1.8;
+}
+
+.creator-recommend-group > p.jp {
+  color: #365f60;
+  font-weight: 600;
+}
+
+.creator-recommend-grid {
+  margin-top: 22px;
 }
 
 .recommend-card-link {
@@ -7424,6 +7475,21 @@ body.lightbox-open {
   .recommend-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .creator-recommend-group {
+    width: calc(100% - 28px);
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .creator-recommend-group h3 {
+    font-size: 1.35rem;
+  }
+
+  .creator-recommend-group > p:not(.freshness-kicker) {
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 }
 
@@ -12344,8 +12410,8 @@ body.guruguru-shop-page .business-link-row {
 
 @media (max-width: 560px) {
   .recommend-logo-badge {
-    width: 74px;
-    height: 50px;
+    width: 68px;
+    height: 48px;
     right: 10px;
     bottom: 10px;
   }

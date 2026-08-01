@@ -927,9 +927,13 @@ const curatedListings = [
   { href: "coral-rent.html", name: "Coral Rent a Car", nameJp: "コーラルレンタカー", category: "transport", moods: ["easy", "active"], image: "images/rentacar3.jpg" },
   { href: "pine-rentacar.html", name: "Pine Rent a Car", nameJp: "パインレンタカー", category: "transport", moods: ["easy", "active"], image: "images/pine6.jpg" },
   { href: "lomilomi-pono.html", name: "Hawaiian Lomi Lomi Pono", nameJp: "ハワイアンロミロミ＆リラクゼーション ポノ", category: "wellness", moods: ["easy", "special"], image: "images/lomilomi-pono-recommend.jpg" },
+  { href: "creative-saninsalon.html", name: "Hair Salon Sanin", nameJp: "ヘアサロン サニン", category: "wellness", moods: ["easy", "local"], image: "images/sanin-hero.jpg" },
+  { href: "creative-ran.html", name: "LUNA SPA Miyakojima", nameJp: "宮古島 LUNA SPA", category: "wellness", moods: ["easy", "special"], image: "images/ran-practice.jpeg" },
   { href: "laso-laso.html", name: "Laso Laso", nameJp: "ラソラソ", category: "lifestyle", moods: ["easy", "local"], image: "images/laso6.jpg" },
   { href: "ggs.html", name: "GGS GAKUGAKU", nameJp: "ジージーエス ガクガク", category: "lifestyle", moods: ["local", "special"], image: "images/ggs-recommend.jpg" },
-  { href: "guruguru-glass.html", name: "Guru Guru Glass", nameJp: "グルグルグラス", category: "lifestyle", moods: ["local", "special"], image: "images/guruguru-ocean-pendant.jpg" }
+  { href: "guruguru-glass.html", name: "Guru Guru Glass", nameJp: "グルグルグラス", category: "lifestyle", moods: ["local", "special"], image: "images/guruguru-ocean-pendant.jpg" },
+  { href: "creative-blupantu.html", name: "Blu Pantu", nameJp: "ブルー・パントゥ", category: "lifestyle", moods: ["local", "special"], image: "images/blupantu-hero2.jpg" },
+  { href: "creative-masa.html", name: "Masa", nameJp: "マサ", category: "lifestyle", moods: ["local", "active"], image: "images/masa-video-poster.jpeg" }
 ];
 
 const savedPlacesKey = "mymiyakojima-saved-places";
