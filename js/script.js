@@ -596,16 +596,29 @@ function updateLanguageNavigation() {
   if (!preferredLink) return;
 
   preferredLink.classList.add("is-active");
-  const target = document.querySelector(preferredLink.getAttribute("href"));
-
-  if (target) {
-    window.requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: "auto", block: "start" });
-    });
-  }
 }
 
 updateLanguageNavigation();
+
+function resetCreativeProfileScroll() {
+  if (!document.body.classList.contains("spotlight-page") || window.location.hash) return;
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+  });
+
+  window.addEventListener("pageshow", () => {
+    window.requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  });
+}
+
+resetCreativeProfileScroll();
 
 // =============================
 // REUSABLE PHOTO LIGHTBOX
