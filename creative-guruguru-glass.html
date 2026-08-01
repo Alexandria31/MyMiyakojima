@@ -31,6 +31,20 @@
 <meta name="twitter:description" content="Handmade Miyakojima glass art, accessories, workshops, and playful island-made pieces by Makoto.">
 <meta name="twitter:image" content="https://mymiyakojima.com/images/guruguru-hero-maker.jpg">
 
+<script>
+  (function () {
+    if (window.location.hash) return;
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.addEventListener("pageshow", function () {
+      requestAnimationFrame(function () {
+        window.scrollTo(0, 0);
+      });
+    });
+  })();
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
