@@ -620,6 +620,27 @@ function resetCreativeProfileScroll() {
 
 resetCreativeProfileScroll();
 
+function scrollToInitialHashTarget() {
+  if (!window.location.hash) return;
+
+  const targetId = decodeURIComponent(window.location.hash.slice(1));
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  const scrollToTarget = () => {
+    window.requestAnimationFrame(() => {
+      target.scrollIntoView({ block: "start" });
+    });
+  };
+
+  scrollToTarget();
+  window.addEventListener("load", scrollToTarget);
+  window.setTimeout(scrollToTarget, 250);
+  window.setTimeout(scrollToTarget, 900);
+}
+
+scrollToInitialHashTarget();
+
 // =============================
 // REUSABLE PHOTO LIGHTBOX
 // =============================
@@ -801,11 +822,14 @@ const seasonalNotes = [
   },
   {
     month: "AUG",
-    symbol: "星",
-    title: "Summer Night Skies",
-    titleJp: "夏の夜空",
-    copy: "After bright beach days, clear island nights invite a slower look upward.",
-    copyJp: "明るい海の日のあとには、島の夜空をゆっくり見上げたくなる季節です。"
+    symbol: "夏",
+    title: "August on My Miyakojima",
+    titleJp: "8月のMy Miyakojima",
+    copy: "A new month begins with more curated places, creative stories, and summer notes from the island.",
+    copyJp: "8月は、さらに選び抜いた場所、クリエイティブな物語、島の夏の空気をお届けします。",
+    link: "recommended.html",
+    linkLabel: "Explore Picks",
+    linkLabelJp: "おすすめを見る"
   },
   {
     month: "SEP",
