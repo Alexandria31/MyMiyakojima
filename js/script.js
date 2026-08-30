@@ -1228,3 +1228,138 @@ function renderRecentlyViewed() {
 
 recordRecentlyViewed();
 renderRecentlyViewed();
+
+// =============================
+// MY MIYAKOJIMA 2.0 HOMEPAGE
+// =============================
+const mm25Home = document.querySelector(".home-revamp");
+
+if (mm25Home) {
+  const hero = document.querySelector(".mm25-hero");
+  const heroMedia = document.querySelector(".mm25-hero-media img");
+  const interactiveCards = document.querySelectorAll(".mm25-now-card, .mm25-path, .mm25-update-list a");
+
+  if (hero && heroMedia && window.matchMedia("(pointer: fine)").matches) {
+    hero.addEventListener("pointermove", event => {
+      const bounds = hero.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      heroMedia.style.transform = `scale(1.045) translate(${x * 10}px, ${y * 8}px)`;
+    });
+
+    hero.addEventListener("pointerleave", () => {
+      heroMedia.style.transform = "scale(1.02)";
+    });
+  }
+
+  interactiveCards.forEach((card, index) => {
+    card.style.setProperty("--mm25-delay", `${index * 45}ms`);
+    card.addEventListener("pointerenter", () => card.classList.add("mm25-card-active"));
+    card.addEventListener("pointerleave", () => card.classList.remove("mm25-card-active"));
+  });
+
+  const homeUpdated = document.querySelector(".mm25-hero-note strong");
+  const homeUpdatedJp = document.querySelector(".mm25-hero-note span");
+  if (homeUpdated && homeUpdatedJp) {
+    const islandLabels = [
+      ["Late Summer Island Edit", "夏の終わりの島だより"],
+      ["Slow Island Notes", "ゆっくり届く島の便り"],
+      ["Curated Miyakojima Now", "いまの宮古島を丁寧に"]
+    ];
+    const labelIndex = Math.floor(Date.now() / 86400000) % islandLabels.length;
+    homeUpdated.textContent = islandLabels[labelIndex][0];
+    homeUpdatedJp.textContent = islandLabels[labelIndex][1];
+  }
+}
+
+// =============================
+// SITE-WIDE MODERN NAVIGATION POLISH
+// =============================
+function initializeModernSiteEffects() {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const body = document.body;
+
+  body.classList.add("modern-effects-ready");
+
+  const currentPage = getCurrentPageName();
+  document.querySelectorAll(".main-nav a").forEach(link => {
+    const href = link.getAttribute("href") || "";
+    const targetPage = href.split("#")[0];
+    if (targetPage === currentPage || (currentPage === "" && targetPage === "index.html")) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
+  const progress = document.createElement("div");
+  progress.className = "site-scroll-progress";
+  progress.setAttribute("aria-hidden", "true");
+  progress.innerHTML = "<span></span>";
+  document.body.prepend(progress);
+
+  const backTop = document.createElement("button");
+  backTop.className = "site-back-top";
+  backTop.type = "button";
+  backTop.setAttribute("aria-label", "Back to top");
+  backTop.innerHTML = '<span aria-hidden="true">↑</span><strong>Top</strong><small>上へ</small>';
+  document.body.appendChild(backTop);
+
+  const updateScrollTools = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+    progress.style.setProperty("--site-scroll", percent);
+    backTop.classList.toggle("is-visible", window.scrollY > Math.min(720, window.innerHeight * 0.9));
+  };
+
+  updateScrollTools();
+  window.addEventListener("scroll", updateScrollTools, { passive: true });
+  window.addEventListener("resize", updateScrollTools);
+
+  backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+  });
+
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+    anchor.addEventListener("click", event => {
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+      history.pushState(null, "", anchor.getAttribute("href"));
+    });
+  });
+
+  const livingCards = document.querySelectorAll(
+    ".recommend-card, .business-card, .mm25-now-card, .mm25-path, .mm25-update-list a, .tours-coming-note article, .featured-card, .update-card, .weekly-note"
+  );
+
+  livingCards.forEach(card => {
+    card.classList.add("living-card");
+    if (!card.querySelector(":scope > .living-card-shine")) {
+      const shine = document.createElement("span");
+      shine.className = "living-card-shine";
+      shine.setAttribute("aria-hidden", "true");
+      card.prepend(shine);
+    }
+    if (reducedMotion || !window.matchMedia("(pointer: fine)").matches) return;
+
+    card.addEventListener("pointermove", event => {
+      const rect = card.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--shine-x", `${x}%`);
+      card.style.setProperty("--shine-y", `${y}%`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.removeProperty("--shine-x");
+      card.style.removeProperty("--shine-y");
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeModernSiteEffects);
+} else {
+  initializeModernSiteEffects();
+}
