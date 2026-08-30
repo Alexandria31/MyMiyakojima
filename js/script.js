@@ -1330,7 +1330,7 @@ function initializeModernSiteEffects() {
   });
 
   const livingCards = document.querySelectorAll(
-    ".recommend-card, .business-card, .mm25-now-card, .mm25-path, .mm25-update-list a, .tours-coming-note article, .featured-card, .update-card, .weekly-note"
+    ".recommend-card, .business-card, .mm25-now-card, .mm25-path, .mm25-update-list a, .mm25-visual-strip a, .tours-coming-note article, .featured-card, .update-card, .weekly-note"
   );
 
   livingCards.forEach(card => {
