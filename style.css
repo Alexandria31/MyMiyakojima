@@ -10857,6 +10857,49 @@ body.spotlight-page .spotlight-hero h2 {
     width: calc(100% - 28px);
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    min-width: 88px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border: 1px solid rgba(7, 94, 101, 0.24);
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(216, 242, 236, 0.86));
+    color: #075e65;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    box-shadow: 0 12px 30px rgba(20, 63, 67, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .menu-icon {
+    color: #075e65;
+    font-size: 1.12rem;
+    line-height: 1;
+  }
+
+  .menu-text {
+    color: #075e65;
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+
+  .menu-toggle.active {
+    background: linear-gradient(135deg, #075e65, #35aaa7);
+    color: #fff;
+    box-shadow: 0 16px 38px rgba(20, 63, 67, 0.18);
+  }
+
+  .menu-toggle.active .menu-icon,
+  .menu-toggle.active .menu-text {
+    color: #fff;
+  }
+
   .main-nav {
     flex: none;
     justify-content: center;
