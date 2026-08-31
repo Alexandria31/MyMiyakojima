@@ -13390,7 +13390,7 @@ body.home-revamp {
   color: var(--mm25-ink);
 }
 
-body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business),
+body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip),
 body.home-revamp main > aside {
   display: none;
 }
@@ -14827,6 +14827,27 @@ body.home-revamp .mm25-visual-strip a:nth-child(3) img {
   }
 }
 
+.recommend-contact-line {
+  display: inline-flex;
+  width: fit-content;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 12px;
+  padding: 10px 13px;
+  border: 1px solid rgba(7, 94, 101, 0.12);
+  border-radius: 14px;
+  background: rgba(216, 242, 236, 0.52);
+  color: #075e65;
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.recommend-contact-line .jp {
+  color: #315a63;
+  font-size: 0.78rem;
+}
+
 /* ===== TOURS DIRECTORY + HOMEPAGE INTRO FINAL PASS ===== */
 body.home-revamp main > section.mm25-tour-intro {
   display: grid;
@@ -15059,5 +15080,116 @@ body.home-revamp .mm25-tour-intro-link span {
   body.home-revamp .mm25-tour-intro-link,
   .tour-guide-actions a {
     width: 100%;
+  }
+}
+
+body.home-revamp .home-trust-strip {
+  display: block;
+  width: min(1080px, calc(100% - 40px));
+  margin: 18px auto 24px;
+}
+
+body.home-revamp .home-trust-inner {
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  border: 1px solid rgba(7, 94, 101, 0.13);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(216, 242, 236, 0.6)),
+    radial-gradient(circle at 96% 16%, rgba(244, 189, 76, 0.16), transparent 32%);
+  box-shadow: 0 18px 54px rgba(20, 63, 67, 0.08);
+}
+
+body.home-revamp .home-trust-inner::before {
+  background:
+    linear-gradient(135deg, rgba(7, 94, 101, 0.1), rgba(53, 170, 167, 0.16));
+  color: #075e65;
+}
+
+body.home-revamp .home-trust-kicker {
+  color: #075e65;
+}
+
+body.home-revamp .home-trust-link {
+  background: rgba(255, 255, 255, 0.74);
+  color: #075e65;
+}
+
+body.home-revamp .home-trust-link-primary {
+  background: rgba(53, 170, 167, 0.16);
+}
+
+@media (max-width: 720px) {
+  body.home-revamp .home-trust-strip {
+    width: calc(100% - 28px);
+    margin: 12px auto 18px;
+  }
+
+  body.home-revamp .home-trust-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 15px 14px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  body.home-revamp .home-trust-inner::before {
+    position: static;
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 2px;
+  }
+
+  body.home-revamp .home-trust-inner::after {
+    right: 26%;
+    left: 26%;
+  }
+
+  body.home-revamp .home-trust-kicker,
+  body.home-revamp .home-trust-inner > p:not(.home-trust-kicker) {
+    grid-column: 1;
+    max-width: 315px;
+  }
+
+  body.home-revamp .home-trust-kicker {
+    margin: 0;
+    font-size: 0.68rem;
+  }
+
+  body.home-revamp .home-trust-kicker .jp {
+    margin-top: 3px;
+    font-size: 0.8rem;
+  }
+
+  body.home-revamp .home-trust-inner > p:not(.home-trust-kicker) {
+    font-size: 0.86rem;
+    line-height: 1.58;
+  }
+
+  body.home-revamp .home-trust-inner > p:not(.home-trust-kicker) .jp {
+    margin-top: 5px;
+    color: #284f53;
+    font-size: 0.92rem;
+    line-height: 1.66;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  body.home-revamp .home-trust-actions {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    max-width: 330px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    justify-self: center;
+  }
+
+  body.home-revamp .home-trust-link {
+    width: 100%;
+    min-height: 46px;
+    margin: 0;
+    padding: 10px 14px;
   }
 }
