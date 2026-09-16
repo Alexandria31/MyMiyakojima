@@ -16312,3 +16312,141 @@ body.events-page {
     word-break: auto-phrase;
   }
 }
+
+/* Caldo de Cana feature */
+body.caldo-page {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(246, 232, 64, 0.22), transparent 28%),
+    radial-gradient(circle at 86% 10%, rgba(151, 203, 18, 0.12), transparent 30%),
+    linear-gradient(180deg, #fbfff9 0%, #f4fbf5 48%, #ffffff 100%);
+}
+
+.caldo-business-logo {
+  width: min(230px, 58vw);
+  margin: 34px auto 18px;
+  padding: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(17, 64, 93, 0.14);
+}
+
+.caldo-business-logo img {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.caldo-hero-image {
+  width: min(1040px, calc(100% - 36px));
+  max-height: 680px;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: 14px;
+  box-shadow: 0 22px 62px rgba(16, 74, 74, 0.16);
+}
+
+.caldo-page h1 {
+  color: #133f5f;
+}
+
+.caldo-page .jp,
+.caldo-page .jp-title {
+  overflow-wrap: normal;
+  word-break: normal;
+  word-break: auto-phrase;
+}
+
+.caldo-overview,
+.caldo-why,
+.caldo-info-card {
+  border-color: rgba(151, 203, 18, 0.22);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(246, 232, 64, 0.18), transparent 34%),
+    rgba(255, 255, 255, 0.9);
+}
+
+.caldo-why .freshness-kicker,
+.caldo-page .freshness-kicker {
+  color: #1b6f79;
+}
+
+.caldo-instagram-note {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #f5fbdf;
+  color: #345556;
+  font-size: 0.95rem;
+}
+
+.caldo-instagram-note .jp {
+  display: block;
+  margin-top: 4px;
+  color: #4d6867;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.caldo-logo-badge {
+  width: 74px;
+  height: 74px;
+  padding: 7px;
+  background: #fffef0;
+}
+
+.recommend-card-caldo {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(246, 232, 64, 0.2), transparent 32%),
+    #ffffff;
+}
+
+.recommend-card-caldo .recommend-image img {
+  object-position: center 44%;
+}
+
+.mm25-now-card-caldo {
+  border-color: rgba(246, 232, 64, 0.32);
+}
+
+.mm25-now-card-caldo > span,
+.weekly-note-caldo .weekly-note-type {
+  color: #1b6f79;
+}
+
+.weekly-note-caldo {
+  background:
+    radial-gradient(circle at 96% 10%, rgba(246, 232, 64, 0.2), transparent 34%),
+    #ffffff;
+}
+
+.weekly-note-caldo .weekly-note-thumb {
+  background: #f5fbdf;
+}
+
+.weekly-note-caldo .weekly-note-thumb img {
+  object-position: center 47%;
+}
+
+@media (max-width: 620px) {
+  .caldo-business-logo {
+    width: min(188px, 54vw);
+    margin-top: 28px;
+  }
+
+  .caldo-hero-image {
+    width: min(100% - 28px, 560px);
+    max-height: 520px;
+    border-radius: 12px;
+  }
+
+  .caldo-page .overview-text,
+  .caldo-page .location-card,
+  .caldo-page .why-recommend {
+    text-align: center;
+  }
+
+  .caldo-logo-badge {
+    width: 64px;
+    height: 64px;
+  }
+}
