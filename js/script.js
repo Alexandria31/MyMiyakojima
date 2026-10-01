@@ -771,9 +771,9 @@ const seasonalNotes = [
   {
     month: "FEB",
     symbol: "風",
-    title: "Gentle Winter Days",
+    title: "Quiet Winter Days",
     titleJp: "島のやさしい冬",
-    copy: "A quieter season for slow drives, warm local meals, and softer island light.",
+    copy: "A quieter season for slow drives, warm local meals, and clear island light.",
     copyJp: "ゆっくりしたドライブや温かい島の味、やわらかな光を楽しむ季節です。"
   },
   {
@@ -834,7 +834,7 @@ const seasonalNotes = [
   {
     month: "SEP",
     symbol: "海",
-    title: "Late Summer Sea",
+    title: "September Sea",
     titleJp: "晩夏の海",
     copy: "Summer lingers in the water while the island begins to soften toward autumn.",
     copyJp: "海にはまだ夏が残り、島の空気は少しずつ秋へとやわらぎます。"
@@ -844,7 +844,7 @@ const seasonalNotes = [
     symbol: "風",
     title: "Island Autumn",
     titleJp: "島の秋",
-    copy: "Gentler heat makes room for outdoor stops, local walks, and longer drives.",
+    copy: "Milder heat makes room for outdoor stops, local walks, and longer drives.",
     copyJp: "暑さがやわらぎ、島歩きやローカル巡り、ドライブが心地よい季節です。"
   },
   {
@@ -917,6 +917,7 @@ const curatedListings = [
   { href: "pizza-doraku.html", name: "Pizza Doraku", nameJp: "ピザ道楽", category: "food", moods: ["easy", "local"], image: "images/doraku-pizza.jpeg" },
   { href: "captain-marian.html", name: "Captain Marian", nameJp: "キャプテンメリアン", category: "food", moods: ["local", "special"], image: "https://captain-marians.com/serviceimg/gourmet/315092/menu/297793/img1-1748226855669-5367.jpg" },
   { href: "hirochan.html", name: "Hirochan Shokudo", nameJp: "お食事処 ひろちゃん", category: "food", moods: ["easy", "local"], image: "images/hirochan-soba.jpg" },
+  { href: "gare-385.html", name: "Gare 385", nameJp: "ガレ385", category: "food", moods: ["easy", "local", "special"], image: "images/gare-385-sweets-table.jpeg" },
   { href: "tonkatsu-ichiban-miyakojima.html", name: "Tonkatsu Ichiban", nameJp: "とんかつ一番", category: "food", moods: ["easy", "local"], image: "images/ichiban6.jpg" },
   { href: "para-jiro.html", name: "Pa-ra-jiro", nameJp: "ぱーら二郎", category: "food", moods: ["easy", "local"], image: "images/parajiro-500-yen-bento.jpeg" },
   { href: "burwood-donuts.html", name: "Burwood Donuts", nameJp: "バーウッドドーナツ", category: "food", moods: ["easy", "local"], image: "images/burwood6.jpg" },
@@ -1262,9 +1263,9 @@ if (mm25Home) {
   const homeUpdatedJp = document.querySelector(".mm25-hero-note span");
   if (homeUpdated && homeUpdatedJp) {
     const islandLabels = [
-      ["Late Summer Island Edit", "夏の終わりの島だより"],
-      ["Slow Island Notes", "ゆっくり届く島の便り"],
-      ["Curated Miyakojima Now", "いまの宮古島を丁寧に"]
+      ["October Island Edit", "10月の島だより"],
+      ["Island Guide, Updated", "更新された島ガイド"],
+      ["Miyakojima Now", "いまの宮古島"]
     ];
     const labelIndex = Math.floor(Date.now() / 86400000) % islandLabels.length;
     homeUpdated.textContent = islandLabels[labelIndex][0];
@@ -1280,6 +1281,16 @@ function initializeModernSiteEffects() {
   const body = document.body;
 
   body.classList.add("modern-effects-ready");
+  body.classList.add("site-page-enter");
+  window.requestAnimationFrame(() => body.classList.add("site-page-loaded"));
+
+  if (!document.querySelector(".site-atmosphere")) {
+    const atmosphere = document.createElement("div");
+    atmosphere.className = "site-atmosphere";
+    atmosphere.setAttribute("aria-hidden", "true");
+    atmosphere.innerHTML = "<span></span><span></span><span></span>";
+    document.body.prepend(atmosphere);
+  }
 
   const currentPage = getCurrentPageName();
   document.querySelectorAll(".main-nav a").forEach(link => {
@@ -1329,8 +1340,60 @@ function initializeModernSiteEffects() {
     });
   });
 
+  if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+    window.addEventListener("pointermove", event => {
+      document.documentElement.style.setProperty("--site-pointer-x", `${event.clientX}px`);
+      document.documentElement.style.setProperty("--site-pointer-y", `${event.clientY}px`);
+    }, { passive: true });
+  }
+
+  document.querySelectorAll("main > section, main > article, .content, .recommended-section, .business-profile, .page-hero, .spotlight-hero, .events-current, .events-notes, .events-submit").forEach((section, index) => {
+    section.classList.add("site-reveal");
+    section.style.setProperty("--reveal-delay", `${Math.min(index * 35, 220)}ms`);
+  });
+
+  if ("IntersectionObserver" in window) {
+    const siteRevealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("site-in-view");
+          siteRevealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.08
+    });
+
+    document.querySelectorAll(".site-reveal").forEach(section => siteRevealObserver.observe(section));
+  } else {
+    document.querySelectorAll(".site-reveal").forEach(section => section.classList.add("site-in-view"));
+  }
+
+  document.querySelectorAll("main img:not(.site-logo):not(.business-logo):not(.toppuri-teaser-logo):not([src*='logo']):not([src*='Logo'])").forEach(image => {
+    image.classList.add("site-image-motion");
+  });
+
+  document.querySelectorAll("a[href]").forEach(link => {
+    const href = link.getAttribute("href") || "";
+    const isExternal = link.hostname && link.hostname !== window.location.hostname;
+    const linkUrl = new URL(link.href, window.location.href);
+    const isPageLink = linkUrl.pathname === "/" || linkUrl.pathname.endsWith(".html");
+    const isSpecial = href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || link.target === "_blank" || isExternal || !isPageLink;
+    if (isSpecial) return;
+
+    link.addEventListener("click", event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.defaultPrevented) return;
+      event.preventDefault();
+      body.classList.add("site-page-leaving");
+      window.setTimeout(() => {
+        window.location.href = link.href;
+      }, reducedMotion ? 0 : 180);
+    });
+  });
+
   const livingCards = document.querySelectorAll(
-    ".recommend-card, .business-card, .mm25-now-card, .mm25-path, .mm25-update-list a, .mm25-visual-strip a, .tours-coming-note article, .featured-card, .update-card, .weekly-note"
+    ".recommend-card, .business-card, .mm25-now-card, .mm25-path, .mm25-update-list a, .mm25-visual-strip a, .tours-coming-note article, .featured-card, .update-card, .weekly-note, .events-card, .island-event, .creative-card, .location-card, .info-card, .benefit-box, .contact-card, .tour-card, .finder-result-card, .recent-place"
   );
 
   livingCards.forEach(card => {
