@@ -17490,3 +17490,169 @@ body.home-revamp .weather-pearl {
     border-radius: 999px;
   }
 }
+
+/* Hard visibility lock for the homepage weather bubble */
+body.home-revamp a.weather-pearl.weather-pearl-visible {
+  display: flex !important;
+  position: fixed !important;
+  top: 112px !important;
+  right: 22px !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 2147483000 !important;
+  width: 132px !important;
+  min-width: 132px !important;
+  min-height: 132px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  animation: weatherWander 11s ease-in-out infinite !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 20px 15px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  color: #174f52 !important;
+  background:
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78) 43%, rgba(116, 205, 199, 0.64) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.94) !important;
+  box-shadow:
+    0 22px 58px rgba(21, 91, 93, 0.28),
+    inset 0 1px 18px rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+body.home-revamp a.weather-pearl.weather-pearl-visible::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 10px !important;
+  border-radius: inherit !important;
+  border: 1px solid rgba(255, 255, 255, 0.56) !important;
+  pointer-events: none !important;
+}
+
+body.home-revamp a.weather-pearl.weather-pearl-visible .weather-pearl-status,
+body.home-revamp a.weather-pearl.weather-pearl-visible strong,
+body.home-revamp a.weather-pearl.weather-pearl-visible span {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.home-revamp a.weather-pearl.weather-pearl-visible .weather-pearl-status {
+  display: block !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 1.4px !important;
+  color: #245f60 !important;
+}
+
+body.home-revamp a.weather-pearl.weather-pearl-visible strong {
+  display: block !important;
+  font-size: 1.02rem !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+  color: #164f4c !important;
+}
+
+body.home-revamp a.weather-pearl.weather-pearl-visible span:last-child {
+  display: block !important;
+  max-width: 82px !important;
+  font-size: 0.66rem !important;
+  line-height: 1.25 !important;
+  color: #5c4a3d !important;
+}
+
+@keyframes weatherWander {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  24% {
+    transform: translate3d(-18px, 18px, 0);
+  }
+
+  48% {
+    transform: translate3d(-8px, 42px, 0);
+  }
+
+  72% {
+    transform: translate3d(16px, 22px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-revamp a.weather-pearl.weather-pearl-visible {
+    top: auto !important;
+    right: 12px !important;
+    bottom: 84px !important;
+    width: auto !important;
+    min-width: 178px !important;
+    min-height: 0 !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    padding: 10px 14px !important;
+    border-radius: 999px !important;
+    animation-name: weatherWanderMobile !important;
+  }
+
+  body.home-revamp a.weather-pearl.weather-pearl-visible::after {
+    inset: 5px !important;
+  }
+
+  body.home-revamp a.weather-pearl.weather-pearl-visible .weather-pearl-status {
+    display: none !important;
+  }
+
+  body.home-revamp a.weather-pearl.weather-pearl-visible strong {
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+  }
+
+  body.home-revamp a.weather-pearl.weather-pearl-visible span:last-child {
+    max-width: 90px !important;
+    text-align: left !important;
+  }
+}
+
+@keyframes weatherWanderMobile {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  28% {
+    transform: translate3d(-8px, -12px, 0);
+  }
+
+  56% {
+    transform: translate3d(4px, -22px, 0);
+  }
+
+  82% {
+    transform: translate3d(-10px, -8px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+body.home-revamp a.weather-pearl.weather-pearl-visible.weather-pearl-roaming {
+  top: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: 0 !important;
+  animation: none !important;
+  transform: translate3d(var(--weather-x, calc(100vw - 154px)), var(--weather-y, 112px), 0) !important;
+  will-change: transform;
+}
+
+body.home-revamp.site-page-loaded {
+  transform: none !important;
+}

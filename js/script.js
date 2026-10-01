@@ -462,6 +462,131 @@ async function loadMiyakoWeather() {
 
 loadMiyakoWeather();
 
+function initializeWeatherPearlRoam() {
+  const pearl = document.querySelector(".weather-pearl-visible");
+  if (!pearl) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion) return;
+
+  let current = { x: 0, y: 0 };
+  let start = { x: 0, y: 0 };
+  let target = { x: 0, y: 0 };
+  let startTime = 0;
+  let duration = 9000;
+  let paused = false;
+  let initialized = false;
+
+  pearl.classList.add("weather-pearl-roaming");
+
+  function getBounds() {
+    const rect = pearl.getBoundingClientRect();
+    const isMobile = window.innerWidth <= 760;
+    const margin = isMobile ? 12 : 18;
+    const topMargin = isMobile ? 88 : 112;
+    const bottomMargin = isMobile ? 86 : 24;
+
+    return {
+      minX: margin,
+      maxX: Math.max(margin, window.innerWidth - rect.width - margin),
+      minY: topMargin,
+      maxY: Math.max(topMargin, window.innerHeight - rect.height - bottomMargin)
+    };
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function pickTarget() {
+    const bounds = getBounds();
+    const x = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
+    const y = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
+    return { x, y };
+  }
+
+  function place(position) {
+    const bounds = getBounds();
+    current = {
+      x: clamp(position.x, bounds.minX, bounds.maxX),
+      y: clamp(position.y, bounds.minY, bounds.maxY)
+    };
+
+    pearl.style.setProperty("--weather-x", `${current.x}px`);
+    pearl.style.setProperty("--weather-y", `${current.y}px`);
+  }
+
+  function setNewTarget(timestamp) {
+    start = { ...current };
+    target = pickTarget();
+    startTime = timestamp;
+    duration = 7600 + Math.random() * 5200;
+  }
+
+  function easeInOut(value) {
+    return 0.5 - Math.cos(value * Math.PI) / 2;
+  }
+
+  function roam(timestamp) {
+    if (!initialized) {
+      const bounds = getBounds();
+      place({
+        x: bounds.maxX,
+        y: bounds.minY + Math.min(28, Math.max(0, bounds.maxY - bounds.minY))
+      });
+      setNewTarget(timestamp);
+      initialized = true;
+    }
+
+    if (!paused) {
+      const progress = Math.min(1, (timestamp - startTime) / duration);
+      const eased = easeInOut(progress);
+
+      place({
+        x: start.x + (target.x - start.x) * eased,
+        y: start.y + (target.y - start.y) * eased
+      });
+
+      if (progress >= 1) {
+        setNewTarget(timestamp);
+      }
+    }
+
+    window.requestAnimationFrame(roam);
+  }
+
+  pearl.addEventListener("pointerenter", () => {
+    paused = true;
+  });
+
+  pearl.addEventListener("pointerleave", () => {
+    paused = false;
+    setNewTarget(performance.now());
+  });
+
+  window.addEventListener("resize", () => {
+    place(current);
+    setNewTarget(performance.now());
+  });
+
+  let scrollRescueFrame = 0;
+  window.addEventListener("scroll", () => {
+    if (scrollRescueFrame) return;
+    scrollRescueFrame = window.requestAnimationFrame(() => {
+      place(current);
+      scrollRescueFrame = 0;
+    });
+  }, { passive: true });
+
+  window.requestAnimationFrame(roam);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeWeatherPearlRoam);
+} else {
+  initializeWeatherPearlRoam();
+}
+
 // =============================
 // SELF-UPDATING ISLAND CALENDAR
 // =============================
