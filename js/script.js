@@ -917,7 +917,7 @@ const curatedListings = [
   { href: "pizza-doraku.html", name: "Pizza Doraku", nameJp: "ピザ道楽", category: "food", moods: ["easy", "local"], image: "images/doraku-pizza.jpeg" },
   { href: "captain-marian.html", name: "Captain Marian", nameJp: "キャプテンメリアン", category: "food", moods: ["local", "special"], image: "https://captain-marians.com/serviceimg/gourmet/315092/menu/297793/img1-1748226855669-5367.jpg" },
   { href: "hirochan.html", name: "Hirochan Shokudo", nameJp: "お食事処 ひろちゃん", category: "food", moods: ["easy", "local"], image: "images/hirochan-soba.jpg" },
-  { href: "gare-385.html", name: "Gare 385", nameJp: "ガレ385", category: "food", moods: ["easy", "local", "special"], image: "images/gare-385-sweets-table.jpeg" },
+  { href: "gare-385.html", name: "Galle 385", nameJp: "ガレ385", category: "food", moods: ["easy", "local", "special"], image: "images/gare-385-sweets-table.jpeg" },
   { href: "tonkatsu-ichiban-miyakojima.html", name: "Tonkatsu Ichiban", nameJp: "とんかつ一番", category: "food", moods: ["easy", "local"], image: "images/ichiban6.jpg" },
   { href: "para-jiro.html", name: "Pa-ra-jiro", nameJp: "ぱーら二郎", category: "food", moods: ["easy", "local"], image: "images/parajiro-500-yen-bento.jpeg" },
   { href: "burwood-donuts.html", name: "Burwood Donuts", nameJp: "バーウッドドーナツ", category: "food", moods: ["easy", "local"], image: "images/burwood6.jpg" },
