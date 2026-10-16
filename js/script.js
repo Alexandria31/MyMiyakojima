@@ -591,23 +591,26 @@ if (document.readyState === "loading") {
 // SELF-UPDATING ISLAND CALENDAR
 // =============================
 function updateIslandCalendar() {
-  const eventCards = Array.from(document.querySelectorAll(".island-event[data-event-date]"));
+  const eventCards = Array.from(document.querySelectorAll(".island-event[data-event-date], .events-card[data-event-date], .island-agenda[data-event-date]"));
   if (!eventCards.length) return;
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const japanDate = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit"
+  }).format(new Date());
+  const today = new Date(`${japanDate}T00:00:00`);
   let firstUpcomingCard = null;
 
   eventCards.forEach(card => {
     const dateText = card.dataset.eventDate;
     const eventDate = new Date(`${dateText}T00:00:00`);
+    const endDate = new Date(`${card.dataset.eventEnd || dateText}T00:00:00`);
 
     if (Number.isNaN(eventDate.getTime())) return;
 
     const dayDifference = Math.round((eventDate - today) / 86400000);
     const status = card.querySelector(".island-event-status");
 
-    if (dayDifference < 0) {
+    if (endDate < today) {
       card.hidden = true;
       card.setAttribute("aria-hidden", "true");
       return;
@@ -622,7 +625,7 @@ function updateIslandCalendar() {
       let english = "Coming Up";
       let japanese = "開催予定";
 
-      if (dayDifference === 0) {
+      if (dayDifference <= 0) {
         english = "Today";
         japanese = "本日開催";
       } else if (dayDifference === 1) {
