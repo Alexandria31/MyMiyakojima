@@ -619,6 +619,12 @@ function updateIslandCalendar() {
     card.hidden = false;
     card.removeAttribute("aria-hidden");
 
+    if (card.dataset.eventStatus === "cancelled") {
+      const cancellationStatus = card.querySelector(".island-event-status, .events-status");
+      if (cancellationStatus) cancellationStatus.innerHTML = 'Cancelled<span>開催中止</span>';
+      return;
+    }
+
     if (!firstUpcomingCard) firstUpcomingCard = card;
 
     if (status) {

@@ -14415,7 +14415,7 @@ body.home-revamp {
   color: var(--mm25-ink);
 }
 
-body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip):not(.island-agenda),
+body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip):not(.island-agenda):not(.storm-notice),
 body.home-revamp main > aside {
   display: none;
 }
@@ -17659,6 +17659,61 @@ body.home-revamp.site-page-loaded {
 
 /* Mid-October editorial refresh. */
 .mobile-island-scenes { display: none; }
+.home-quick-browse {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  margin: 22px 0;
+  text-align: left;
+}
+.home-quick-browse a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  gap: 2px 6px;
+  min-height: 70px;
+  padding: 10px 0;
+  border-bottom: 1px solid #b9d2c9;
+  color: #174f52;
+  text-decoration: none;
+  font-size: .95rem;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+.home-quick-browse a > span[lang] { grid-column: 1; font-size: .9rem; color: #365854; text-wrap: pretty; }
+.home-quick-browse a > span[aria-hidden] { grid-column: 2; grid-row: 1 / 3; align-self: center; transition: transform .2s ease; }
+.home-quick-browse a:hover { color: #08716d; border-color: #08716d; }
+.home-quick-browse a:hover > span[aria-hidden] { transform: translate(2px, -2px); }
+.home-quick-browse a:focus-visible { outline: 2px solid #08716d; outline-offset: 4px; }
+.storm-notice {
+  width: min(1180px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 22px;
+  box-sizing: border-box;
+  border: 1px solid #dec8b4;
+  border-left: 4px solid #994626;
+  border-radius: 6px;
+  background: #fff6ed;
+  color: #513d31;
+  text-align: left;
+  scroll-margin-top: 110px;
+}
+.storm-notice h2 { margin: 10px 0; color: #713c25; font-size: 1.3rem; line-height: 1.5; letter-spacing: 0; }
+.storm-notice h2 span, .storm-notice a > span[lang] { display: block; }
+.storm-notice h2 span { font-size: 1.1rem; margin-top: 5px; }
+.storm-notice p, .storm-notice li { font-size: 1rem; line-height: 1.85; text-wrap: pretty; }
+.storm-notice .storm-notice-date { margin: 0; font-size: .85rem; }
+.storm-notice a { color: #713c25; text-underline-offset: 4px; }
+.storm-notice ul { padding-left: 22px; }
+.storm-notice li + li { margin-top: 16px; }
+.storm-notice-links { display: flex; flex-wrap: wrap; gap: 12px 26px; }
+.storm-notice-links a { min-height: 44px; font-weight: 600; }
+[data-event-status="cancelled"] .events-status,
+[data-event-status="cancelled"] .island-event-status { background: #fff0e5; color: #853a21; }
+@media (max-width: 560px) {
+  .storm-notice { padding: 16px; }
+  .storm-notice-date span { display: block; }
+}
 body.island-refresh .home-trust-strip {
   width: min(1180px, calc(100% - 40px));
   margin: 12px auto;
