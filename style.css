@@ -17658,6 +17658,7 @@ body.home-revamp.site-page-loaded {
 }
 
 /* Mid-October editorial refresh. */
+.mobile-island-scenes { display: none; }
 body.island-refresh .home-trust-strip {
   width: min(1180px, calc(100% - 40px));
   margin: 12px auto;
@@ -17774,6 +17775,35 @@ body.island-refresh main > section.island-agenda {
   body.island-refresh .mm25-hero-media > img { min-height: 0; height: 180px; }
   body.island-refresh .mm25-hero-media { order: 1; }
   body.island-refresh .mm25-hero-content { padding: 0; order: 0; }
+  body.island-refresh .mm25-hero-media { display: none; }
+  body.island-refresh .mm25-hero-content > .mm25-kicker { display: none; }
+  body.island-refresh .mm25-member-badge { margin: 0 auto 16px; padding: 8px 14px; box-shadow: none; }
+  body.island-refresh .mm25-hero-signals { display: none; }
+  body.island-refresh .mm25-hero h1 { margin-top: 0; }
+  .mobile-island-scenes {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 10px;
+    margin: 22px -4px;
+    text-align: left;
+  }
+  .mobile-island-scenes a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 190px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    isolation: isolate;
+  }
+  .mobile-island-scenes a:nth-child(2) { margin-top: 20px; }
+  .mobile-island-scenes img { width: 100%; height: 100%; object-fit: cover; object-position: center 65%; transition: transform .45s ease; }
+  .mobile-island-scenes a::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(10, 45, 48, .7)); z-index: 0; pointer-events: none; }
+  .mobile-island-scenes a > span { position: absolute; bottom: 12px; left: 10px; right: 8px; z-index: 1; font-size: .95rem; font-weight: 600; line-height: 1.5; letter-spacing: 0; }
+  .mobile-island-scenes small { display: block; font-size: .9rem; line-height: 1.7; white-space: nowrap; }
+  .mobile-island-scenes a:hover img { transform: scale(1.04); }
+  .mobile-island-scenes a:focus-visible { outline: 3px solid #086e70; outline-offset: 3px; }
   body.island-refresh .mm25-hero h1 { font-size: 2rem; }
   body.island-refresh .mm25-hero h1 span { font-size: 1.1rem; }
   body.island-refresh .mm25-section-head h2,
