@@ -3575,23 +3575,6 @@ body {
   text-align: center;
   overflow-x: hidden;
   opacity: 1;
-  transition: opacity 0.6s ease;
-  animation:
-  pageFade 0.8s ease;
-}
-
-@keyframes pageFade{
-
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
 }
 
 /* ===== Sand Texture (All Pages Except Spotlight) ===== */
@@ -10380,10 +10363,10 @@ body.ggs-page .info-grid span {
 /* ===== SOFT SCROLL ANIMATION ===== */
 
 .fade-up{
-  opacity:0;
+  opacity:1;
 
   transform:
-    translateY(40px);
+    none;
 
   transition:
     opacity 1s ease,
@@ -17267,20 +17250,18 @@ body.modern-effects-ready {
 }
 
 body.site-page-enter {
-  opacity: 0;
-  transform: translateY(8px);
+  opacity: 1;
+  transform: none;
 }
 
 body.site-page-loaded {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.34s ease, transform 0.34s ease;
+  transform: none;
 }
 
 body.site-page-leaving {
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  opacity: 1;
+  transform: none;
 }
 
 .site-atmosphere {
@@ -17333,8 +17314,8 @@ body.site-page-leaving {
 }
 
 .site-reveal {
-  opacity: 0;
-  transform: translateY(22px);
+  opacity: 1;
+  transform: none;
   transition:
     opacity 0.78s ease var(--reveal-delay, 0ms),
     transform 0.78s cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms);

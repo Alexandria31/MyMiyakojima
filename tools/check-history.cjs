@@ -30,6 +30,20 @@ const server = http.createServer((req, res) => {
       }
       await page.goto(origin + '/index.html');
       await visible();
+      const staleOpacity = await page.evaluate(() => {
+        document.body.classList.remove('site-page-loaded');
+        document.body.classList.add('site-page-enter', 'site-page-leaving');
+        const opacity = getComputedStyle(document.body).opacity;
+        document.body.classList.remove('site-page-enter', 'site-page-leaving');
+        document.body.classList.add('site-page-loaded');
+        const probe = document.createElement('section');
+        probe.className = 'fade-up site-reveal';
+        document.body.appendChild(probe);
+        const sectionOpacity = getComputedStyle(probe).opacity;
+        probe.remove();
+        return { opacity, sectionOpacity };
+      });
+      assert.deepEqual(staleOpacity, { opacity: '1', sectionOpacity: '1' });
       await page.locator('.mm25-guide-button').click();
       await page.waitForURL('**/recommended.html');
       await visible();

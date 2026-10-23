@@ -1418,19 +1418,19 @@ function initializeModernSiteEffects() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const body = document.body;
 
-  let pageNavigationTimer;
   const restorePageVisibility = () => {
-    window.clearTimeout(pageNavigationTimer);
-    body.classList.remove("site-page-leaving");
+    body.classList.remove("site-page-leaving", "site-page-enter", "menu-open");
     body.classList.add("site-page-loaded");
+    document.getElementById("mobileMenu")?.classList.remove("show");
+    document.getElementById("menuToggle")?.classList.remove("active");
+    revealElements();
   };
   // History restores the existing document, including its outgoing fade state.
   window.addEventListener("pageshow", restorePageVisibility);
   window.addEventListener("popstate", restorePageVisibility);
 
   body.classList.add("modern-effects-ready");
-  body.classList.add("site-page-enter");
-  window.requestAnimationFrame(() => body.classList.add("site-page-loaded"));
+  restorePageVisibility();
 
   if (!document.querySelector(".site-atmosphere")) {
     const atmosphere = document.createElement("div");
@@ -1520,26 +1520,6 @@ function initializeModernSiteEffects() {
 
   document.querySelectorAll("main img:not(.site-logo):not(.business-logo):not(.toppuri-teaser-logo):not([src*='logo']):not([src*='Logo'])").forEach(image => {
     image.classList.add("site-image-motion");
-  });
-
-  document.querySelectorAll("a[href]").forEach(link => {
-    const href = link.getAttribute("href") || "";
-    const isExternal = link.hostname && link.hostname !== window.location.hostname;
-    const linkUrl = new URL(link.href, window.location.href);
-    const isPageLink = linkUrl.pathname === "/" || linkUrl.pathname.endsWith(".html");
-    const sameDocument = linkUrl.origin === window.location.origin && linkUrl.pathname === window.location.pathname && linkUrl.search === window.location.search;
-    const isSpecial = sameDocument || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || (link.target && link.target !== "_self") || link.hasAttribute("download") || isExternal || !isPageLink;
-    if (isSpecial) return;
-
-    link.addEventListener("click", event => {
-      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.defaultPrevented) return;
-      event.preventDefault();
-      window.clearTimeout(pageNavigationTimer);
-      body.classList.add("site-page-leaving");
-      pageNavigationTimer = window.setTimeout(() => {
-        window.location.href = link.href;
-      }, reducedMotion ? 0 : 180);
-    });
   });
 
   const livingCards = document.querySelectorAll(
