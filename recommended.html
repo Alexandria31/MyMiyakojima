@@ -68,7 +68,8 @@
 
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
-  <link rel="stylesheet" href="style.css?v=150">
+  <link rel="stylesheet" href="style.css?v=157">
+<link rel="stylesheet" href="discovery.css?v=2">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -92,7 +93,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 
 <!-- HEADER -->
 <header class="site-header">
-  <img src="mymiyakojima-logo-nav.png" class="site-logo">
+  <img alt="Miyakojima Recommendations: Food, Stays, Cars &amp;amp; Local Spots · Photo / 写真" width="809" height="76" src="mymiyakojima-logo-nav.png" class="site-logo">
 
  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
 
@@ -150,12 +151,22 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 <section class="recommendation-finder" id="recommendationFinder" aria-labelledby="finder-title">
   <div class="finder-intro">
     <p class="freshness-kicker">A Little Help Choosing<span class="jp">おすすめ選びをお手伝い</span></p>
-    <h1 id="finder-title">Find Your Miyakojima Match<span class="jp-title">あなたに合う宮古島を探す</span></h1>
+    <h2 id="finder-title">Find Your Miyakojima Match<span class="jp-title">あなたに合う宮古島を探す</span></h2>
     <p>Choose what sounds right today. My Miyakojima will suggest a few places from the curated guide.</p>
     <p class="jp">今日の気分に近いものを選ぶと、厳選ガイドからおすすめをご提案します。</p>
   </div>
 
   <form class="finder-form" id="finderForm">
+    <label class="island-area-select">Area<span lang="ja">エリア</span>
+      <select name="finderArea">
+        <option value="">Any area / すべてのエリア</option>
+        <option value="hirara">Hirara / 平良</option>
+        <option value="shimoji">Shimoji / 下地</option>
+        <option value="gusukube">Gusukube / 城辺</option>
+        <option value="ueno">Ueno &amp; Shigira / 上野・シギラ</option>
+        <option value="north">Karimata &amp; Ikema / 狩俣・池間方面</option>
+      </select>
+    </label>
     <fieldset>
       <legend>What are you looking for?<span>何を探していますか？</span></legend>
       <div class="finder-options">
@@ -188,6 +199,24 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 </section>
 
 <!-- ================= FOOD ================= -->
+<section class="island-area-browser" id="islandAreaBrowser" aria-labelledby="area-browser-title">
+  <h2 id="area-browser-title">Explore by area<span lang="ja">エリアから探す</span></h2>
+  <label class="island-area-select">Choose an area<span lang="ja">エリアを選ぶ</span>
+    <select>
+      <option value="">Choose an area / エリアを選ぶ</option>
+      <option value="hirara">Hirara / 平良</option>
+      <option value="shimoji">Shimoji / 下地</option>
+      <option value="gusukube">Gusukube / 城辺</option>
+      <option value="ueno">Ueno &amp; Shigira / 上野・シギラ</option>
+      <option value="north">Karimata &amp; Ikema / 狩俣・池間方面</option>
+      <option value="island">Multiple locations / Confirm directly · 複数拠点・所在地は要確認</option>
+    </select>
+  </label>
+  <p>Areas reflect the addresses and meeting points in this guide. Mobile businesses and stockists may change location.<span lang="ja">掲載済みの住所や集合場所をもとにまとめています。移動販売や委託販売店の情報は変更になる場合があります。</span></p>
+  <p class="area-browser-status" role="status" aria-live="polite"></p>
+  <div class="area-browser-results island-discovery-grid"></div>
+  <noscript><p>Browse the categories below for all listings. / 以下のカテゴリーから掲載先をご覧いただけます。</p></noscript>
+</section>
 <section id="food" class="recommended-section fade-up">
 
 
@@ -209,7 +238,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
     <div class="recommend-card fade-up">
 
         <div class="recommend-image">
-    <img loading="lazy" src="images/doraku-pizza.jpeg" alt="Pizza Doraku">
+    <img width="1206" height="1436" loading="eager" src="images/doraku-pizza.jpeg" alt="Pizza Doraku">
   </div>
 
       <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -276,7 +305,7 @@ FOOD • STEAKHOUSE
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/hirochan-soba.jpg" alt="Hirochan Shokudo local soba">
+        <img width="1600" height="1254" loading="lazy" src="images/hirochan-soba.jpg" alt="Hirochan Shokudo local soba">
       </div>
 
       <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -310,8 +339,8 @@ FOOD • LOCAL SHOKUDO
     <div class="recommend-card fade-up recommend-card-caldo">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/caldo-de-cana-cup-hand.jpg" alt="Caldo de Cana sugarcane drink in Miyakojima">
-        <span class="recommend-logo-badge caldo-logo-badge"><img loading="lazy" src="images/caldo-de-cana-logo.png" alt="Caldo de Cana logo"></span>
+        <img width="1160" height="1412" loading="lazy" src="images/caldo-de-cana-cup-hand.jpg" alt="Caldo de Cana sugarcane drink in Miyakojima">
+        <span class="recommend-logo-badge caldo-logo-badge"><img width="893" height="900" loading="lazy" src="images/caldo-de-cana-logo.png" alt="Caldo de Cana logo"></span>
       </div>
 
       <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -345,7 +374,7 @@ FOOD • ISLAND DRINK
     <div class="recommend-card fade-up recommend-card-gare">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/gare-385-sweets-table.jpeg" alt="Galle 385 sweets arranged at Coworking Space MUGI">
+        <img width="640" height="480" loading="lazy" src="images/gare-385-sweets-table.jpeg" alt="Galle 385 sweets arranged at Coworking Space MUGI">
       </div>
 
       <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -379,7 +408,7 @@ FOOD • SWEETS
 <div class="recommend-card fade-up">
 
   <div class="recommend-image">
-  <img loading="lazy" src="images/ichiban6.jpg" alt="Tonkatsu Ichiban">
+  <img width="1206" height="879" loading="lazy" src="images/ichiban6.jpg" alt="Tonkatsu Ichiban">
 </div>
 
   <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -412,7 +441,7 @@ FOOD • LOCAL FAVORITE
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/parajiro-500-yen-bento.jpeg" alt="Pa-ra-jiro bento">
+        <img width="1206" height="1166" loading="lazy" src="images/parajiro-500-yen-bento.jpeg" alt="Pa-ra-jiro bento">
       </div>
 
       <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -446,7 +475,7 @@ FOOD • LOCAL FAVORITE
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/burwood6.jpg" alt="Burwood Donuts">
+        <img width="1206" height="1452" loading="lazy" src="images/burwood6.jpg" alt="Burwood Donuts">
       </div>
 
       <div class="recommend-icon icon-food" aria-hidden="true"></div>
@@ -497,7 +526,7 @@ FOOD • LOCAL FAVORITE
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/ilove-miyakojima-yabiji.jpg" alt="I Love Miyakojima relaxed Yabiji snorkeling tour">
+        <img width="2048" height="1152" loading="lazy" src="images/ilove-miyakojima-yabiji.jpg" alt="I Love Miyakojima relaxed Yabiji snorkeling tour">
       </div>
 
       <div class="recommend-icon icon-marine" aria-hidden="true"></div>
@@ -535,7 +564,7 @@ FOOD • LOCAL FAVORITE
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/nii4.jpeg" alt="NII Marine">
+        <img width="1206" height="1136" loading="lazy" src="images/nii4.jpeg" alt="NII Marine">
       </div>
 
 
@@ -590,7 +619,7 @@ FOOD • LOCAL FAVORITE
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/toppuri-aerial-sunset.jpg" alt="TOPPURI villa glamping property at sunset">
+        <img width="1600" height="900" loading="lazy" src="images/toppuri-aerial-sunset-optimized.webp" alt="TOPPURI villa glamping property at sunset">
       </div>
 
       <div class="recommend-icon icon-stays" aria-hidden="true"></div>
@@ -624,7 +653,7 @@ STAY &middot; NOW OPEN
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/umioto7.jpg" alt="UMIOTO log">
+        <img width="1206" height="998" loading="lazy" src="images/umioto7.jpg" alt="UMIOTO log">
       </div>
 
 
@@ -659,7 +688,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/maho3.jpg" alt="MAHHO TERRACE">
+        <img width="1206" height="1033" loading="lazy" src="images/maho3.jpg" alt="MAHHO TERRACE">
       </div>
 
       <div class="recommend-icon icon-stays" aria-hidden="true"></div>
@@ -712,7 +741,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/rentacar3.jpg" alt="Coral Rent a Car">
+        <img width="640" height="480" loading="lazy" src="images/rentacar3.jpg" alt="Coral Rent a Car">
       </div>
 
       <div class="recommend-icon icon-transport" aria-hidden="true"></div>
@@ -739,7 +768,7 @@ STAY • ENGLISH FRIENDLY
     <!-- Pine -->
     <div class="recommend-card fade-up">
       <div class="recommend-image">
-        <img loading="lazy" src="images/pine6.jpg" alt="Pine Rent a Car">
+        <img width="1206" height="1346" loading="lazy" src="images/pine6.jpg" alt="Pine Rent a Car">
       </div>
       <div class="recommend-icon icon-transport" aria-hidden="true"></div>
 
@@ -783,7 +812,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/lomilomi-pono-recommend.jpg" alt="Hawaiian Lomi Lomi Pono private sea-view salon in Miyakojima">
+        <img width="1600" height="900" loading="lazy" src="images/lomilomi-pono-recommend.jpg" alt="Hawaiian Lomi Lomi Pono private sea-view salon in Miyakojima">
       </div>
 
       <div class="recommend-icon icon-wellness" aria-hidden="true"></div>
@@ -812,7 +841,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/sanin-hero.jpg" alt="Hair Salon Sanin calm salon in Miyakojima">
+        <img width="750" height="562" loading="lazy" src="images/sanin-hero.jpg" alt="Hair Salon Sanin calm salon in Miyakojima">
       </div>
 
       <div class="recommend-icon icon-wellness" aria-hidden="true"></div>
@@ -842,7 +871,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/ran-practice.jpeg" alt="Ran offering a private wellness treatment at LUNA SPA Miyakojima">
+        <img width="1108" height="1477" loading="lazy" src="images/ran-practice.jpeg" alt="Ran offering a private wellness treatment at LUNA SPA Miyakojima">
       </div>
 
       <div class="recommend-icon icon-wellness" aria-hidden="true"></div>
@@ -912,7 +941,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/laso6.jpg" alt="Laso Laso">
+        <img width="1131" height="782" loading="lazy" src="images/laso6.jpg" alt="Laso Laso">
       </div>
 
       <div class="recommend-icon icon-lifestyle" aria-hidden="true"></div>
@@ -946,7 +975,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-                            <img loading="lazy" src="images/ggs-recommend.jpg" alt="GGS GAKUGAKU handmade Miyakojima tile magnets and island art">
+                            <img width="900" height="700" loading="lazy" src="images/ggs-recommend.jpg" alt="GGS GAKUGAKU handmade Miyakojima tile magnets and island art">
       </div>
 
       <div class="recommend-icon icon-lifestyle" aria-hidden="true"></div>
@@ -980,8 +1009,8 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/guruguru-ocean-pendant.jpg" alt="Guru Guru Glass handmade blue glass pendant in Miyakojima water">
-        <span class="recommend-logo-badge"><img loading="lazy" src="images/guruguru-logo-official.jpg" alt="Guru Guru Glass official logo"></span>
+        <img width="1206" height="1281" loading="lazy" src="images/guruguru-ocean-pendant.jpg" alt="Guru Guru Glass handmade blue glass pendant in Miyakojima water">
+        <span class="recommend-logo-badge"><img width="849" height="922" loading="lazy" src="images/guruguru-logo-official.jpg" alt="Guru Guru Glass official logo"></span>
       </div>
 
       <div class="recommend-icon icon-lifestyle" aria-hidden="true"></div>
@@ -1038,7 +1067,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/blupantu-hero2.jpg" alt="Blu Pantu artwork and island-inspired creative style in Miyakojima">
+        <img width="803" height="1162" loading="lazy" src="images/blupantu-hero2.jpg" alt="Blu Pantu artwork and island-inspired creative style in Miyakojima">
       </div>
 
       <div class="recommend-icon icon-lifestyle" aria-hidden="true"></div>
@@ -1068,7 +1097,7 @@ STAY • ENGLISH FRIENDLY
     <div class="recommend-card fade-up">
 
       <div class="recommend-image">
-        <img loading="lazy" src="images/masa-video-poster.jpeg" alt="Masa singing with ukulele by the ocean in Miyakojima">
+        <img width="1003" height="569" loading="lazy" src="images/masa-video-poster.jpeg" alt="Masa singing with ukulele by the ocean in Miyakojima">
       </div>
 
       <div class="recommend-icon icon-lifestyle" aria-hidden="true"></div>
@@ -1108,7 +1137,8 @@ STAY • ENGLISH FRIENDLY
   <p class="footer-note jp">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=39"></script>
+<script src="js/script.js?v=42"></script>
 
+<script src="js/island-discovery.js?v=2"></script>
 </body>
 </html>

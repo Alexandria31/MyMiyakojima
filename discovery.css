@@ -1,0 +1,90 @@
+.visitor-summary, .related-discoveries, .island-area-browser, .island-finds {
+  width: min(1120px, calc(100% - 32px));
+  margin: 34px auto;
+  color: #174f52;
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+.visitor-summary { padding: 18px; border-block: 1px solid #bcd6cd; text-align: left; background: #f4faf7; }
+.visitor-summary > span { display: block; margin: 12px 0; font-size: 1rem; line-height: 1.8; }
+.visitor-summary h2, .related-discoveries h2, .island-area-browser h2, .island-finds h2 { font-size: 1.5rem; line-height: 1.5; margin: 0 0 20px; letter-spacing: 0; }
+.visitor-summary h2 { font-size: 1.1rem; margin: 0 0 10px; }
+.visitor-summary [lang="ja"], .related-discoveries [lang="ja"], .island-area-browser [lang="ja"], .island-finds [lang="ja"], .feature-process [lang="ja"] {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.85;
+  font-weight: 500;
+  color: #365854;
+  text-wrap: pretty;
+  letter-spacing: 0;
+}
+.visitor-summary-actions, .feature-example-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.visitor-summary-actions a, .feature-example-links a { color: #175b58; padding: 6px 0; min-height: 44px; text-underline-offset: 4px; }
+.island-discovery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.island-discovery-card { display: block; color: #174f52; text-align: left; text-decoration: none; min-width: 0; }
+.island-discovery-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; transition: filter .2s; }
+.island-discovery-card > span { display: block; padding-top: 12px; font-size: 1.05rem; font-weight: 600; line-height: 1.6; }
+.island-discovery-card:hover img { filter: brightness(1.06); }
+.island-discovery-card:focus-visible, .visitor-summary a:focus-visible { outline: 2px solid #175b58; outline-offset: 5px; }
+.island-area-browser { padding: 28px 0; border-block: 1px solid #c9dcd4; text-align: left; }
+.island-area-browser p { line-height: 1.8; }
+.island-area-select { display: grid; gap: 5px; max-width: 480px; margin-bottom: 16px; color: #174f52; font-size: 1rem; }
+.island-area-select > span { display: block; }
+.island-area-select select { width: 100%; min-height: 48px; padding: 10px; border: 1px solid #9ebfb4; border-radius: 5px; background: #fff; color: #174f52; font: inherit; }
+.area-browser-status { min-height: 28px; }
+.feature-process { margin: 24px 0; text-align: left; border-block: 1px solid #c9dcd4; padding: 24px 0; }
+.feature-process h3 { margin: 0 0 20px; font-size: 1.3rem; color: #174f52; }
+.feature-process summary { padding: 8px 0; min-height: 44px; color: #174f52; font-weight: 600; cursor: pointer; }
+.feature-process[open] summary { margin-bottom: 18px; }
+.feature-process ol { margin: 0; padding-left: 22px; }
+.feature-process li { margin-bottom: 18px; padding-left: 8px; }
+.feature-process p { line-height: 1.85; }
+.feature-example-links { margin-top: 18px; }
+.island-film-caption { padding: 12px 0; margin: 0; color: #174f52; font-size: 1rem; text-align: center; }
+.island-film-caption [lang="ja"] { display: block; line-height: 1.8; }
+.feature-video { aspect-ratio: auto; background: #f4faf7; }
+.feature-video::after { display: none; }
+.feature-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+body.home-revamp main > section.island-finds { display: block; }
+.island-finds { padding-block: 32px; border-block: 1px solid #c9dcd4; }
+.area-guide-grid .area-browse-link { display: block; padding: 12px 0; min-height: 44px; color: #175b58; text-underline-offset: 4px; }
+.area-guide-grid .area-browse-link span { display: block; font-size: 1rem; font-weight: 500; }
+@media (max-width: 760px) {
+  .island-discovery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  .visitor-summary, .related-discoveries, .island-area-browser, .island-finds { width: calc(100% - 32px); }
+  .feature-process { padding: 20px 0; }
+}
+@media (max-width: 480px) {
+  .island-discovery-grid { grid-template-columns: 1fr; }
+  .related-discoveries .island-discovery-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .island-discovery-card img { transition: none; } }
+
+body.home-revamp main > section.island-film-feature { display: block; }
+.island-film-feature { width: min(960px, calc(100% - 32px)); margin: 44px auto; padding-block: 24px; color: #174f52; letter-spacing: 0; }
+.island-film-feature h2 { margin: 0 0 20px; font-size: 1.6rem; line-height: 1.5; letter-spacing: 0; }
+.island-film-feature [lang="ja"], .island-film-play [lang="ja"] { display: block; font-size: 1rem; line-height: 1.85; font-weight: 500; text-wrap: pretty; }
+.island-film { margin: 0; }
+.island-film-player { position: relative; overflow: hidden; border-radius: 8px; background: #153f42; }
+.island-film-player video, .island-film-player iframe { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain; border: 0; }
+.island-film-launch { display: block; position: relative; width: 100%; padding: 0; border: 0; border-radius: 0; background: #153f42; color: #fff; cursor: pointer; text-align: center; }
+.island-film-launch img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.island-film-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content; max-width: calc(100% - 32px); padding: 12px 20px; box-sizing: border-box; border: 1px solid rgba(255,255,255,.7); border-radius: 6px; background: rgba(15,58,61,.92); color: #fff; font: inherit; font-weight: 600; cursor: pointer; line-height: 1.5; }
+.island-film-play > span[aria-hidden] { display: block; font-size: 1.4rem; margin-bottom: 4px; }
+.island-film-player > button.island-film-play { z-index: 2; }
+.island-film-player > button.island-film-play[hidden] { display: none; }
+.island-film-play:focus-visible, .island-film-launch:focus-visible { outline: 3px solid #fff; outline-offset: -5px; }
+.island-film figcaption, .island-film-link, .island-film-status { padding-block: 12px; font-size: 1rem; line-height: 1.8; color: #365854; }
+.island-film-link { display: inline-block; color: #175b58; text-underline-offset: 4px; }
+.island-film-status [lang="ja"] { display: block; }
+.masa-video-frame.island-film-player { aspect-ratio: 16 / 9; }
+.masa-video-note { text-wrap: pretty; }
+.masa-section-heading p > span[lang="ja"] { display: block; font-size: .95rem; letter-spacing: 0; line-height: 1.8; }
+.masa-video-frame .island-film-launch { height: 100%; }
+.masa-video-frame .island-film-launch img { height: 100%; }
+@media (max-width: 560px) {
+  .island-film-feature { margin: 28px auto; }
+  .island-film-feature h2 { font-size: 1.35rem; }
+  .island-film-play { padding: 8px 14px; font-size: .9rem; }
+  .island-film-play [lang="ja"] { font-size: .9rem; }
+}

@@ -69,7 +69,8 @@
     gtag('config', 'G-VMYZ8E1EYN');
   </script>
 
-  <link rel="stylesheet" href="style.css?v=150">
+  <link rel="stylesheet" href="style.css?v=157">
+<link rel="stylesheet" href="discovery.css?v=2">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -92,7 +93,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 <body>
 
 <header class="site-header">
-  <img src="mymiyakojima-logo-nav.png" class="site-logo">
+  <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="809" height="76" src="mymiyakojima-logo-nav.png" class="site-logo">
 
  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
 
@@ -123,19 +124,16 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 
   <!-- LOGO -->
   <div class="business-logo">
-    <img loading="lazy" src="images/umioto-logo.jpg" alt="Umioto Log Logo">
+    <img width="1206" height="1134" loading="lazy" src="images/umioto-logo.jpg" alt="Umioto Log Logo">
   </div>
 
- <div class="feature-video">
+ <div class="feature-video island-film-player" data-island-film>
 
-  <video id="umiotoVideo" autoplay muted loop playsinline>
+  <video id="umiotoVideo" controls muted playsinline preload="none" poster="images/umioto7.jpg" aria-label="UMIOTO log stay preview / うみおとログの滞在風景">
     <source src="videos/umioto.mp4" type="video/mp4">
   </video>
 
-  <!-- 🔊 SOUND BUTTON -->
-  <button class="sound-toggle" onclick="toggleSound()">
-    🔇
-  </button>
+  <p class="island-film-caption">A moment at UMIOTO log<span lang="ja">うみおとログの風景を動画で</span></p>
 
 </div>
 
@@ -198,12 +196,12 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
   <h2>Photos <span class="jp">写真</span></h2>
 
   <div class="photo-grid">
-    <img loading="lazy" src="images/umioto2.jpg" class="gallery-image">
-    <img loading="lazy" src="images/umioto3.jpg" class="gallery-image">
-    <img loading="lazy" src="images/umioto4.jpg" class="gallery-image">
-    <img loading="lazy" src="images/umioto5.jpg" class="gallery-image">
-    <img loading="lazy" src="images/umioto6.jpg" class="gallery-image">
-    <img loading="lazy" src="images/umioto7.jpg" class="gallery-image">
+    <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="750" height="848" loading="eager" src="images/umioto2.jpg" class="gallery-image">
+    <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="1206" height="673" loading="lazy" src="images/umioto3.jpg" class="gallery-image">
+    <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="1206" height="761" loading="lazy" src="images/umioto4.jpg" class="gallery-image">
+    <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="1206" height="1323" loading="lazy" src="images/umioto5.jpg" class="gallery-image">
+    <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="931" height="1024" loading="lazy" src="images/umioto6.jpg" class="gallery-image">
+    <img alt="UMIOTO Log Miyakojima · Photo / 写真" width="1206" height="998" loading="lazy" src="images/umioto7.jpg" class="gallery-image">
   </div>
 
 </section>
@@ -285,12 +283,13 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 </section>
 </main>
 <footer class="site-footer">
-  <p class="footer-updated">Last updated: June 2026<span>2026年6月更新</span></p>
+  <p class="footer-updated">Local places. Island stories.<span>宮古島の場所と、人の物語。</span></p>
   <p class="footer-note">New recommendations and feature pages are added regularly.</p>
   <p class="footer-note jp">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=39"></script>
+<script src="js/script.js?v=42"></script>
 
+<script src="js/island-discovery.js?v=2"></script>
 </body>
 </html>

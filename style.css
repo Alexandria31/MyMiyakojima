@@ -4255,7 +4255,7 @@ box-shadow:
       rgba(18, 77, 85, 0.18),
       rgba(8, 44, 51, 0.36)
     ),
-    url('images/slider4.jpg');
+    url('images/slider4-optimized.webp');
 
   background-size:cover;
   background-position:center 54%;
@@ -6860,7 +6860,7 @@ section[id] {
   max-width: 760px;
 }
 
-.finder-intro h1 {
+.finder-intro h2 {
   margin: 7px 0 14px;
   color: #255f5a;
   font-size: clamp(1.8rem, 3.8vw, 3.1rem);
@@ -6868,7 +6868,7 @@ section[id] {
   letter-spacing: 0;
 }
 
-.finder-intro h1 .jp-title {
+.finder-intro h2 .jp-title {
   display: block;
   margin-top: 7px;
   color: #546f6b;
@@ -14415,7 +14415,7 @@ body.home-revamp {
   color: var(--mm25-ink);
 }
 
-body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip):not(.island-agenda):not(.storm-notice),
+body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip):not(.island-agenda):not(.storm-notice):not(.island-finds):not(.island-film-feature),
 body.home-revamp main > aside {
   display: none;
 }

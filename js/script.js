@@ -1048,6 +1048,8 @@ updateSeasonalNote();
 // CURATED LISTING DATA
 // =============================
 const curatedListings = [
+  { href: "caldo-de-cana.html", name: "Caldo de Cana", nameJp: "カルド・デ・カナ", category: "food", moods: ["easy", "local"], image: "images/caldo-de-cana-cup-hand.jpg" },
+  { href: "miyakojima-tours.html#ilove-miyakojima", name: "I Love Miyakojima", nameJp: "アイラブ宮古島", category: "marine", moods: ["active", "special"], image: "images/ilove-miyakojima-yabiji.jpg" },
   { href: "pizza-doraku.html", name: "Pizza Doraku", nameJp: "ピザ道楽", category: "food", moods: ["easy", "local"], image: "images/doraku-pizza.jpeg" },
   { href: "captain-marian.html", name: "Captain Marian", nameJp: "キャプテンメリアン", category: "food", moods: ["local", "special"], image: "https://captain-marians.com/serviceimg/gourmet/315092/menu/297793/img1-1748226855669-5367.jpg" },
   { href: "hirochan.html", name: "Hirochan Shokudo", nameJp: "お食事処 ひろちゃん", category: "food", moods: ["easy", "local"], image: "images/hirochan-soba.jpg" },
@@ -1056,7 +1058,7 @@ const curatedListings = [
   { href: "para-jiro.html", name: "Pa-ra-jiro", nameJp: "ぱーら二郎", category: "food", moods: ["easy", "local"], image: "images/parajiro-500-yen-bento.jpeg" },
   { href: "burwood-donuts.html", name: "Burwood Donuts", nameJp: "バーウッドドーナツ", category: "food", moods: ["easy", "local"], image: "images/burwood6.jpg" },
   { href: "nii-marine.html", name: "NII Marine", nameJp: "NIIマリン", category: "marine", moods: ["active", "special"], image: "images/nii4.jpeg" },
-  { href: "toppuri.html", name: "TOPPURI", nameJp: "トップリ", category: "stays", moods: ["easy", "special"], image: "images/toppuri-aerial-sunset.jpg" },
+  { href: "toppuri.html", name: "TOPPURI", nameJp: "トップリ", category: "stays", moods: ["easy", "special"], image: "images/toppuri-aerial-sunset-optimized.webp" },
   { href: "umioto-log.html", name: "UMIOTO log", nameJp: "ウミオトログ", category: "stays", moods: ["easy", "special"], image: "images/umioto7.jpg" },
   { href: "maho-terraces.html", name: "MAHHO TERRACE", nameJp: "マホーテラス", category: "stays", moods: ["easy", "special"], image: "images/maho3.jpg" },
   { href: "coral-rent.html", name: "Coral Rent a Car", nameJp: "コーラルレンタカー", category: "transport", moods: ["easy", "active"], image: "images/rentacar3.jpg" },
@@ -1263,7 +1265,8 @@ function initializeRecommendationFinder() {
     const category = data.get("finderCategory");
     const mood = data.get("finderMood");
 
-    if (!category && !mood) {
+    const area = data.get("finderArea");
+    if (!category && !mood && !area) {
       results.innerHTML = `
         <p class="finder-message">Choose at least one option so My Miyakojima can narrow the guide.<span>ひとつ以上選ぶと、おすすめをご提案できます。</span></p>
       `;
@@ -1272,6 +1275,7 @@ function initializeRecommendationFinder() {
 
     const matches = curatedListings
       .filter(listing => !category || listing.category === category)
+      .filter(listing => !area || (typeof islandListingDetails !== "undefined" && islandListingDetails[listing.href]?.area === area))
       .map(listing => ({
         ...listing,
         score: (category && listing.category === category ? 2 : 0) + (mood && listing.moods.includes(mood) ? 2 : 0)

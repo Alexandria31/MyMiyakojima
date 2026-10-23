@@ -66,7 +66,8 @@
 
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
-<link rel="stylesheet" href="style.css?v=150">
+<link rel="stylesheet" href="style.css?v=157">
+<link rel="stylesheet" href="discovery.css?v=2">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -92,7 +93,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 
 <header class="site-header">
 
-<img src="mymiyakojima-logo-nav.png" class="site-logo" alt="My Miyakojima">
+<img width="809" height="76" src="mymiyakojima-logo-nav.png" class="site-logo" alt="My Miyakojima">
 
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
 
@@ -200,6 +201,16 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
             My Miyakojimaでの掲載に興味がある事業者さまは、下記フォームから概要をお知らせください。お問い合わせはMy Miyakojimaへ直接送信されます。
         </p>
 
+        <details class="feature-process">
+          <summary>What a feature includes &amp; how it works<span lang="ja">掲載内容と、ご相談から公開までの流れ</span></summary>
+          <ol>
+            <li><strong>Tell My Miyakojima about your business<span lang="ja">お店や事業について教えてください</span></strong><p>Share your links, location, and what you would like visitors to know.<span lang="ja">リンク、所在地、お客さまに伝えたいことをお知らせください。</span></p></li>
+            <li><strong>Discuss a suitable feature<span lang="ja">掲載内容をご相談</span></strong><p>My Miyakojima will discuss the story, available photos, visitor information, and any fees before you decide.<span lang="ja">想い、使用可能な写真、利用情報、料金の有無などを確認し、ご納得いただいてから進めます。</span></p></li>
+            <li><strong>Check the details together<span lang="ja">内容を一緒に確認</span></strong><p>Names, contact details, and approved images are checked before publication.<span lang="ja">公開前に店名、連絡先、使用許可のある写真などを確認します。</span></p></li>
+          </ol>
+          <p>Features bring together English and Japanese writing, photography supplied or approved by the business, and direct visitor contact links. Monthly Creative Portraits are a separate, personally selected editorial series.<span lang="ja">英語と日本語の紹介文、事業者さまからご提供・使用許可をいただいた写真、直接問い合わせできるリンクを整えます。毎月のクリエイティブ特集は、My Miyakojimaが独自に選ぶ別の編集企画です。</span></p>
+          <div class="feature-example-links"><a href="ggs.html">See a shop feature<span lang="ja">ショップの掲載例</span></a><a href="lomilomi-pono.html">See a wellness feature<span lang="ja">サロンの掲載例</span></a></div>
+        </details>
         <form id="businessInquiryForm" class="business-inquiry-form" action="https://formspree.io/f/xdargydl" method="POST">
             <input type="hidden" name="_subject" value="New My Miyakojima business inquiry">
             <input type="text" name="_gotcha" class="business-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -258,7 +269,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
             <label>
                 Message
                 <span class="jp">お問い合わせ内容</span>
-                <textarea name="message" rows="6" required placeholder="Tell My Miyakojima what you would like visitors to know."></textarea>
+                <textarea name="message" rows="6" required placeholder="What would you like visitors to know? / お客さまに伝えたいことをお知らせください。"></textarea>
             </label>
 
             <button type="submit" class="business-form-button">
@@ -278,12 +289,12 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
 </section>
 
 <footer class="site-footer">
-  <p class="footer-updated">Last updated: June 2026<span>2026年6月更新</span></p>
+  <p class="footer-updated">Local places. Island stories.<span>宮古島の場所と、人の物語。</span></p>
   <p class="footer-note">New recommendations and feature pages are added regularly.</p>
   <p class="footer-note jp">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=39"></script>
+<script src="js/script.js?v=42"></script>
 <script>
   const businessInquiryForm = document.getElementById("businessInquiryForm");
 
@@ -315,6 +326,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
         }
 
         businessInquiryForm.reset();
+        if (typeof gtag === "function") gtag("event", "generate_lead", { form_name: "business_inquiry" });
         businessFormStatus.className = "business-form-status is-success";
         businessFormStatus.innerHTML = "Thank you. Your inquiry has been sent to My Miyakojima.<span class=\"jp\">ありがとうございます。お問い合わせをMy Miyakojimaへ送信しました。</span>";
       } catch (error) {
@@ -330,5 +342,6 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1"
   }
 </script>
 
+<script src="js/island-discovery.js?v=2"></script>
 </body>
 </html>
