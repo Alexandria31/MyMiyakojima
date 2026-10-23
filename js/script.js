@@ -1418,6 +1418,16 @@ function initializeModernSiteEffects() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const body = document.body;
 
+  let pageNavigationTimer;
+  const restorePageVisibility = () => {
+    window.clearTimeout(pageNavigationTimer);
+    body.classList.remove("site-page-leaving");
+    body.classList.add("site-page-loaded");
+  };
+  // History restores the existing document, including its outgoing fade state.
+  window.addEventListener("pageshow", restorePageVisibility);
+  window.addEventListener("popstate", restorePageVisibility);
+
   body.classList.add("modern-effects-ready");
   body.classList.add("site-page-enter");
   window.requestAnimationFrame(() => body.classList.add("site-page-loaded"));
@@ -1517,14 +1527,16 @@ function initializeModernSiteEffects() {
     const isExternal = link.hostname && link.hostname !== window.location.hostname;
     const linkUrl = new URL(link.href, window.location.href);
     const isPageLink = linkUrl.pathname === "/" || linkUrl.pathname.endsWith(".html");
-    const isSpecial = href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || link.target === "_blank" || isExternal || !isPageLink;
+    const sameDocument = linkUrl.origin === window.location.origin && linkUrl.pathname === window.location.pathname && linkUrl.search === window.location.search;
+    const isSpecial = sameDocument || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || (link.target && link.target !== "_self") || link.hasAttribute("download") || isExternal || !isPageLink;
     if (isSpecial) return;
 
     link.addEventListener("click", event => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.defaultPrevented) return;
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.defaultPrevented) return;
       event.preventDefault();
+      window.clearTimeout(pageNavigationTimer);
       body.classList.add("site-page-leaving");
-      window.setTimeout(() => {
+      pageNavigationTimer = window.setTimeout(() => {
         window.location.href = link.href;
       }, reducedMotion ? 0 : 180);
     });
