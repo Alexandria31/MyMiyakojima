@@ -39,6 +39,7 @@
 <link rel="stylesheet" href="style.css?v=160">
 <link rel="preload" as="image" href="images/slider4-web.webp" media="(min-width: 761px)" imagesrcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" imagesizes="560px">
 <link rel="stylesheet" href="discovery.css?v=2">
+<link rel="stylesheet" href="weather-dock.css?v=1">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -88,11 +89,14 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
 </nav>
 
 </header>
-<a href="weather.html" class="weather-pearl weather-pearl-visible" aria-label="See the current Miyakojima weather and 7-day forecast">
-  <span class="weather-pearl-status">Miyakojima now</span>
-  <strong id="miyakoWeatherTemp">--°C</strong>
-  <span id="miyakoWeatherLabel">7-day weather</span>
-</a>
+<aside class="weather-dock" aria-label="Miyakojima weather / 宮古島の天気">
+  <a href="weather.html" class="weather-dock-link" aria-label="Miyakojima weather and forecast / 宮古島の天気と週間予報" title="Weather and forecast / 天気と週間予報">
+    <span class="weather-dock-icon" id="miyakoWeatherIcon" aria-hidden="true">☁</span>
+    <strong id="miyakoWeatherTemp">--°C</strong>
+    <span id="miyakoWeatherLabel" class="weather-dock-sr">Weather / 天気</span>
+  </a>
+  <button type="button" class="weather-dock-dismiss" aria-label="Hide weather / 天気表示を閉じる" title="Hide weather / 天気表示を閉じる">×</button>
+</aside>
 
 <main>
 
@@ -222,7 +226,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
         <span>Island Wellness<small lang="ja">癒しの時間</small></span>
       </a>
       <a href="toppuri.html" class="mm25-slider-card">
-        <img loading="lazy" width="1672" height="941" src="images/toppuri-hero-stars-web.webp" alt="Gold star illustration on a dark blue background / 濃紺の背景に金色の星を描いたイラスト" srcset="images/toppuri-hero-stars-web-640.webp 640w, images/toppuri-hero-stars-web-960.webp 960w, images/toppuri-hero-stars-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
+        <img loading="lazy" width="1600" height="900" src="images/toppuri-aerial-sunset-web.webp" alt="TOPPURI dome accommodation at sunset / 夕暮れのTOPPURIのドーム型宿泊施設" srcset="images/toppuri-aerial-sunset-web-640.webp 640w, images/toppuri-aerial-sunset-web-960.webp 960w, images/toppuri-aerial-sunset-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
         <span>Slow Stays<small lang="ja">泊まる</small></span>
       </a>
       <a href="recommended.html#food" class="mm25-slider-card">
@@ -246,7 +250,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
         <span>Island Wellness<small lang="ja">癒しの時間</small></span>
       </a>
       <a href="toppuri.html" class="mm25-slider-card" aria-hidden="true" tabindex="-1">
-        <img loading="lazy" width="1672" height="941" src="images/toppuri-hero-stars-web.webp" alt="" srcset="images/toppuri-hero-stars-web-640.webp 640w, images/toppuri-hero-stars-web-960.webp 960w, images/toppuri-hero-stars-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
+        <img loading="lazy" width="1600" height="900" src="images/toppuri-aerial-sunset-web.webp" alt="" srcset="images/toppuri-aerial-sunset-web-640.webp 640w, images/toppuri-aerial-sunset-web-960.webp 960w, images/toppuri-aerial-sunset-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
         <span>Slow Stays<small lang="ja">泊まる</small></span>
       </a>
       <a href="recommended.html#food" class="mm25-slider-card" aria-hidden="true" tabindex="-1">
@@ -299,7 +303,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
     </article>
 
     <article class="mm25-now-card">
-      <img loading="lazy" width="1672" height="941" src="images/toppuri-hero-stars-web.webp" alt="Gold star illustration on a dark blue background / 濃紺の背景に金色の星を描いたイラスト" srcset="images/toppuri-hero-stars-web-640.webp 640w, images/toppuri-hero-stars-web-960.webp 960w, images/toppuri-hero-stars-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
+      <img loading="lazy" width="1600" height="900" src="images/toppuri-aerial-sunset-web.webp" alt="TOPPURI dome accommodation at sunset / 夕暮れのTOPPURIのドーム型宿泊施設" srcset="images/toppuri-aerial-sunset-web-640.webp 640w, images/toppuri-aerial-sunset-web-960.webp 960w, images/toppuri-aerial-sunset-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
       <span>Under the Stars · 星空の滞在</span>
       <h3>A slower stay at TOPPURI<span>TOPPURIで、ゆっくりと</span></h3>
       <p>Private villa glamping in Bora, Gusukube, with room to enjoy the night sky.</p>
@@ -1171,7 +1175,7 @@ My Miyakojimaでは、宮古島の事業者さまを英語と日本語で丁寧�
   <p class="footer-note jp" lang="ja">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=45"></script>
+<script src="js/script.js?v=46"></script>
 
 <script src="js/island-discovery.js?v=2"></script>
 </body>

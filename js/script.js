@@ -150,6 +150,7 @@ fadeElements.forEach(el => {
 // =============================
 const weatherTemp = document.getElementById("miyakoWeatherTemp");
 const weatherLabel = document.getElementById("miyakoWeatherLabel");
+const weatherIcon = document.getElementById("miyakoWeatherIcon");
 const weatherPageTemp = document.getElementById("weatherPageTemp");
 const weatherPageLabel = document.getElementById("weatherPageLabel");
 const weatherPageLabelJp = document.getElementById("weatherPageLabelJp");
@@ -403,6 +404,14 @@ async function loadMiyakoWeather() {
 
     if (weatherTemp) weatherTemp.textContent = temp === null ? "Forecast" : `${temp}°C`;
     if (weatherLabel) weatherLabel.textContent = label;
+    if (weatherIcon) {
+      const code = Number(current.weatherCode);
+      const jma = normalized.source === "JMA";
+      weatherIcon.textContent = jma
+        ? ({ 1: "☀", 2: "☁", 3: "☂", 4: "❄" }[String(code)[0]] || "☁")
+        : code === 0 ? "☀" : code <= 3 || code === 45 || code === 48 ? "☁" : code >= 95 ? "⚡" : (code >= 71 && code <= 77) || code === 85 || code === 86 ? "❄" : "☂";
+      weatherIcon.closest("a").setAttribute("aria-label", `${temp === null ? "Forecast" : `${temp}°C`}, ${label}. Miyakojima forecast / ${labelJp}・宮古島の天気予報`);
+    }
 
     if (weatherPageTemp) weatherPageTemp.textContent = temp === null ? "Forecast" : `${temp}°C`;
     if (weatherPageLabel) weatherPageLabel.textContent = label;
@@ -462,130 +471,30 @@ async function loadMiyakoWeather() {
 
 loadMiyakoWeather();
 
-function initializeWeatherPearlRoam() {
-  const pearl = document.querySelector(".weather-pearl-visible");
-  if (!pearl) return;
-
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reducedMotion) return;
-
-  let current = { x: 0, y: 0 };
-  let start = { x: 0, y: 0 };
-  let target = { x: 0, y: 0 };
-  let startTime = 0;
-  let duration = 9000;
-  let paused = false;
-  let initialized = false;
-
-  pearl.classList.add("weather-pearl-roaming");
-
-  function getBounds() {
-    const rect = pearl.getBoundingClientRect();
-    const isMobile = window.innerWidth <= 760;
-    const margin = isMobile ? 12 : 18;
-    const topMargin = isMobile ? 88 : 112;
-    const bottomMargin = isMobile ? 86 : 24;
-
-    return {
-      minX: margin,
-      maxX: Math.max(margin, window.innerWidth - rect.width - margin),
-      minY: topMargin,
-      maxY: Math.max(topMargin, window.innerHeight - rect.height - bottomMargin)
-    };
-  }
-
-  function clamp(value, min, max) {
-    return Math.min(max, Math.max(min, value));
-  }
-
-  function pickTarget() {
-    const bounds = getBounds();
-    const x = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
-    const y = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
-    return { x, y };
-  }
-
-  function place(position) {
-    const bounds = getBounds();
-    current = {
-      x: clamp(position.x, bounds.minX, bounds.maxX),
-      y: clamp(position.y, bounds.minY, bounds.maxY)
-    };
-
-    pearl.style.setProperty("--weather-x", `${current.x}px`);
-    pearl.style.setProperty("--weather-y", `${current.y}px`);
-  }
-
-  function setNewTarget(timestamp) {
-    start = { ...current };
-    target = pickTarget();
-    startTime = timestamp;
-    duration = 7600 + Math.random() * 5200;
-  }
-
-  function easeInOut(value) {
-    return 0.5 - Math.cos(value * Math.PI) / 2;
-  }
-
-  function roam(timestamp) {
-    if (!initialized) {
-      const bounds = getBounds();
-      place({
-        x: bounds.maxX,
-        y: bounds.minY + Math.min(28, Math.max(0, bounds.maxY - bounds.minY))
-      });
-      setNewTarget(timestamp);
-      initialized = true;
-    }
-
-    if (!paused) {
-      const progress = Math.min(1, (timestamp - startTime) / duration);
-      const eased = easeInOut(progress);
-
-      place({
-        x: start.x + (target.x - start.x) * eased,
-        y: start.y + (target.y - start.y) * eased
-      });
-
-      if (progress >= 1) {
-        setNewTarget(timestamp);
-      }
-    }
-
-    window.requestAnimationFrame(roam);
-  }
-
-  pearl.addEventListener("pointerenter", () => {
-    paused = true;
+function initializeWeatherDock() {
+  const dock = document.querySelector(".weather-dock");
+  if (!dock) return;
+  const key = "mymiyakojima-weather-dismissed";
+  try { dock.hidden = sessionStorage.getItem(key) === "true"; } catch (_) { /* Storage is optional. */ }
+  dock.querySelector(".weather-dock-dismiss").addEventListener("click", () => {
+    dock.hidden = true;
+    try { sessionStorage.setItem(key, "true"); } catch (_) { /* Keep dismissal working without storage. */ }
   });
-
-  pearl.addEventListener("pointerleave", () => {
-    paused = false;
-    setNewTarget(performance.now());
-  });
-
-  window.addEventListener("resize", () => {
-    place(current);
-    setNewTarget(performance.now());
-  });
-
-  let scrollRescueFrame = 0;
+  let previousY = window.scrollY;
+  let frame = 0;
   window.addEventListener("scroll", () => {
-    if (scrollRescueFrame) return;
-    scrollRescueFrame = window.requestAnimationFrame(() => {
-      place(current);
-      scrollRescueFrame = 0;
+    if (frame || dock.hidden) return;
+    frame = requestAnimationFrame(() => {
+      const y = Math.max(0, window.scrollY);
+      if (y < 80) dock.classList.remove("is-compact");
+      else if (Math.abs(y - previousY) > 8) dock.classList.toggle("is-compact", y > previousY);
+      previousY = y;
+      frame = 0;
     });
   }, { passive: true });
-
-  window.requestAnimationFrame(roam);
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializeWeatherPearlRoam);
-} else {
-  initializeWeatherPearlRoam();
-}
+initializeWeatherDock();
 
 // =============================
 // SELF-UPDATING ISLAND CALENDAR
