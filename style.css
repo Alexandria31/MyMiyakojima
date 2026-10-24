@@ -4238,7 +4238,7 @@ box-shadow:
       rgba(18, 77, 85, 0.18),
       rgba(8, 44, 51, 0.36)
     ),
-    url('images/slider4-optimized.webp');
+    url('images/slider4-web.webp');
 
   background-size:cover;
   background-position:center 54%;
@@ -7126,11 +7126,14 @@ section[id] {
 }
 
 .save-place-card {
+  box-sizing: border-box;
   position: absolute;
   top: 13px;
   right: 13px;
   z-index: 4;
-  min-height: 39px;
+  width: 96px;
+  height: 44px;
+  justify-content: center;
   padding: 6px 9px;
   box-shadow: 0 7px 20px rgba(31, 63, 60, 0.13);
 }
@@ -7638,7 +7641,7 @@ section[id] {
   opacity: 1;
 }
 
-.modern-effects-ready .living-card > *:not(.living-card-shine) {
+.modern-effects-ready .living-card > *:not(.living-card-shine):not(.save-place-card) {
   position: relative;
   z-index: 2;
 }

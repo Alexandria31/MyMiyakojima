@@ -1058,7 +1058,7 @@ const curatedListings = [
   { href: "para-jiro.html", name: "Pa-ra-jiro", nameJp: "ぱーら二郎", category: "food", moods: ["easy", "local"], image: "images/parajiro-500-yen-bento.jpeg" },
   { href: "burwood-donuts.html", name: "Burwood Donuts", nameJp: "バーウッドドーナツ", category: "food", moods: ["easy", "local"], image: "images/burwood6.jpg" },
   { href: "nii-marine.html", name: "NII Marine", nameJp: "NIIマリン", category: "marine", moods: ["active", "special"], image: "images/nii4.jpeg" },
-  { href: "toppuri.html", name: "TOPPURI", nameJp: "トップリ", category: "stays", moods: ["easy", "special"], image: "images/toppuri-aerial-sunset-optimized.webp" },
+  { href: "toppuri.html", name: "TOPPURI", nameJp: "トップリ", category: "stays", moods: ["easy", "special"], image: "images/toppuri-aerial-sunset-web.webp" },
   { href: "umioto-log.html", name: "UMIOTO log", nameJp: "ウミオトログ", category: "stays", moods: ["easy", "special"], image: "images/umioto7.jpg" },
   { href: "maho-terraces.html", name: "MAHHO TERRACE", nameJp: "マホーテラス", category: "stays", moods: ["easy", "special"], image: "images/maho3.jpg" },
   { href: "coral-rent.html", name: "Coral Rent a Car", nameJp: "コーラルレンタカー", category: "transport", moods: ["easy", "active"], image: "images/rentacar3.jpg" },
