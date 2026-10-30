@@ -517,7 +517,7 @@ function updateIslandCalendar() {
     if (Number.isNaN(eventDate.getTime())) return;
 
     const dayDifference = Math.round((eventDate - today) / 86400000);
-    const status = card.querySelector(".island-event-status");
+    const status = card.querySelector(".island-event-status, .events-status");
 
     if (endDate < today) {
       card.hidden = true;
@@ -530,7 +530,7 @@ function updateIslandCalendar() {
 
     if (card.dataset.eventStatus === "cancelled") {
       const cancellationStatus = card.querySelector(".island-event-status, .events-status");
-      if (cancellationStatus) cancellationStatus.innerHTML = 'Cancelled<span>開催中止</span>';
+      if (cancellationStatus) cancellationStatus.innerHTML = 'Cancelled<span lang="ja">開催中止</span>';
       return;
     }
 
@@ -551,22 +551,25 @@ function updateIslandCalendar() {
         japanese = "今週開催";
       }
 
-      status.innerHTML = `${english}<span>${japanese}</span>`;
+      status.innerHTML = `${english}<span lang="ja">${japanese}</span>`;
     }
   });
 
   eventCards.forEach(card => card.classList.remove("island-event-now"));
   if (firstUpcomingCard) firstUpcomingCard.classList.add("island-event-now");
 
-  const calendarGrid = document.querySelector(".island-calendar-grid");
-  if (calendarGrid && !firstUpcomingCard) {
-    calendarGrid.innerHTML = `
-      <p class="island-calendar-empty">
-        New island dates are being curated.
-        <span>新しい島の予定を準備中です。</span>
-      </p>
-    `;
-  }
+  document.querySelectorAll(".island-calendar-grid, .events-grid").forEach(grid => {
+    const upcoming = [...grid.querySelectorAll("[data-event-date]")].find(card => !card.hidden && card.dataset.eventStatus !== "cancelled");
+    if (upcoming) upcoming.classList.add("island-event-now");
+    let empty = grid.querySelector(".island-calendar-empty");
+    if (!empty) {
+      empty = document.createElement("p");
+      empty.className = "island-calendar-empty";
+      empty.innerHTML = 'More island dates are on the way.<span lang="ja">次の島の予定を準備しています。</span><a href="https://miyako-guide.net/event/" target="_blank" rel="noopener">Official event calendar<span lang="ja">観光協会のイベント情報</span></a>';
+      grid.appendChild(empty);
+    }
+    empty.hidden = [...grid.querySelectorAll("[data-event-date]")].some(card => !card.hidden);
+  });
 }
 
 updateIslandCalendar();
@@ -580,8 +583,8 @@ function updateWeeklySignal() {
 
   const count = document.querySelectorAll(".weekly-edit-grid .weekly-note").length;
   signal.innerHTML = `
-    <strong>${count}</strong> fresh ${count === 1 ? "update" : "updates"} this week
-    <span class="jp">今週の新着情報 ${count}件</span>
+    <strong>${count}</strong> selected island ${count === 1 ? "note" : "notes"}
+    <span class="jp" lang="ja">島のピックアップ ${count}件</span>
   `;
 }
 
@@ -885,18 +888,24 @@ const seasonalNotes = [
   {
     month: "OCT",
     symbol: "風",
-    title: "Island Autumn",
-    titleJp: "島の秋",
-    copy: "Milder heat makes room for outdoor stops, local walks, and longer drives.",
-    copyJp: "暑さがやわらぎ、島歩きやローカル巡り、ドライブが心地よい季節です。"
+    title: "Take the Long Way Round",
+    titleJp: "少し遠回りする島時間",
+    copy: "A beach walk, something warm for lunch, and a small shop you hadn't planned to find. Leave a little space in the day.",
+    copyJp: "海辺を歩いて、温かいごはんを食べて、気になったお店へ。予定を詰めすぎず、寄り道も楽しむ一日に。",
+    link: "recommended.html",
+    linkLabel: "Find a Local Stop",
+    linkLabelJp: "寄り道を見つける"
   },
   {
     month: "NOV",
     symbol: "島",
-    title: "Slow Island Days",
-    titleJp: "ゆっくり流れる島時間",
-    copy: "A quieter Miyakojima invites unhurried meals, conversations, and discoveries.",
-    copyJp: "静かな宮古島で、食事や会話、小さな発見をゆっくり楽しめます。"
+    title: "A Little Closer to Island Life",
+    titleJp: "島の暮らしに、少し近づく",
+    copy: "Make time for a local meal, a maker's shop, or an evening of island music. Check the events page for confirmed dates.",
+    copyJp: "島のごはん、つくり手のお店、音楽に出会う夜。気になる予定はイベントページで確認しながら、自分らしい島時間を。",
+    link: "events.html",
+    linkLabel: "See What's On",
+    linkLabelJp: "島の予定を見る"
   },
   {
     month: "DEC",
@@ -912,8 +921,10 @@ function updateSeasonalNote() {
   const seasonalSection = document.getElementById("seasonNow");
   if (!seasonalSection) return;
 
-  const today = new Date();
-  const isTanabataWindow = today.getMonth() === 6 && today.getDate() >= 5 && today.getDate() <= 7;
+  const parts = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric" }).formatToParts(new Date());
+  const month = Number(parts.find(part => part.type === "month").value) - 1;
+  const day = Number(parts.find(part => part.type === "day").value);
+  const isTanabataWindow = month === 6 && day >= 5 && day <= 7;
   const tanabataNote = {
     month: "JUL 07",
     symbol: "星",
@@ -926,14 +937,14 @@ function updateSeasonalNote() {
     linkLabelJp: "島の文化を知る",
     tanabata: true
   };
-  const note = isTanabataWindow ? tanabataNote : seasonalNotes[today.getMonth()];
+  const note = isTanabataWindow ? tanabataNote : seasonalNotes[month];
   const title = document.getElementById("season-now-title");
   const link = document.getElementById("seasonNowLink");
 
   seasonalSection.classList.toggle("season-tanabata", Boolean(note.tanabata));
   document.getElementById("seasonNowMonth").textContent = note.month;
   document.getElementById("seasonNowSymbol").textContent = note.symbol;
-  title.innerHTML = `${note.title}<span class="jp-title">${note.titleJp}</span>`;
+  title.innerHTML = `${note.title}<span class="jp-title" lang="ja">${note.titleJp}</span>`;
   document.getElementById("seasonNowCopy").textContent = note.copy;
   document.getElementById("seasonNowCopyJp").textContent = note.copyJp;
 
@@ -1309,14 +1320,8 @@ if (mm25Home) {
   const homeUpdated = document.querySelector(".mm25-hero-note strong");
   const homeUpdatedJp = document.querySelector(".mm25-hero-note span");
   if (homeUpdated && homeUpdatedJp) {
-    const islandLabels = [
-      ["October Island Edit", "10月の島だより"],
-      ["Island Guide, Updated", "更新された島ガイド"],
-      ["Miyakojima Now", "いまの宮古島"]
-    ];
-    const labelIndex = Math.floor(Date.now() / 86400000) % islandLabels.length;
-    homeUpdated.textContent = islandLabels[labelIndex][0];
-    homeUpdatedJp.textContent = islandLabels[labelIndex][1];
+    homeUpdated.textContent = "Between Sea & Town";
+    homeUpdatedJp.textContent = "海とまちのあいだで";
   }
 }
 

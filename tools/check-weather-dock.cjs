@@ -10,6 +10,12 @@ const forecast = {
   const failures = [];
   for (const width of [320, 390, 1440]) {
     const page = await browser.newPage({ viewport: { width, height: 900 } });
+    await page.addInitScript(data => {
+      const originalFetch = window.fetch.bind(window);
+      window.fetch = (input, options) => String(input).includes('api.open-meteo.com')
+        ? Promise.resolve(new Response(JSON.stringify(data), { status: 200, headers: { 'Content-Type': 'application/json' } }))
+        : originalFetch(input, options);
+    }, forecast);
     page.on('pageerror', error => failures.push({ width, error: error.message }));
     await page.route('https://**', route => route.request().url().includes('api.open-meteo.com')
       ? route.fulfill({ json: forecast }) : route.abort());

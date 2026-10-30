@@ -1,0 +1,17 @@
+/* A lighter autumn edit, without changing the homepage's navigation or identity. */
+body.island-refresh .home-trust-strip { margin-top: 26px; }
+body.island-refresh main > section.island-agenda { background: #edf6f0; border-block: 1px solid #c7dcd1; border-radius: 0; box-shadow: none; }
+.island-agenda p > small { display: block; font-size: .9rem; line-height: 1.8; color: #47675e; font-weight: 400; }
+body.island-refresh .mm25-board-copy h2 { font-size: 1.7rem; line-height: 1.45; letter-spacing: 0; }
+body.island-refresh .mm25-board-copy h2 > span { font-size: 1.15rem; line-height: 1.8; }
+body.island-refresh .mm25-update-list a { padding-block: 16px; border-bottom: 1px solid #c7dcd1; }
+body.island-refresh .mm25-update-list a strong { font-size: 1.05rem; line-height: 1.6; }
+body.island-refresh .mm25-update-list a span[lang="ja"] { font-size: 1rem; line-height: 1.85; color: #365854; }
+body.island-refresh .mm25-board-image img { border-radius: 6px; }
+body.island-refresh .mm25-island-now { border-top: 1px solid #c7dcd1; padding-top: 38px; }
+body.island-refresh .mm25-now-card { border-radius: 8px; }
+.island-calendar-empty > span, .island-calendar-empty a, .island-calendar-empty a span { display: block; }
+@media (max-width: 600px) {
+  body.island-refresh .mm25-board-copy h2 { font-size: 1.45rem; }
+  body.island-refresh main > section.island-agenda { padding: 22px 18px; }
+}

@@ -211,3 +211,34 @@ body.collaborations-page .feature-cta-text { max-width: 680px; font-size: 1rem; 
 @media (prefers-reduced-motion: reduce) {
   body.refined-controls :is(button:not(.menu-toggle), main a) { transition: none; }
 }
+
+/* Late-autumn guide polish; portrait palettes and the main menu stay intact. */
+body.refined-controls .recommend-card { padding: 28px 24px; border: 1px solid #d5e3dc; border-radius: 8px; background: #fbfdfc; box-shadow: 0 4px 16px #183a2e07; }
+body.refined-controls .recommend-image { border-radius: 6px; }
+body.refined-controls .recommend-card:hover { box-shadow: 0 8px 24px #183a2e12; }
+body.refined-controls .recommend-card .learn-more { min-width: 138px; }
+body.refined-controls .visitor-summary { padding: 22px 0; background: transparent; border-block: 1px solid #cbdcd4; }
+body.refined-controls .visitor-summary p { font-size: 1rem; line-height: 1.85; color: #365854; }
+body.refined-controls .visitor-summary-actions a span[lang="ja"] { display: block; }
+body.refined-controls .events-hero h1 { font-size: 2rem; letter-spacing: 0; }
+body.refined-controls .events-hero h1 span { font-size: 1.35rem; }
+body.refined-controls .events-card { background: #fcfdfc; border-color: #cbdcd4; box-shadow: 0 4px 16px #183a2e07; grid-template-columns: 76px minmax(0, 1fr); }
+body.refined-controls .events-card-featured { border-top: 3px solid #4e8980; }
+body.refined-controls .events-card h3 { font-size: 1.25rem; line-height: 1.55; letter-spacing: 0; }
+body.refined-controls .events-card h3 span { font-size: 1.05rem; line-height: 1.8; }
+body.refined-controls .events-card-copy { text-align: left; }
+body.refined-controls .events-card p.jp { word-break: normal; line-break: strict; text-wrap: pretty; }
+body.refined-controls :is(.events-card-copy, .events-hero-actions) a { border-radius: 8px; box-shadow: none; min-height: 48px; }
+body.refined-controls .events-date { min-height: 100px; align-self: start; background: #eaf3ee; color: #215e5b; }
+body.refined-controls .events-date :is(span, small) { letter-spacing: 0; }
+.event-source-note { width: min(1120px, calc(100% - 40px)); margin: 40px auto 56px; padding-block: 24px; border-block: 1px solid #cbdcd4; color: #365854; text-align: left; }
+.event-source-note h2 { font-size: 1.25rem; line-height: 1.6; letter-spacing: 0; }
+.event-source-note h2 span, .event-source-note a span { display: block; font-size: 1rem; line-height: 1.8; }
+.event-source-note p { font-size: 1rem; line-height: 1.85; }
+.event-source-note a { display: inline-block; padding-block: 10px; color: #215e5b; text-underline-offset: 5px; }
+.events-grid .island-calendar-empty { grid-column: 1 / -1; padding: 28px 0; text-align: center; line-height: 1.8; }
+.island-calendar-empty > span, .island-calendar-empty a, .island-calendar-empty a span { display: block; }
+@media (max-width: 600px) {
+  body.refined-controls .events-card { grid-template-columns: 1fr; padding: 20px; }
+  body.refined-controls .events-date { width: 80px; min-height: 90px; }
+}
