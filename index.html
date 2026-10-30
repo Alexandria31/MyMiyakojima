@@ -36,11 +36,11 @@
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
 
-<link rel="stylesheet" href="style.css?v=160">
+<link rel="stylesheet" href="style.css?v=161">
 <link rel="preload" as="image" href="images/slider4-web.webp" media="(min-width: 761px)" imagesrcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" imagesizes="560px">
 <link rel="stylesheet" href="discovery.css?v=2">
 <link rel="stylesheet" href="weather-dock.css?v=1">
-<link rel="stylesheet" href="seasonal-refresh.css?v=1">
+<link rel="stylesheet" href="seasonal-refresh.css?v=2">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -190,10 +190,33 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
   </div>
 </section>
 
-<section class="island-agenda" data-event-date="2026-11-01" aria-label="Coming up in Miyakojima / 宮古島のこれから">
-  <div><span>Coming up</span><span lang="ja">島のこれから</span></div>
-  <p><strong>November 1 · Kuicha Festival</strong><span lang="ja">11月1日・クイチャーフェスティバル</span><small>JTA Dome · Doors 15:00 / <span lang="ja">JTAドーム宮古島・15:00開場</span></small></p>
-  <a href="events.html#events-current">Make a little plan <span lang="ja">島の予定を見つける</span><span aria-hidden="true">↗</span></a>
+<section class="weekend-edit" id="weekendEdit" aria-labelledby="weekend-edit-title">
+  <div class="weekend-edit-heading">
+    <p>A Little Island Plan<span lang="ja">島で楽しむ、小さな予定</span></p>
+    <h2 id="weekend-edit-title">Your Weekend on Miyakojima<span lang="ja">宮古島で過ごす週末</span></h2>
+  </div>
+  <div class="weekend-edit-grid">
+    <a href="events.html#events-current" class="weekend-edit-card" data-weekend-event data-event-date="2026-11-01">
+      <span class="weekend-edit-date" aria-hidden="true">NOV<strong>01</strong></span>
+      <span class="weekend-edit-copy"><strong>Sunday: Kuicha Festival<span lang="ja">日曜日は、クイチャーへ</span></strong><small>Nov 1 · JTA Dome · Doors 15:00<span lang="ja">11月1日・JTAドーム・<span class="weekend-edit-time">15:00開場</span></span></small></span>
+      <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="events.html#events-current" class="weekend-edit-card" data-weekend-fallback hidden>
+      <span class="weekend-edit-date" aria-hidden="true">NEXT<strong>次</strong></span>
+      <span class="weekend-edit-copy"><strong>A Date With the Island<span lang="ja">島の予定を見つける</span></strong><small>Browse the island event calendar<span lang="ja">これからのイベントをチェック</span></small></span>
+      <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="recommended.html#food" class="weekend-edit-card">
+      <img src="images/hirochan-soba.jpg" width="76" height="96" loading="lazy" alt="Island soba at Hirochan / ひろちゃんの島そば">
+      <span class="weekend-edit-copy"><strong>Something Good for Lunch<span lang="ja">お昼は、島のごはんを</span></strong><small>Find a local table<span lang="ja">気になるお店を探す</span></small></span>
+      <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="recommended.html#wellness" class="weekend-edit-card">
+      <img src="images/lomilomi-pono-footbath.jpg" width="76" height="96" loading="lazy" alt="Flower footbath at Hawaiian Lomi Lomi Pono / ポノの花を浮かべたフットバス">
+      <span class="weekend-edit-copy"><strong>A Little Time to Unwind<span lang="ja">ひと息つける時間を</span></strong><small>Explore wellness; book directly<span lang="ja">サロンを探して、直接予約</span></small></span>
+      <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
 </section>
 
 <section class="mm25-experience-slider fade-up" aria-labelledby="mm25-slider-title">
@@ -1150,7 +1173,7 @@ My Miyakojimaでは、宮古島の事業者さまを英語と日本語で丁寧�
   <p class="footer-note jp" lang="ja">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=47"></script>
+<script src="js/script.js?v=48"></script>
 
 <script src="js/island-discovery.js?v=3"></script>
 </body>

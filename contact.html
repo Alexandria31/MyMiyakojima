@@ -66,7 +66,7 @@
 
   gtag('config', 'G-VMYZ8E1EYN');
 </script>
-<link rel="stylesheet" href="style.css?v=160">
+<link rel="stylesheet" href="style.css?v=161">
 <link rel="stylesheet" href="discovery.css?v=2">
 <link rel="stylesheet" href="refinements.css?v=4">
 <!-- Meta Pixel Code -->
@@ -294,7 +294,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
   <p class="footer-note jp" lang="ja">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=47"></script>
+<script src="js/script.js?v=48"></script>
 <script>
   const businessInquiryForm = document.getElementById("businessInquiryForm");
 
@@ -304,6 +304,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
 
     businessInquiryForm.addEventListener("submit", async function (event) {
       event.preventDefault();
+      if (businessFormButton.disabled) return;
 
       businessFormButton.disabled = true;
       businessFormButton.setAttribute("aria-busy", "true");
@@ -312,9 +313,12 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
       businessFormStatus.className = "business-form-status is-sending";
       businessFormStatus.innerHTML = "Sending your inquiry.<span class=\"jp\">お問い合わせを送信しています。</span>";
 
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
       try {
         const response = await fetch(businessInquiryForm.action, {
           method: "POST",
+          signal: controller.signal,
           body: new FormData(businessInquiryForm),
           headers: {
             "Accept": "application/json"
@@ -333,6 +337,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
         businessFormStatus.className = "business-form-status is-error";
         businessFormStatus.innerHTML = "The form could not send your inquiry. Please email <a href=\"mailto:hello@mymiyakojima.com\">hello@mymiyakojima.com</a>.<span class=\"jp\">送信できませんでした。メールでお問い合わせください。</span>";
       } finally {
+        clearTimeout(timeout);
         businessFormButton.disabled = false;
         businessFormButton.removeAttribute("aria-busy");
         businessFormButton.querySelector(".business-form-button-en").textContent = "Send Inquiry";

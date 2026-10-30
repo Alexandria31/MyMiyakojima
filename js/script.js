@@ -1470,3 +1470,36 @@ if (document.readyState === "loading") {
 } else {
   initializeModernSiteEffects();
 }
+
+function updateWeekendEdit() {
+  const section = document.getElementById("weekendEdit");
+  if (!section) return;
+  const japanDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  const weekend = japanDate <= "2026-11-01";
+  const title = section.querySelector("h2");
+  title.innerHTML = weekend
+    ? 'Your Weekend on Miyakojima<span lang="ja">宮古島で過ごす週末</span>'
+    : 'A Little Time on Miyakojima<span lang="ja">自分のペースで島時間</span>';
+  section.querySelector("[data-weekend-fallback]").hidden = weekend;
+  section.querySelector("[data-weekend-event]").hidden = !weekend;
+}
+
+function initializeDatedContentRefresh() {
+  if (!document.querySelector("[data-event-date], #weekendEdit")) return;
+  let timer;
+  function refresh() {
+    clearTimeout(timer);
+    updateIslandCalendar();
+    updateWeekendEdit();
+    updateSeasonalNote();
+    // Reschedule against Tokyo midnight, including tabs left open over the weekend.
+    const japanNow = new Date(Date.now() + 9 * 60 * 60 * 1000);
+    const nextMidnight = Date.UTC(japanNow.getUTCFullYear(), japanNow.getUTCMonth(), japanNow.getUTCDate() + 1) - 9 * 60 * 60 * 1000;
+    timer = setTimeout(refresh, Math.max(1000, nextMidnight - Date.now() + 100));
+  }
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
+  window.addEventListener("pageshow", refresh);
+  refresh();
+}
+
+initializeDatedContentRefresh();

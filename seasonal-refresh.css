@@ -11,6 +11,34 @@ body.island-refresh .mm25-board-image img { border-radius: 6px; }
 body.island-refresh .mm25-island-now { border-top: 1px solid #c7dcd1; padding-top: 38px; }
 body.island-refresh .mm25-now-card { border-radius: 8px; }
 .island-calendar-empty > span, .island-calendar-empty a, .island-calendar-empty a span { display: block; }
+/* Compact choices for ad visitors; no extra popup or floating control. */
+body.home-revamp main > section.weekend-edit {
+  display: block; width: min(1120px, calc(100% - 32px)); margin: 36px auto 44px;
+  padding: 28px 0; border-block: 1px solid #c7dcd1; text-align: left;
+}
+.weekend-edit-heading p { margin: 0 0 10px; font-size: .85rem; font-weight: 650; color: #4b6c63; line-height: 1.6; }
+.weekend-edit-heading p span { display: block; font-size: .9rem; font-weight: 500; }
+.weekend-edit-heading h2 { margin: 0 0 24px; color: #215e5b; font-size: 1.5rem; line-height: 1.5; letter-spacing: 0; }
+.weekend-edit-heading h2 span { display: block; font-size: 1.1rem; font-weight: 500; margin-top: 5px; line-height: 1.8; }
+.weekend-edit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.weekend-edit-card { display: grid; grid-template-columns: 76px minmax(0, 1fr) 16px; align-items: center; gap: 14px; padding: 16px; border: 1px solid #d5e3dc; border-radius: 8px; background: #fbfdfc; color: #244d49; text-decoration: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.weekend-edit-card[hidden] { display: none !important; }
+.weekend-edit-card img { display: block; width: 76px; height: 96px; object-fit: cover; border-radius: 6px; }
+.weekend-edit-date { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 76px; height: 96px; border-radius: 6px; background: #e6f1eb; font-size: .8rem; font-weight: 650; line-height: 1.6; }
+.weekend-edit-date strong { font-size: 1.85rem; font-weight: 650; }
+.weekend-edit-copy { min-width: 0; }
+.weekend-edit-copy strong { display: block; font-size: 1rem; line-height: 1.6; font-weight: 650; }
+.weekend-edit-copy strong span { display: block; font-size: 1rem; line-height: 1.8; font-weight: 500; text-wrap: pretty; }
+.weekend-edit-copy small { display: block; margin-top: 7px; font-size: .85rem; line-height: 1.75; color: #4b6c63; text-wrap: pretty; }
+.weekend-edit-copy small span { display: block; font-size: .9rem; line-height: 1.8; }
+.weekend-edit-copy small span.weekend-edit-time { display: inline-block; white-space: nowrap; }
+.weekend-edit-arrow { font-size: 1.15rem; }
+body.island-refresh .home-credibility { align-items: center; gap: 12px; }
+body.island-refresh .home-credibility-inquiry { padding: 8px 12px; border: 1px solid #b8d1ca; border-radius: 8px; background: #eaf5ef; text-align: center; min-height: 44px; box-sizing: border-box; }
+.weekend-edit-card:focus-visible, body.island-refresh .home-credibility-inquiry:focus-visible { outline: 2px solid #215e5b; outline-offset: 4px; }
+@media (hover: hover) { .weekend-edit-card:hover { border-color: #65978b; box-shadow: 0 4px 16px #183a2e0c; } }
+@media (max-width: 1050px) { .weekend-edit-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .weekend-edit-card { transition: none; } }
 @media (max-width: 600px) {
   body.island-refresh .mm25-board-copy h2 { font-size: 1.45rem; }
   body.island-refresh main > section.island-agenda { padding: 22px 18px; }

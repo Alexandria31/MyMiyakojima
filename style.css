@@ -14401,7 +14401,7 @@ body.home-revamp {
   color: var(--mm25-ink);
 }
 
-body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip):not(.island-agenda):not(.storm-notice):not(.island-finds):not(.island-film-feature),
+body.home-revamp main > section:not(.mm25-hero):not(.mm25-experience-slider):not(.mm25-tour-intro):not(.mm25-island-now):not(.mm25-explore):not(.mm25-current-board):not(.mm25-business):not(.home-trust-strip):not(.island-agenda):not(.storm-notice):not(.island-finds):not(.island-film-feature):not(.weekend-edit),
 body.home-revamp main > aside {
   display: none;
 }
