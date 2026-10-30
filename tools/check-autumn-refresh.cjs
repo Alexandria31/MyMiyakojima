@@ -36,6 +36,7 @@ const url = file => 'file:///' + path.join(root, file).replaceAll('\\', '/');
       await page.goto(url(file));
       if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)) failures.push({ file, width, overflow: true });
       if (await page.locator('h1').count() !== 1) failures.push({ file, width, heading: true });
+      if (['index.html', 'events.html', 'weather.html'].includes(file) && await page.locator('.storm-notice, [data-event-status="cancelled"]').count()) failures.push({ file, width, staleBanner: true });
     }
   }
   await page.goto(url('index.html'));

@@ -238,6 +238,13 @@ body.refined-controls .events-date :is(span, small) { letter-spacing: 0; }
 .event-source-note a { display: inline-block; padding-block: 10px; color: #215e5b; text-underline-offset: 5px; }
 .events-grid .island-calendar-empty { grid-column: 1 / -1; padding: 28px 0; text-align: center; line-height: 1.8; }
 .island-calendar-empty > span, .island-calendar-empty a, .island-calendar-empty a span { display: block; }
+.weather-guidance { width: min(960px, calc(100% - 40px)); margin: 28px auto; padding: 16px 0; border-block: 1px solid #cbdcd4; color: #365854; text-align: left; }
+.weather-guidance summary { min-height: 44px; cursor: pointer; font-weight: 600; font-size: 1rem; line-height: 1.7; }
+.weather-guidance summary span, .weather-guidance-links a span { display: block; font-size: 1rem; line-height: 1.8; }
+.weather-guidance p { font-size: 1rem; line-height: 1.85; }
+.weather-guidance-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.weather-guidance-links a { color: #215e5b; min-height: 44px; padding: 8px 0; text-underline-offset: 4px; }
+.weather-guidance summary:focus-visible { outline: 2px solid #215e5b; outline-offset: 4px; }
 @media (max-width: 600px) {
   body.refined-controls .events-card { grid-template-columns: 1fr; padding: 20px; }
   body.refined-controls .events-date { width: 80px; min-height: 90px; }
