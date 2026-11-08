@@ -53,6 +53,35 @@
 .cat-weddings .cat-symbol { background: #bc879d; }
 .recommend-card .wedding-card-image img { object-fit: contain; background: #edf5f4; }
 .spotlight-card-mutsumi .spotlight-bg { background-position: center 36%; }
+body.collaborations-page .portrait-current .spotlight-card-mutsumi {
+ grid-template-columns: minmax(0,.9fr) minmax(0,1fr); gap: 48px;
+ padding: 32px 0; border-block: 1px solid #c9a7b8; overflow: visible;
+}
+body.collaborations-page .portrait-current .spotlight-card-mutsumi .mutsumi-feature-photo {
+ grid-column: 1; grid-row: 1; align-self: center; margin: 0; width: 100%; height: auto;
+ padding: 12px; box-sizing: border-box; background: #ede0e8;
+ border: 1px solid #c9a7b8; border-radius: 180px 180px 6px 6px;
+ overflow: hidden; box-shadow: 9px 9px 0 #dfebe7;
+}
+.mutsumi-feature-photo img { display: block; width: 100%; height: auto; max-height: 570px; object-fit: contain; border-radius: 170px 170px 0 0; }
+body.collaborations-page .portrait-current .spotlight-card.spotlight-card-mutsumi > .mutsumi-feature-copy { grid-column: 2; align-self: center; min-width: 0; padding: 8px 0; }
+body.collaborations-page .spotlight-card-mutsumi .spotlight-month { color: #70465c; margin-bottom: 14px; letter-spacing: 0; }
+.mutsumi-feature-note { display: block; font-size: .9rem; color: #75455e; line-height: 1.7; }
+.mutsumi-feature-note > span { display: block; font-size: 1rem; }
+.mutsumi-feature-seal { position: relative; width: 60px; height: 42px; margin: 24px 0 16px; }
+.mutsumi-feature-seal i { position: absolute; width: 27px; height: 34px; border: 2px solid #a36d5a; border-radius: 50%; top: 3px; left: 3px; transform: rotate(-28deg); }
+.mutsumi-feature-seal i + i { left: 23px; transform: rotate(28deg); border-color: #a86b88; }
+body.collaborations-page .mutsumi-feature-title { font-size: 1.8rem; line-height: 1.4; color: #70465c; letter-spacing: 0; margin: 0 0 24px; }
+.mutsumi-feature-title > span { display: block; font-size: 1.1rem; font-weight: 500; line-height: 1.8; margin-top: 12px; }
+body.collaborations-page .spotlight-card-mutsumi .spotlight-link { display: inline-block; border-bottom: 1px solid #a86b88; padding: 14px 0 8px; color: #70465c; }
+body.collaborations-page .spotlight-card-mutsumi .spotlight-link > span > span { display: inline; margin-left: 16px; }
+body.collaborations-page .spotlight-card-mutsumi:focus-visible { outline: 2px solid #8b5167; outline-offset: 8px; }
+@media (max-width: 760px) {
+ body.collaborations-page .portrait-current .spotlight-card-mutsumi { display: grid; grid-template-columns: 1fr; gap: 32px; padding: 24px 0; }
+ body.collaborations-page .portrait-current .spotlight-card-mutsumi .mutsumi-feature-photo { max-width: 360px; justify-self: center; }
+ body.collaborations-page .portrait-current .spotlight-card.spotlight-card-mutsumi > .mutsumi-feature-copy { grid-column: 1; grid-row: 2; padding: 8px 4px; }
+ body.collaborations-page .mutsumi-feature-title { font-size: 1.6rem; }
+}
 body.home-revamp .mm25-creative-mutsumi { background: #f0e3eb; color: #633d54; border: 1px solid #cba8bb; }
 body.home-revamp .mm25-creative-mutsumi small { color: #633d54; }
 body.home-revamp .mm25-creative-mutsumi .mm25-button-icon { background: #fff; color: #8b5167; }

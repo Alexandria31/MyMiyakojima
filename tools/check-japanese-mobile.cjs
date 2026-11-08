@@ -9,7 +9,8 @@ const root = path.resolve(__dirname,'..');
     const page = await browser.newPage();
     page.on('pageerror', error => failures.push({script:error.message}));
     await page.route('https://**', route => route.abort());
-    const files = fs.readdirSync(root).filter(file => file.endsWith('.html'));
+    const requested = process.argv.slice(2);
+    const files = fs.readdirSync(root).filter(file => file.endsWith('.html') && (!requested.length || requested.includes(file)));
     for (const width of [320,360,390,430,1440]) {
       await page.setViewportSize({width,height:900});
       for (const file of files) {
