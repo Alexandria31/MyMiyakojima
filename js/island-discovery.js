@@ -178,6 +178,12 @@ function initializeVisitorMeasurement() {
     const a = event.target.closest("a[href]");
     if (!a) return;
     const href = a.getAttribute("href");
+    const inquiryPlacement = a.dataset.inquiryLocation;
+    if (["homepage_top", "homepage_business"].includes(inquiryPlacement)) {
+      try {
+        if (typeof gtag === "function") gtag("event", "business_inquiry_click", { placement: inquiryPlacement });
+      } catch (_) {}
+    }
     let action;
     if (href.startsWith("tel:")) action = "business_call";
     else if (/maps\.google|maps\.app|google\..*maps/.test(href)) action = "business_map";

@@ -68,7 +68,7 @@
 </script>
 <link rel="stylesheet" href="style.css?v=162">
 <link rel="stylesheet" href="discovery.css?v=2">
-<link rel="stylesheet" href="refinements.css?v=6">
+<link rel="stylesheet" href="refinements.css?v=7">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -195,11 +195,12 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
         <p class="freshness-kicker">Feature Inquiry<span class="jp" lang="ja">掲載についてのご相談</span></p>
         <h2 id="business-inquiry-title">For Miyakojima Business Owners<span class="jp-title" lang="ja">宮古島の事業者さまへ</span></h2>
         <p>
-            If you would like My Miyakojima to learn about your business, please share a few details below. Your inquiry will be sent directly to My Miyakojima.
+            Tell us about your business and what makes it yours. We can discuss an English and Japanese feature, approved photos, and the details visitors need to contact you directly.
         </p>
         <p class="jp" lang="ja">
-            My Miyakojimaでの掲載に興味がある事業者さまは、下記フォームから概要をお知らせください。お問い合わせはMy Miyakojimaへ直接送信されます。
+            お店やサービスのこと、大切にしている想いをお聞かせください。英語と日本語の紹介文、使用可能な写真、お客さまが直接お問い合わせできる情報などを、一緒にご相談します。
         </p>
+        <p class="business-inquiry-reassurance">An inquiry is just the first conversation. Publication details and any fees are discussed before you decide.<span lang="ja">まずは、ご相談から。掲載内容や料金の有無は、ご依頼を決めていただく前にご案内します。</span></p>
 
         <details class="feature-process">
           <summary>What a feature includes &amp; how it works<span lang="ja">掲載内容と、ご相談から公開までの流れ</span></summary>
@@ -239,6 +240,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
                         <option value="Activity / 体験">Activity / 体験</option>
                         <option value="Transport / 移動">Transport / 移動</option>
                         <option value="Creative / クリエイティブ">Creative / クリエイティブ</option>
+                        <option value="Wedding / ウェディング">Wedding / ウェディング</option>
                         <option value="Other / その他">Other / その他</option>
                     </select>
                 </label>
@@ -254,8 +256,8 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
                 </label>
 
                 <label>
-                    Instagram or Website
-                    <span class="jp" lang="ja">Instagram・ウェブサイト</span>
+                    Instagram or Website (optional)
+                    <span class="jp" lang="ja">Instagram・ウェブサイト（任意）</span>
                     <input type="text" name="link" inputmode="url" placeholder="@account or https://">
                 </label>
 
@@ -330,9 +332,16 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
         }
 
         businessInquiryForm.reset();
-        if (typeof gtag === "function") gtag("event", "generate_lead", { form_name: "business_inquiry" });
         businessFormStatus.className = "business-form-status is-success";
         businessFormStatus.innerHTML = "Thank you. Your inquiry has been sent to My Miyakojima.<span class=\"jp\">ありがとうございます。お問い合わせをMy Miyakojimaへ送信しました。</span>";
+        // A blocked analytics script must never turn a delivered inquiry into an error.
+        // Only fixed event labels are sent, never names, email addresses or message text.
+        try {
+          if (typeof gtag === "function") gtag("event", "generate_lead", { form_name: "business_inquiry" });
+        } catch (_) {}
+        try {
+          if (typeof fbq === "function") fbq("track", "Lead", { content_name: "business_inquiry" });
+        } catch (_) {}
       } catch (error) {
         businessFormStatus.className = "business-form-status is-error";
         businessFormStatus.innerHTML = "The form could not send your inquiry. Please email <a href=\"mailto:hello@mymiyakojima.com\">hello@mymiyakojima.com</a>.<span class=\"jp\">送信できませんでした。メールでお問い合わせください。</span>";
@@ -347,7 +356,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
   }
 </script>
 
-<script src="js/island-discovery.js?v=4"></script>
+<script src="js/island-discovery.js?v=5"></script>
 <script src="js/japanese-typography.js?v=1"></script>
 </body>
 </html>

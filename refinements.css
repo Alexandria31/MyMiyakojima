@@ -251,6 +251,8 @@ body.refined-controls main [lang="ja"] { line-break: strict; overflow-wrap: brea
 body.refined-controls main a:focus-visible { outline: 2px solid #36796e; outline-offset: 4px; }
 body.refined-controls .discover-edit-note > a { display: inline-block; padding: 12px 0; color: #215e5b; text-underline-offset: 5px; }
 body.refined-controls .discover-edit-note > a span { display: block; line-height: 1.8; }
+.business-inquiry-reassurance { padding: 18px 0; border-block: 1px solid #c9dcd4; font-size: 1rem; line-height: 1.85; color: #365854; }
+.business-inquiry-reassurance > span { display: block; margin-top: 8px; }
 @media (max-width: 600px) {
   body.refined-controls .events-card { grid-template-columns: 1fr; padding: 20px; }
   body.refined-controls .events-date { width: 80px; min-height: 90px; }

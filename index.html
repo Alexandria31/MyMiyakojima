@@ -40,7 +40,7 @@
 <link rel="preload" as="image" href="images/slider4-web.webp" media="(min-width: 761px)" imagesrcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" imagesizes="560px">
 <link rel="stylesheet" href="discovery.css?v=2">
 <link rel="stylesheet" href="weather-dock.css?v=1">
-<link rel="stylesheet" href="seasonal-refresh.css?v=3">
+<link rel="stylesheet" href="seasonal-refresh.css?v=4">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -108,8 +108,8 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
       <span>Officially registered</span>
       <span lang="ja">登録事業者・事業者情報</span>
     </a>
-    <a href="contact.html#business-inquiry" class="home-credibility-inquiry">
-      <span>Feature your business <span aria-hidden="true">↗</span></span>
+    <a href="contact.html#business-inquiry" class="home-credibility-inquiry" data-inquiry-location="homepage_top">
+      <span>Get Featured <span aria-hidden="true">↗</span></span>
       <span lang="ja">掲載について相談する</span>
     </a>
   </div>
@@ -437,14 +437,19 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
 <section class="mm25-business fade-up" id="business-for-miyakojima" aria-labelledby="mm25-business-title">
   <div>
     <p class="mm25-kicker">For Local Businesses<span lang="ja">宮古島の事業者さまへ</span></p>
-    <h2 id="mm25-business-title">Be found with care, not noise.<span lang="ja">ただ目立つのではなく、丁寧に見つけてもらう。</span></h2>
+    <h2 id="mm25-business-title">Your place. Your story. In two languages.<span lang="ja">お店の魅力を、英語と日本語で。</span></h2>
     <p>
-      My Miyakojima creates bilingual feature pages for selected local businesses, with thoughtful writing, clear visitor information, and design that respects each brand.
-      <span>My Miyakojimaでは、宮古島に根ざした事業者さまを英語と日本語で丁寧に紹介します。想い、写真、基本情報を整え、来店や予約につながるページづくりを大切にしています。</span>
+      Introduce your Miyakojima business to visitors through a curated bilingual page, approved photos, and clear links to contact you directly.
+      <span lang="ja">宮古島のお店やサービスを、丁寧な英日紹介文、使用許可のある写真、直接お問い合わせできるリンクとともに、島を訪れる方へ届けます。</span>
     </p>
+    <ul class="business-feature-benefits">
+      <li>English &amp; Japanese writing<span lang="ja">英語・日本語の紹介文</span></li>
+      <li>Photos that reflect your business<span lang="ja">お店らしさが伝わる写真</span></li>
+      <li>Direct contact &amp; booking links<span lang="ja">問い合わせ・予約先へのリンク</span></li>
+    </ul>
   </div>
-  <a href="contact.html#business-inquiry">
-    Start a feature inquiry
+  <a href="contact.html#business-inquiry" data-inquiry-location="homepage_business">
+    Get Featured
     <span lang="ja">掲載について相談する</span>
   </a>
 </section>
@@ -1171,7 +1176,7 @@ My Miyakojimaでは、宮古島の事業者さまを英語と日本語で丁寧�
 </footer>
 <script src="js/script.js?v=50"></script>
 
-<script src="js/island-discovery.js?v=4"></script>
+<script src="js/island-discovery.js?v=5"></script>
 <script src="js/japanese-typography.js?v=1"></script>
 </body>
 </html>

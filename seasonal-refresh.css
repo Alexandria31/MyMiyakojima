@@ -38,6 +38,17 @@ body.home-revamp main > section.weekend-edit {
 .weekend-edit-arrow { font-size: 1.15rem; }
 body.island-refresh .home-credibility { align-items: center; gap: 12px; }
 body.island-refresh .home-credibility-inquiry { padding: 8px 12px; border: 1px solid #b8d1ca; border-radius: 8px; background: #eaf5ef; text-align: center; min-height: 44px; box-sizing: border-box; }
+body.island-refresh .home-credibility-inquiry { font-weight: 650; border-color: #8db5a9; }
+body.island-refresh .mm25-business { background: #215e5b; border-radius: 8px; box-shadow: none; }
+body.island-refresh .mm25-business :is(.mm25-kicker,h2,p) { text-align: left; }
+body.island-refresh .mm25-business h2 { font-size: 1.55rem; line-height: 1.5; }
+body.island-refresh .mm25-business h2 > span { font-size: 1.2rem; line-height: 1.8; margin-top: 8px; }
+body.island-refresh .mm25-business p { margin-top: 16px; font-size: 1rem; line-height: 1.85; }
+body.island-refresh .mm25-business p > span { font-size: 1rem; font-weight: 500; line-height: 1.85; }
+body.island-refresh .mm25-business > a { background: #f2faf6; border-radius: 8px; }
+.business-feature-benefits { display: flex; flex-wrap: wrap; gap: 16px 28px; margin: 24px 0 0; padding: 20px 0 0; border-top: 1px solid #ffffff40; list-style: none; text-align: left; }
+.business-feature-benefits li { flex: 1 1 160px; font-size: .95rem; line-height: 1.7; color: #fff; }
+.business-feature-benefits li span { display: block; font-size: 1rem; line-height: 1.8; color: #fff; }
 .weekend-edit-card:focus-visible, body.island-refresh .home-credibility-inquiry:focus-visible { outline: 2px solid #215e5b; outline-offset: 4px; }
 @media (hover: hover) { .weekend-edit-card:hover { border-color: #65978b; box-shadow: 0 4px 16px #183a2e0c; } }
 @media (max-width: 1050px) { .weekend-edit-grid { grid-template-columns: 1fr; } }
