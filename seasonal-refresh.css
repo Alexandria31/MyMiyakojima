@@ -12,6 +12,9 @@ body.island-refresh .mm25-island-now { border-top: 1px solid #c7dcd1; padding-to
 body.island-refresh .mm25-now-card { border-radius: 8px; }
 .island-calendar-empty > span, .island-calendar-empty a, .island-calendar-empty a span { display: block; }
 /* Compact choices for ad visitors; no extra popup or floating control. */
+body.island-refresh .mm25-creative-collection { background: #e4f0ed; color: #234d49; border-color: #a8c8c0; }
+body.island-refresh .mm25-creative-collection small { color: #365e58; }
+body.island-refresh .mm25-creative-collection .mm25-button-icon { background: #fff; color: #36796e; }
 body.home-revamp main > section.weekend-edit {
   display: block; width: min(1120px, calc(100% - 32px)); margin: 36px auto 44px;
   padding: 28px 0; border-block: 1px solid #c7dcd1; text-align: left;

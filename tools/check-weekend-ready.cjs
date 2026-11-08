@@ -22,7 +22,7 @@ async function fillForm(page) {
         ...(mobile ? { userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Instagram' } : {})
       });
       const page = await context.newPage();
-      await page.clock.install({ time: new Date('2026-10-30T03:00:00Z') });
+      await page.clock.install({ time: new Date('2026-11-08T03:00:00Z') });
       await page.addInitScript(data => {
         const original = window.fetch.bind(window);
         window.fetch = (url, options) => String(url).includes('api.open-meteo.com')
@@ -66,7 +66,7 @@ async function fillForm(page) {
     const context = await browser.newContext({ viewport: { width: 390, height: 844 }, timezoneId: 'Pacific/Honolulu' });
     const page = await context.newPage();
     await page.route('https://**', route => route.abort());
-    await page.clock.install({ time: new Date('2026-11-01T14:59:55Z') });
+    await page.clock.install({ time: new Date('2026-11-22T14:59:55Z') });
     await page.goto(home);
     assert(await page.locator('[data-weekend-event]').isVisible(), 'Sunday event missing before Tokyo midnight');
     await page.clock.runFor(6200);

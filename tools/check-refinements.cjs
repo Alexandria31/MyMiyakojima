@@ -26,8 +26,8 @@ const fileUrl = file => 'file:///' + path.join(root, file).replaceAll('\\', '/')
       if (state.overflow || state.refined !== interior || state.stylesheet !== interior || state.clipped.length) failures.push({ file, width, ...state });
     }
     await page.goto(fileUrl('collaborations.html'));
-    if (await page.locator('.portrait-current .spotlight-card').count() !== 1 || await page.locator('.portrait-index a').count() !== 7) failures.push({ width, portraits: 'Missing portrait' });
-    if (await page.locator('.portrait-index-photo').count() !== 7) failures.push({ width, images: 'Missing compact portraits' });
+    if (await page.locator('.portrait-current .spotlight-card').count() !== 1 || await page.locator('.portrait-index a').count() !== 8) failures.push({ width, portraits: 'Missing portrait' });
+    if (await page.locator('.portrait-index-photo').count() !== 8) failures.push({ width, images: 'Missing compact portraits' });
     for (const image of await page.locator('.portrait-index-photo').all()) {
       await image.scrollIntoViewIfNeeded();
       await image.evaluate(x => x.decode());

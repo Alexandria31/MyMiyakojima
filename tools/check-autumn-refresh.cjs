@@ -6,10 +6,10 @@ const url = file => 'file:///' + path.join(root, file).replaceAll('\\', '/');
   const browser = await chromium.launch({ channel: 'msedge', headless: true });
   const failures = [];
   for (const [time, visible, label] of [
-    ['2026-10-30T03:00:00Z', 2, 'This Week'],
-    ['2026-10-31T15:01:00Z', 2, 'Today'],
-    ['2026-11-02T03:00:00Z', 1, 'Tomorrow'],
-    ['2026-11-04T03:00:00Z', 0, null]
+    ['2026-11-08T03:00:00Z', 2, null],
+    ['2026-11-21T15:01:00Z', 2, 'Today'],
+    ['2026-11-28T03:00:00Z', 1, 'Tomorrow'],
+    ['2026-11-30T03:00:00Z', 0, null]
   ]) {
     const context = await browser.newContext({ timezoneId: 'America/Los_Angeles' });
     await context.addInitScript(timestamp => {
@@ -41,7 +41,7 @@ const url = file => 'file:///' + path.join(root, file).replaceAll('\\', '/');
   }
   await page.goto(url('index.html'));
   if (await page.locator('.storm-notice').count()) failures.push('Old homepage alert remains');
-  if (await page.locator('.mm25-creative-button').getAttribute('href') !== 'creative-daiki-nakashima.html') failures.push('October portrait changed');
+  if (await page.locator('.mm25-creative-button').getAttribute('href') !== 'creative-mutsumi-kouno.html') failures.push('November portrait link missing');
   await browser.close();
   console.log(JSON.stringify({ dates: 'Tokyo date boundaries verified from a non-Japan timezone', widths: [320, 390, 768, 1440], failures }, null, 2));
   if (failures.length) process.exitCode = 1;

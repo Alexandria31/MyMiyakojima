@@ -968,6 +968,7 @@ updateSeasonalNote();
 // CURATED LISTING DATA
 // =============================
 const curatedListings = [
+  { href: "kounotori-wedding.html", name: "Kounotori Wedding", nameJp: "幸の鳥Wedding", category: "weddings", moods: ["special", "local"], image: "images/kounotori-beach-wedding.webp" },
   { href: "caldo-de-cana.html", name: "Caldo de Cana", nameJp: "カルド・デ・カナ", category: "food", moods: ["easy", "local"], image: "images/caldo-de-cana-cup-hand.jpg" },
   { href: "miyakojima-tours.html#ilove-miyakojima", name: "I Love Miyakojima", nameJp: "アイラブ宮古島", category: "marine", moods: ["active", "special"], image: "images/ilove-miyakojima-yabiji.jpg" },
   { href: "pizza-doraku.html", name: "Pizza Doraku", nameJp: "ピザ道楽", category: "food", moods: ["easy", "local"], image: "images/doraku-pizza.jpeg" },
@@ -1475,13 +1476,14 @@ function updateWeekendEdit() {
   const section = document.getElementById("weekendEdit");
   if (!section) return;
   const japanDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
-  const weekend = japanDate <= "2026-11-01";
+  const event = section.querySelector("[data-weekend-event]");
+  const weekend = event && japanDate <= event.dataset.eventDate;
   const title = section.querySelector("h2");
-  title.innerHTML = weekend
-    ? 'Your Weekend on Miyakojima<span lang="ja">宮古島で過ごす週末</span>'
+  title.innerHTML = japanDate.startsWith("2026-11")
+    ? 'November, at Your Pace<span lang="ja">自分のペースで楽しむ、11月の島</span>'
     : 'A Little Time on Miyakojima<span lang="ja">自分のペースで島時間</span>';
   section.querySelector("[data-weekend-fallback]").hidden = weekend;
-  section.querySelector("[data-weekend-event]").hidden = !weekend;
+  if (event) event.hidden = !weekend;
 }
 
 function initializeDatedContentRefresh() {

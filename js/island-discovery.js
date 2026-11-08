@@ -8,6 +8,7 @@ const islandAreas = {
   island: ["Check location with the business", "所在地は事業者へご確認ください"]
 };
 const islandListingDetails = {
+  "kounotori-wedding.html": { area: "hirara", facts: [["Wedding plans by direct consultation", "ウェディングのご相談は事業者へ直接"]] },
   "pizza-doraku.html": { area: "hirara" },
   "captain-marian.html": { area: "hirara", facts: [["Parking available", "駐車場あり"]] },
   "hirochan.html": { area: "ueno", facts: [["Call ahead for current hours", "営業時間はお電話でご確認ください"]] },
