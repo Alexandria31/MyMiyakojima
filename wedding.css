@@ -61,6 +61,39 @@ body.home-revamp .mm25-creative-mutsumi .mm25-button-icon { grid-column: 1; grid
 body.home-revamp .mm25-creative-mutsumi :is(strong,small) { grid-column: 2; width: auto; max-width: none; margin: 0; }
 body.home-revamp .mm25-creative-mutsumi strong { font-size: 1rem; }
 body.home-revamp .mm25-creative-mutsumi small { font-size: .9rem; line-height: 1.8; }
+body.home-revamp .mm25-creative-mutsumi {
+ position: relative; isolation: isolate; overflow: hidden;
+ grid-template-columns: 48px minmax(0,1fr) 16px;
+ background: #f7edf2; border: 1px solid #be8fa5; border-radius: 8px;
+ box-shadow: inset 0 0 0 5px #f7edf2, inset 0 0 0 6px #dfc3d0, 0 4px 14px #70465c0d;
+ padding: 20px 18px; min-height: 104px;
+ transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+body.home-revamp .mm25-creative-mutsumi::before,
+body.home-revamp .mm25-creative-mutsumi::after { display: none; }
+body.home-revamp .mm25-creative-mutsumi .wedding-button-seal {
+ position: relative; width: 48px; height: 48px; border: 1px solid #d6b2c3;
+ border-radius: 50%; background: #fffafc; box-shadow: 0 2px 7px #70465c12;
+ transition: transform .25s ease;
+}
+.wedding-button-seal i { position: absolute; width: 19px; height: 24px; border: 2px solid #a36d5a; border-radius: 50%; top: 11px; box-sizing: border-box; }
+.wedding-button-seal i:first-child { left: 8px; transform: rotate(-28deg); }
+.wedding-button-seal i:last-child { left: 20px; transform: rotate(28deg); border-color: #a86b88; }
+.wedding-button-arrow { grid-column: 3; grid-row: 1 / 3; align-self: center; color: #8b5167; font-size: 1.1rem; }
+body.home-revamp .mm25-creative-mutsumi .wedding-button-month { grid-column: 2; grid-row: 1; font-size: .8rem; line-height: 1.6; color: #75455d; font-weight: 500; }
+.wedding-button-month > span { display: block; font-size: .85rem; line-height: 1.8; }
+body.home-revamp .mm25-creative-mutsumi strong { grid-row: 2; }
+body.home-revamp .mm25-creative-mutsumi small { grid-row: 3; }
+body.home-revamp .mm25-creative-mutsumi .wedding-button-seal,
+body.home-revamp .mm25-creative-mutsumi .wedding-button-arrow { grid-row: 1 / 4; }
+body.home-revamp .mm25-creative-mutsumi:focus-visible { outline: 2px solid #8b5167; outline-offset: 4px; }
+@media (hover: hover) {
+ body.home-revamp .mm25-creative-mutsumi:hover { transform: translateY(-2px); border-color: #8b5167; box-shadow: inset 0 0 0 5px #f7edf2, inset 0 0 0 6px #d2a8bc, 0 7px 18px #70465c16; }
+ body.home-revamp .mm25-creative-mutsumi:hover .wedding-button-seal { transform: rotate(-7deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+ body.home-revamp .mm25-creative-mutsumi, body.home-revamp .mm25-creative-mutsumi .wedding-button-seal { transition: none; transform: none; }
+}
 body.home-revamp .mm25-mutsumi-photo img { object-fit: contain; background: #eee7ed; }
 @media (max-width: 760px) {
  .wedding-portrait main, .wedding-business { padding: 24px 20px 48px; }

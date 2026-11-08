@@ -6801,7 +6801,7 @@ section[id] {
   color: #5c7372;
   font-size: 0.96rem;
   line-height: 1.8;
-  word-break: auto-phrase;
+  word-break: normal;
 }
 
 .recommend-weekly-refresh > a {
@@ -9693,7 +9693,7 @@ body.menu-open .category-guide {
 body.captain-marian-page .jp,
 body.captain-marian-page .jp-title {
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
   text-wrap: pretty;
@@ -9715,7 +9715,7 @@ body.captain-marian-page .subtitle.jp {
 body.hirochan-page .jp,
 body.hirochan-page .jp-title {
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
   text-wrap: pretty;
@@ -9801,7 +9801,7 @@ body.ggs-page .ggs-logo img {
 body.ggs-page .jp,
 body.ggs-page .jp-title {
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
   text-wrap: pretty;
@@ -16394,7 +16394,7 @@ body.myakururu-spotlight .freshness-kicker span,
 body.myakururu-spotlight h1 span,
 body.myakururu-spotlight h2 span {
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
   text-wrap: pretty;
@@ -16416,7 +16416,7 @@ body.myakururu-spotlight .freshness-kicker span {
   body.myakururu-spotlight .myakururu-contact p.jp {
     overflow-wrap: normal;
     word-break: normal;
-    word-break: auto-phrase;
+    word-break: normal;
     line-break: strict;
   }
 }
@@ -16481,7 +16481,7 @@ body.events-page {
   font-size: 0.38em;
   line-height: 1.55;
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
   text-wrap: balance;
@@ -16506,7 +16506,7 @@ body.events-page {
   color: #2f5a58;
   font-weight: 650;
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
   text-wrap: pretty;
@@ -16652,7 +16652,7 @@ body.events-page {
   font-size: 0.64em;
   line-height: 1.55;
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
   overflow-wrap: normal;
   line-break: strict;
 }
@@ -16925,7 +16925,7 @@ body.events-page {
   .events-submit p.jp {
     overflow-wrap: normal;
     word-break: normal;
-    word-break: auto-phrase;
+    word-break: normal;
   }
 }
 
@@ -16969,7 +16969,7 @@ body.caldo-page {
 .caldo-page .jp-title {
   overflow-wrap: normal;
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
 }
 
 .caldo-overview,
@@ -17160,7 +17160,7 @@ body.october-refresh .featured-month .featured-overlay {
 .gare-385-page .jp-title {
   overflow-wrap: normal;
   word-break: normal;
-  word-break: auto-phrase;
+  word-break: normal;
 }
 
 .gare-overview,
@@ -17854,4 +17854,20 @@ body.island-refresh main > section.island-agenda {
 }
 @media (max-width: 560px) {
   body.island-refresh .mm25-now-grid { grid-template-columns: 1fr; }
+}
+
+/* Preserve natural Japanese breaks; keep measured one-character endings together. */
+[lang="ja"] { line-break: strict; }
+.jp-keep-tail { display: inline !important; white-space: nowrap !important; word-break: normal !important; font: inherit; color: inherit; }
+@media (max-width: 600px) {
+  body.spotlight-page .language-jump {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+    max-width: 100%; box-sizing: border-box;
+  }
+  body.spotlight-page .language-jump a {
+    min-width: 0; padding: 12px 8px; box-sizing: border-box;
+  }
+  body.spotlight-page .language-jump a > span {
+    font-size: 1rem; line-height: 1.7; white-space: normal;
+  }
 }
