@@ -12,6 +12,22 @@
 .hitotsuki-page .hitotsuki-opening .map-button span { color: #244d49; }
 .hitotsuki-page .hitotsuki-opening a.map-button,
 .hitotsuki-page .hitotsuki-opening a.map-button * { color: #244d49 !important; text-shadow: none !important; }
+/* Keep every action on this page quiet, including shared injected controls. */
+body.hitotsuki-page.refined-controls :is(main .map-button, .page-nav a, .saved-places-trigger, .site-back-top, .save-place-button) {
+ background: #d2ded7 !important; background-image: none !important;
+ color: #244d49 !important; border: 1px solid #9fb5a8 !important;
+ box-shadow: none !important; text-shadow: none !important; filter: none !important;
+}
+body.hitotsuki-page.refined-controls :is(main .map-button, .page-nav a, .saved-places-trigger, .site-back-top, .save-place-button) :is(span, small, strong, i) {
+ color: #244d49 !important; text-shadow: none !important; opacity: 1;
+}
+body.hitotsuki-page main .map-button .contact-icon { background: #c1d1c7 !important; color: #244d49 !important; box-shadow: none; }
+body.hitotsuki-page.refined-controls :is(main .map-button, .page-nav a)::before,
+body.hitotsuki-page.refined-controls :is(main .map-button, .page-nav a)::after { background: none !important; box-shadow: none !important; }
+@media(hover:hover) {
+ body.hitotsuki-page.refined-controls :is(main .map-button, .page-nav a, .saved-places-trigger, .site-back-top, .save-place-button):hover { background: #bdcfc3 !important; color: #244d49 !important; box-shadow: none !important; transform: none !important; }
+}
+body.hitotsuki-page.refined-controls :is(main .map-button, .page-nav a, .saved-places-trigger, .site-back-top, .save-place-button):focus-visible { outline: 2px solid #244d49; outline-offset: 3px; }
 .hitotsuki-page h1 { font-size: 2rem; line-height: 1.5; }
 .hitotsuki-page :is(h1,h2,p,dt,dd) > span { display: block; }
 .hitotsuki-page h1 > span { font-size: 1.4rem; }
