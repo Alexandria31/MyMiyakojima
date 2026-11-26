@@ -482,16 +482,32 @@ function initializeWeatherDock() {
   });
   let previousY = window.scrollY;
   let frame = 0;
-  window.addEventListener("scroll", () => {
-    if (frame || dock.hidden) return;
-    frame = requestAnimationFrame(() => {
-      const y = Math.max(0, window.scrollY);
-      if (y < 80) dock.classList.remove("is-compact");
-      else if (Math.abs(y - previousY) > 8) dock.classList.toggle("is-compact", y > previousY);
-      previousY = y;
-      frame = 0;
+  function updateDock() {
+    const y = Math.max(0, window.scrollY);
+    if (y < 80) dock.classList.remove("is-compact");
+    else if (Math.abs(y - previousY) > 8) dock.classList.toggle("is-compact", y > previousY);
+    previousY = y;
+    // Stay in one quiet position, but yield when a visitor needs to tap content beneath it.
+    const rect = dock.getBoundingClientRect();
+    const focused = dock.contains(document.activeElement);
+    const overlaps = !focused && [...document.querySelectorAll('main a[href], main button')].some(control => {
+      const box = control.getBoundingClientRect();
+      return box.width && box.height && rect.left < box.right && rect.right > box.left && rect.top < box.bottom && rect.bottom > box.top;
     });
-  }, { passive: true });
+    dock.classList.toggle("is-yielding", overlaps);
+    frame = 0;
+  }
+  function scheduleDock() {
+    if (frame || dock.hidden) return;
+    frame = requestAnimationFrame(updateDock);
+  }
+  window.addEventListener("scroll", scheduleDock, { passive: true });
+  window.addEventListener("resize", scheduleDock, { passive: true });
+  window.addEventListener("pageshow", scheduleDock);
+  window.addEventListener("load", scheduleDock);
+  dock.addEventListener("focusout", scheduleDock);
+  document.fonts?.ready.then(scheduleDock);
+  scheduleDock();
 }
 
 initializeWeatherDock();
@@ -968,6 +984,7 @@ updateSeasonalNote();
 // CURATED LISTING DATA
 // =============================
 const curatedListings = [
+  { href: "hitotsuki.html", name: "Hitotsuki", nameJp: "日と月（ひとつき）", category: "food", moods: ["local", "easy"], image: "images/hitotsuki-dining-1.jpg" },
   { href: "kounotori-wedding.html", name: "Kounotori Wedding", nameJp: "幸の鳥Wedding", category: "weddings", moods: ["special", "local"], image: "images/kounotori-beach-wedding.webp" },
   { href: "caldo-de-cana.html", name: "Caldo de Cana", nameJp: "カルド・デ・カナ", category: "food", moods: ["easy", "local"], image: "images/caldo-de-cana-cup-hand.jpg" },
   { href: "miyakojima-tours.html#ilove-miyakojima", name: "I Love Miyakojima", nameJp: "アイラブ宮古島", category: "marine", moods: ["active", "special"], image: "images/ilove-miyakojima-yabiji.jpg" },
@@ -1494,6 +1511,7 @@ function initializeDatedContentRefresh() {
     updateIslandCalendar();
     updateWeekendEdit();
     updateSeasonalNote();
+    if (typeof initializeIslandFinds === "function") initializeIslandFinds();
     // Reschedule against Tokyo midnight, including tabs left open over the weekend.
     const japanNow = new Date(Date.now() + 9 * 60 * 60 * 1000);
     const nextMidnight = Date.UTC(japanNow.getUTCFullYear(), japanNow.getUTCMonth(), japanNow.getUTCDate() + 1) - 9 * 60 * 60 * 1000;

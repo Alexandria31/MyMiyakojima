@@ -37,10 +37,11 @@
 </script>
 
 <link rel="stylesheet" href="style.css?v=162">
-<link rel="preload" as="image" href="images/slider4-web.webp" media="(min-width: 761px)" imagesrcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" imagesizes="560px">
+<link rel="preload" as="image" href="images/slider4-web.webp" imagesrcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" imagesizes="100vw">
 <link rel="stylesheet" href="discovery.css?v=2">
-<link rel="stylesheet" href="weather-dock.css?v=1">
+<link rel="stylesheet" href="weather-dock.css?v=2">
 <link rel="stylesheet" href="seasonal-refresh.css?v=4">
+<link rel="stylesheet" href="island-welcome.css?v=1">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -133,7 +134,7 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
 <!-- MY MIYAKOJIMA 2.0 HOMEPAGE -->
 <section class="mm25-hero" aria-labelledby="mm25-hero-title">
   <div class="mm25-hero-media">
-    <img width="1600" height="1200" src="images/slider4-web.webp" alt="Clear Miyakojima ocean and bright summer sky" srcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px">
+    <img width="1600" height="1200" src="images/slider4-web.webp" alt="Clear Miyakojima ocean and bright sky / 宮古島の澄んだ海と明るい空" srcset="images/slider4-web-640.webp 640w, images/slider4-web-960.webp 960w, images/slider4-web.webp 1600w" sizes="100vw" fetchpriority="high">
   </div>
   <div class="mm25-hero-shade"></div>
   <div class="mm25-hero-content">
@@ -149,24 +150,18 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
     </h1>
     <div class="mobile-island-scenes">
       <a href="discover-miyakojima.html">
-        <img loading="lazy" src="images/miyako-beach.jpg" width="1280" height="853" alt="Turquoise waves meeting the white sand / 白い砂浜に寄せる、青く澄んだ波" fetchpriority="high">
+        <img loading="lazy" src="images/miyako-beach-mobile-800.webp" srcset="images/miyako-beach-mobile-480.webp 480w, images/miyako-beach-mobile-800.webp 800w" sizes="(max-width: 760px) 52vw, 320px" width="1280" height="853" alt="Turquoise waves meeting the white sand / 白い砂浜に寄せる、青く澄んだ波" fetchpriority="high">
         <span>By the sea<small lang="ja">海のそばで</small></span>
       </a>
       <a href="discover-miyakojima.html">
-        <img loading="lazy" src="images/sunayama-beach.jpg" width="1000" height="563" alt="Rock formations and clear water at Sunayama Beach / 砂山ビーチの岩と澄んだ海">
+        <img loading="lazy" src="images/sunayama-beach-mobile-800.webp" srcset="images/sunayama-beach-mobile-480.webp 480w, images/sunayama-beach-mobile-800.webp 800w" sizes="(max-width: 760px) 36vw, 240px" width="1000" height="563" alt="Rock formations and clear water at Sunayama Beach / 砂山ビーチの岩と澄んだ海">
         <span>Island days<small lang="ja">島を歩く</small></span>
       </a>
     </div>
     <p>
-      Find a favourite place. Meet the people behind it.
-      <span lang="ja">お気に入りの場所と、そこにいる人に出会う。宮古島のお店や体験、島の物語を英語と日本語で。</span>
+      The places you'll love. The people you'll remember.
+      <span lang="ja">好きになる場所、心に残る人。英語と日本語で出会う、宮古島。</span>
     </p>
-    <nav class="home-quick-browse" aria-label="Explore by interest / 目的から探す">
-      <a href="recommended.html#food"><span>Food &amp; cafés</span><span lang="ja">ごはん・カフェ</span><span aria-hidden="true">↗</span></a>
-      <a href="recommended.html#lifestyle"><span>Shops &amp; makers</span><span lang="ja">お店・ものづくり</span><span aria-hidden="true">↗</span></a>
-      <a href="recommended.html#wellness"><span>Wellness</span><span lang="ja">リラクゼーション</span><span aria-hidden="true">↗</span></a>
-      <a href="miyakojima-tours.html"><span>Local guides</span><span lang="ja">ツアーガイド</span><span aria-hidden="true">↗</span></a>
-    </nav>
     <div class="mm25-hero-actions" aria-label="Homepage primary navigation">
       <a href="recommended.html" class="mm25-guide-button">
         <span class="mm25-button-icon">⌕</span>
@@ -193,15 +188,22 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
   </div>
 </section>
 
+<nav class="home-quick-browse home-front-door" aria-label="Explore by interest / 目的から探す">
+  <a href="recommended.html#food"><span>Food &amp; cafés</span><span lang="ja">ごはん・カフェ</span><span aria-hidden="true">↗</span></a>
+  <a href="recommended.html#lifestyle"><span>Shops &amp; makers</span><span lang="ja">お店・ものづくり</span><span aria-hidden="true">↗</span></a>
+  <a href="recommended.html#wellness"><span>Wellness</span><span lang="ja">リラクゼーション</span><span aria-hidden="true">↗</span></a>
+  <a href="miyakojima-tours.html"><span>Local guides</span><span lang="ja">ツアーガイド</span><span aria-hidden="true">↗</span></a>
+</nav>
+
 <section class="weekend-edit" id="weekendEdit" aria-labelledby="weekend-edit-title">
   <div class="weekend-edit-heading">
     <p>A Little Island Plan<span lang="ja">島で楽しむ、小さな予定</span></p>
     <h2 id="weekend-edit-title">November, at Your Pace<span lang="ja">自分のペースで楽しむ、11月の島</span></h2>
   </div>
   <div class="weekend-edit-grid">
-    <a href="events.html#events-current" class="weekend-edit-card" data-weekend-event data-event-date="2026-11-22">
-      <span class="weekend-edit-date" aria-hidden="true">NOV<strong>22</strong></span>
-      <span class="weekend-edit-copy"><strong>Music on Ikema Island<span lang="ja">池間島で、音楽に出会う</span></strong><small>FUNAKUSU Music Fes · Free admission<span lang="ja">11月22日・フナクスビーチ・<span class="weekend-edit-time">入場無料</span></span></small></span>
+    <a href="events.html#events-current" class="weekend-edit-card" data-weekend-event data-event-date="2026-11-29">
+      <span class="weekend-edit-date" aria-hidden="true">NOV<strong>29</strong></span>
+      <span class="weekend-edit-copy"><strong>A Day at the Airport<span lang="ja">空港で楽しむ、一日</span></strong><small>Shimojishima Air Day · 10:30–15:00<span lang="ja">11月29日・下地島空港・<span class="weekend-edit-time">10:30〜15:00</span></span></small></span>
       <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
     </a>
     <a href="events.html#events-current" class="weekend-edit-card" data-weekend-fallback hidden>
@@ -210,8 +212,8 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
       <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
     </a>
     <a href="recommended.html#food" class="weekend-edit-card">
-      <img src="images/hirochan-soba.jpg" width="76" height="96" loading="lazy" alt="Island soba at Hirochan / ひろちゃんの島そば">
-      <span class="weekend-edit-copy"><strong>Something Good for Lunch<span lang="ja">お昼は、島のごはんを</span></strong><small>Find a local table<span lang="ja">気になるお店を探す</span></small></span>
+      <img src="images/burwood-donuts-preview-320.webp" width="76" height="96" loading="lazy" alt="Donuts at Burwood Donuts / バーウッドドーナツのドーナツ">
+      <span class="weekend-edit-copy"><strong>A Sweet Island Pause<span lang="ja">島で、甘いひと息</span></strong><small>Explore local food and sweet stops<span lang="ja">島のごはんと甘いものを探す</span></small></span>
       <span class="weekend-edit-arrow" aria-hidden="true">↗</span>
     </a>
     <a href="recommended.html#wellness" class="weekend-edit-card">
@@ -338,12 +340,12 @@ src="https://www.facebook.com/tr?id=4448563795393123&ev=PageView&noscript=1" alt
     </article>
 
     <article class="mm25-now-card">
-      <img width="1206" height="1033" src="images/guruguru-hero-turtle.jpg" alt="An ocean-coloured glass turtle by Guru Guru Glass / グルグルグラスの海色のガラスのカメ" loading="lazy">
-      <span>Made on the Island · 島のものづくり</span>
-      <h3>A little ocean to take home<span lang="ja">グルグルグラスの海色ガラス</span></h3>
-      <p>Glass turtles, pendants, and small pieces made by Makoto. A keepsake with a person and a story behind it.</p>
-      <p class="jp" lang="ja">誠さんが手がけるガラスのカメやペンダント。つくり手の想いとともに、島の思い出を持ち帰ってみませんか。</p>
-      <a href="guruguru-glass.html">Meet the shop<span lang="ja">お店を見る</span></a>
+      <img width="640" height="480" src="images/hitotsuki-dining-1.jpg" alt="Sashimi at Hitotsuki / 日と月のお刺身" loading="lazy">
+      <span>New to the Guide<span lang="ja">新しくご紹介するお店</span></span>
+      <h3>An evening at Hitotsuki<span lang="ja">日と月で、島の夜ごはん</span></h3>
+      <p>An izakaya near Painagama Beach, with phone reservations and practical details for your evening.</p>
+      <p class="jp" lang="ja">パイナガマビーチ近くの居酒屋「日と月」。電話予約や、お出かけ前に知りたい情報をご案内します。</p>
+      <a href="hitotsuki.html">Meet Hitotsuki<span lang="ja">日と月を見る</span></a>
     </article>
 
     <article class="mm25-now-card mm25-now-card-gare">
@@ -669,21 +671,11 @@ A curated bilingual guide to Miyakojima.
     <p class="island-calendar-updated">
       Miyakojima Events Only
       <span lang="ja">宮古島内のイベントのみ</span>
-      <span>Checked November 8, 2026 / <span lang="ja">2026年11月8日確認</span></span>
+      <span>Checked November 27, 2026 / <span lang="ja">2026年11月27日確認</span></span>
     </p>
   </div>
 
   <div class="island-calendar-grid">
-    <article class="island-event" data-event-date="2026-11-22">
-      <div class="island-event-date"><span>NOV</span><strong>22</strong><small>2026</small></div>
-      <div class="island-event-copy">
-        <span class="island-event-status">Coming Up<span lang="ja">これからの予定</span></span>
-        <h3>FUNAKUSU Music Fes 2026<span lang="ja">フナクスミュージックフェス2026</span></h3>
-        <p>Music by the sea on Ikema Island, with nature and community at its heart. Free admission. There is no venue parking; check the official shuttle and access guidance before visiting.</p>
-        <p class="jp" lang="ja">池間島のフナクスビーチで、自然と地域を感じながら楽しむ音楽の一日。入場無料。会場に駐車場はありません。シャトルバスやアクセスは公式案内をご確認ください。</p>
-        <a href="https://funakusu.com/" target="_blank" rel="noopener">Organizer Details<span lang="ja">主催者の情報を見る</span></a>
-      </div>
-    </article>
 
     <article class="island-event" data-event-date="2026-11-29">
       <div class="island-event-date"><span>NOV</span><strong>29</strong><small>2026</small></div>
@@ -1174,9 +1166,9 @@ My Miyakojimaでは、宮古島の事業者さまを英語と日本語で丁寧�
   <p class="footer-note jp" lang="ja">新しいおすすめや特集ページを定期的に追加しています。</p>
   <p class="footer-copy">&copy; 2026 My Miyakojima</p>
 </footer>
-<script src="js/script.js?v=50"></script>
+<script src="js/script.js?v=53"></script>
 
-<script src="js/island-discovery.js?v=5"></script>
+<script src="js/island-discovery.js?v=7"></script>
 <script src="js/japanese-typography.js?v=1"></script>
 </body>
 </html>

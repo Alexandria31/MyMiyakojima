@@ -1,0 +1,53 @@
+/* A stronger seaside opening, without replacing the guide or monthly portrait. */
+body.home-revamp.island-refresh .mm25-hero {
+ display: block; position: relative; isolation: isolate; overflow: hidden;
+ width: 100%; max-width: none; margin: 20px 0 0; padding: 52px max(32px, calc((100% - 1120px) / 2));
+ min-height: 0; box-sizing: border-box; border: 0; border-radius: 0;
+ background: #d1ede7; box-shadow: none; text-align: left;
+}
+body.home-revamp.island-refresh .mm25-hero .mm25-hero-media {
+ display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; z-index: -2;
+ border: 0; border-radius: 0; overflow: hidden; margin: 0; padding: 0;
+}
+body.home-revamp.island-refresh .mm25-hero .mm25-hero-media > img {
+ width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center 65%;
+ border-radius: 0; transform: none !important; filter: none; opacity: 1;
+}
+body.home-revamp.island-refresh .mm25-hero .mm25-hero-shade { display: block; position: absolute; inset: 0; z-index: -1; background: #f4faf6b8; }
+body.home-revamp.island-refresh .mm25-hero-content { width: min(100%,780px); padding: 0; position: relative; text-align: left; }
+body.home-revamp.island-refresh .mm25-hero-content > .mm25-kicker { display: none; }
+body.home-revamp.island-refresh .mm25-hero h1 { font-size: 3rem; line-height: 1.15; color: #124f50; text-align: left; letter-spacing: 0; margin: 24px 0; text-shadow: none; }
+body.home-revamp.island-refresh .mm25-hero h1 > span { font-size: 1.35rem; line-height: 1.8; font-weight: 500; margin-top: 12px; color: #234f4a; }
+body.home-revamp.island-refresh .mm25-hero-content > p:not(.mm25-kicker) { max-width: 660px; text-align: left; color: #244b47; font-size: 1.15rem; line-height: 1.8; }
+body.home-revamp.island-refresh .mm25-hero-content > p > span { color: #244b47; font-size: 1.05rem; line-height: 1.9; }
+body.home-revamp.island-refresh .mm25-member-badge { display: inline-grid; width: auto; max-width: 100%; text-align: left; align-items: start; background: none; border: 0; border-left: 3px solid #28847c; border-radius: 0; padding: 0 0 0 14px; margin: 0; box-shadow: none; }
+body.home-revamp.island-refresh .mm25-member-badge > span { font-size: .8rem; letter-spacing: 0; }
+body.home-revamp.island-refresh .mm25-member-badge strong { font-size: 1rem; line-height: 1.5; }
+body.home-revamp.island-refresh .mm25-member-badge small { font-size: .95rem; line-height: 1.7; color: #315953; }
+body.home-revamp.island-refresh .mobile-island-scenes, body.home-revamp.island-refresh .mm25-hero-note, body.home-revamp.island-refresh .mm25-hero-signals { display: none; }
+body.home-revamp.island-refresh .home-quick-browse { margin: 24px 0; border-block: 1px solid #47837955; gap: 12px 24px; padding: 16px 0; }
+body.home-revamp.island-refresh .home-quick-browse a { background: none; border-bottom: 0; padding: 6px 0; }
+body.home-revamp.island-refresh .home-front-door { width: min(1120px,calc(100% - 40px)); margin: 22px auto; grid-template-columns: repeat(4,minmax(0,1fr)); }
+body.home-revamp.island-refresh .mm25-hero-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin: 22px 0 0; max-width: 780px; }
+body.home-revamp.island-refresh .mm25-guide-button { background: #165d59; color: #fff; border: 1px solid #165d59; box-shadow: none; }
+body.home-revamp.island-refresh .mm25-guide-button::before, body.home-revamp.island-refresh .mm25-guide-button::after { display: none; }
+body.home-revamp.island-refresh .mm25-guide-button small { color: #fff; }
+body.home-revamp.island-refresh .mm25-section-head h2 { font-size: 1.9rem; line-height: 1.45; }
+body.home-revamp.island-refresh .mm25-section-head h2 > span { font-size: 1.25rem; line-height: 1.8; }
+body.home-revamp.island-refresh .mm25-now-card { border-top: 3px solid #8bb8ab; box-shadow: none; }
+body.home-revamp.island-refresh .mm25-now-card.mm25-mutsumi-photo { border-top-color: #b8819b; }
+@media (hover:hover) { body.home-revamp.island-refresh .mm25-guide-button:hover { background: #104b48; transform: translateY(-2px); } }
+@media (max-width:760px) {
+ body.home-revamp.island-refresh .mm25-hero { padding: 22px; min-height: 0; margin-top: 12px; }
+ body.home-revamp.island-refresh .mm25-hero .mm25-hero-shade { background: #f4faf6d6; }
+ body.home-revamp.island-refresh .mm25-hero h1 { font-size: 2.1rem; margin: 12px 0 10px; }
+ body.home-revamp.island-refresh .mm25-hero h1 > span { font-size: 1.1rem; margin-top: 10px; }
+ body.home-revamp.island-refresh .mm25-hero-content > p:not(.mm25-kicker) { font-size: 1rem; }
+ body.home-revamp.island-refresh .mm25-hero-content > p > span { font-size: 1rem; }
+ body.home-revamp.island-refresh .home-quick-browse { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 16px; margin: 18px 0; padding: 10px 0; }
+ body.home-revamp.island-refresh .home-front-door { margin: 18px auto; }
+ body.home-revamp.island-refresh .mm25-hero-actions { grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
+ body.home-revamp.island-refresh .mm25-creative-mutsumi { padding: 16px 18px; }
+ body.home-revamp.island-refresh .mm25-section-head h2 { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion:reduce) { body.home-revamp.island-refresh .mm25-guide-button:hover { transform: none; } }

@@ -66,7 +66,7 @@ async function fillForm(page) {
     const context = await browser.newContext({ viewport: { width: 390, height: 844 }, timezoneId: 'Pacific/Honolulu' });
     const page = await context.newPage();
     await page.route('https://**', route => route.abort());
-    await page.clock.install({ time: new Date('2026-11-22T14:59:55Z') });
+    await page.clock.install({ time: new Date('2026-11-29T14:59:55Z') });
     await page.goto(home);
     assert(await page.locator('[data-weekend-event]').isVisible(), 'Sunday event missing before Tokyo midnight');
     await page.clock.runFor(6200);

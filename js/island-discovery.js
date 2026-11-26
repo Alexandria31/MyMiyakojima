@@ -8,6 +8,7 @@ const islandAreas = {
   island: ["Check location with the business", "所在地は事業者へご確認ください"]
 };
 const islandListingDetails = {
+  "hitotsuki.html": { area: "hirara", facts: [["Call ahead to confirm a table and current hours", "お席・最新の営業時間はお電話でご確認ください"]] },
   "kounotori-wedding.html": { area: "hirara", facts: [["Wedding plans by direct consultation", "ウェディングのご相談は事業者へ直接"]] },
   "pizza-doraku.html": { area: "hirara" },
   "captain-marian.html": { area: "hirara", facts: [["Parking available", "駐車場あり"]] },
@@ -165,11 +166,12 @@ function initializeIslandFinds() {
     ["An unhurried island day", "ゆっくり楽しむ島の一日", ["hirochan.html", "lomilomi-pono.html", "toppuri.html"]],
     ["Meet the island through its flavours", "島の味から始まる出会い", ["para-jiro.html", "burwood-donuts.html", "caldo-de-cana.html"]]
   ];
-  const week = Math.floor(Date.now() / (7 * 86400000));
+  const japanDay = Math.floor((Date.now() + 9 * 3600000) / 86400000);
+  const week = Math.floor((japanDay + 3) / 7);
   const [en, ja, hrefs] = selections[week % selections.length];
   host.querySelector("h2").replaceChildren(islandPair(en, ja));
   const grid = host.querySelector(".island-discovery-grid");
-  hrefs.map(getListingByHref).filter(Boolean).forEach(listing => grid.appendChild(islandCard(listing)));
+  grid.replaceChildren(...hrefs.map(getListingByHref).filter(Boolean).map(islandCard));
   document.querySelector(".mm25-business")?.before(host);
 }
 

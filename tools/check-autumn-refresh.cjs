@@ -6,8 +6,8 @@ const url = file => 'file:///' + path.join(root, file).replaceAll('\\', '/');
   const browser = await chromium.launch({ channel: 'msedge', headless: true });
   const failures = [];
   for (const [time, visible, label] of [
-    ['2026-11-08T03:00:00Z', 2, null],
-    ['2026-11-21T15:01:00Z', 2, 'Today'],
+    ['2026-11-27T03:00:00Z', 1, 'This Week'],
+    ['2026-11-28T15:01:00Z', 1, 'Today'],
     ['2026-11-28T03:00:00Z', 1, 'Tomorrow'],
     ['2026-11-30T03:00:00Z', 0, null]
   ]) {

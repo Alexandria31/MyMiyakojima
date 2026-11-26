@@ -1,0 +1,10 @@
+{
+  "checked": "2026-11-11",
+  "events": [
+    {"url": "https://funakusu.com/", "date": "2026-11-22", "status": "Still upcoming on organizer website; retain existing listing and access warning."},
+    {"url": "https://shimojishima.jp/post-3128/", "date": "2026-11-29", "status": "Still upcoming; published time 10:30–15:00 unchanged."}
+  ],
+  "homepage": "Rotate only the small food teaser to existing Burwood Donuts imagery. Preserve the November portrait and main layout.",
+  "analytics": "No connected Analytics or Ads Manager reporting access. Conversion behavior can be tested with mocks, but campaign performance cannot be assessed.",
+  "liveReview": "Published mobile-width homepage and inquiry navigation reviewed read-only, with tracking and all non-GET requests blocked. Not a physical-device Instagram app test."
+}

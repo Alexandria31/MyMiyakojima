@@ -1,0 +1,33 @@
+.hitotsuki-page { background: #f8fbf9; color: #244d49; }
+.hitotsuki-page .site-atmosphere { display: none; }
+.hitotsuki-opening .visitor-summary { display: none; }
+.hitotsuki-page main { max-width: 1080px; margin: auto; padding: 32px 24px 64px; }
+.hitotsuki-name { text-align: center; padding: 20px 0; }
+.hitotsuki-name > span { display: block; font-family: 'Yu Mincho',serif; font-size: 2.6rem; line-height: 1.5; }
+.hitotsuki-name small,.hitotsuki-name small span { display: block; font-size: 1rem; line-height: 1.8; }
+.hitotsuki-opening { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 28px; align-items: center; padding: 28px 0; border-block: 1px solid #b8ccc2; text-align: left; background: none; color: #244d49; }
+.hitotsuki-page .hitotsuki-opening :is(h1,p,span) { color: #244d49; }
+.hitotsuki-page .hitotsuki-opening .freshness-kicker { text-align: left; letter-spacing: 0; }
+.hitotsuki-page .hitotsuki-opening .map-button { background: #dce9e1; border: 1px solid #a9bfb1; color: #244d49; box-shadow: none; min-height: 44px; padding: 12px 18px; }
+.hitotsuki-page .hitotsuki-opening .map-button span { color: #244d49; }
+.hitotsuki-page .hitotsuki-opening a.map-button,
+.hitotsuki-page .hitotsuki-opening a.map-button * { color: #244d49 !important; text-shadow: none !important; }
+.hitotsuki-page h1 { font-size: 2rem; line-height: 1.5; }
+.hitotsuki-page :is(h1,h2,p,dt,dd) > span { display: block; }
+.hitotsuki-page h1 > span { font-size: 1.4rem; }
+.hitotsuki-page :is(p,dd,dt) { font-size: 1rem; line-height: 1.9; text-wrap: pretty; }
+.hitotsuki-page :is(section h2) { font-size: 1.5rem; line-height: 1.6; }
+.hitotsuki-page section h2 > span { font-size: 1.1rem; margin-top: 8px; }
+.hitotsuki-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 24px; }
+.hitotsuki-details { display: grid; grid-template-columns: minmax(120px,.7fr) minmax(0,1.7fr); gap: 20px; text-align: left; margin: 26px 0; }
+.hitotsuki-details dd { margin: 0; }
+.hitotsuki-lead-photo,.hitotsuki-gallery figure { margin: 0; }
+.hitotsuki-lead-photo img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; border-radius: 6px; background: #edf2ee; }
+.hitotsuki-page .hitotsuki-opening figcaption { font-size: .9rem; line-height: 1.8; margin-top: 10px; color: #43615b; }
+.hitotsuki-page figcaption span { display: block; }
+.hitotsuki-gallery { margin: 44px 0; }
+.hitotsuki-gallery-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; align-items: start; }
+.hitotsuki-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; border-radius: 6px; background: #edf2ee; }
+.hitotsuki-gallery figcaption { margin-top: 12px; font-size: 1rem; line-height: 1.8; color: #43615b; }
+@media(max-width:760px){.hitotsuki-opening,.hitotsuki-gallery-grid{grid-template-columns:1fr}.hitotsuki-intro-copy{padding:8px 0}.hitotsuki-page .hitotsuki-opening h1{text-align:left}}
+@media(max-width:600px){.hitotsuki-page main{padding:24px 20px 48px}.hitotsuki-details{grid-template-columns:1fr;gap:10px}.hitotsuki-details dd{margin-bottom:16px}.hitotsuki-links{flex-direction:column}.hitotsuki-page h1{font-size:1.7rem}}

@@ -21,7 +21,16 @@ const forecast = {
       ? route.fulfill({ json: forecast }) : route.abort());
     await page.goto(home);
     const dock = page.locator('.weather-dock');
-    await page.locator('#miyakoWeatherTemp').filter({ hasText: '27°C' }).waitFor();
+    async function findClearPosition() {
+      for (let y = 0; y <= 2400; y += 100) {
+        await page.evaluate(y => window.scrollTo({ top: y, behavior: 'instant' }), y);
+        await page.waitForTimeout(100);
+        if (await dock.isVisible()) return;
+      }
+      throw Error(`${width}: weather never returns in clear space`);
+    }
+    await page.locator('#miyakoWeatherTemp').filter({ hasText: '27°C' }).waitFor({ state: 'attached' });
+    await findClearPosition();
     const before = await dock.boundingBox();
     await page.waitForTimeout(1100);
     const after = await dock.boundingBox();
@@ -45,9 +54,11 @@ const forecast = {
       if (await dock.isVisible()) failures.push({ width, menu: 'Weather obscures menu' });
       await page.locator('#menuToggle').click();
     }
+    await findClearPosition();
     await page.locator('.weather-dock-link').click();
     await page.waitForURL('**/weather.html');
     await page.goBack();
+    await findClearPosition();
     if (!await dock.isVisible()) failures.push({ width, back: false });
     await page.locator('.weather-dock-dismiss').click();
     if (await dock.isVisible()) failures.push({ width, dismiss: false });

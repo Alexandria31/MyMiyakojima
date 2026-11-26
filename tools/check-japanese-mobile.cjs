@@ -16,7 +16,7 @@ const root = path.resolve(__dirname,'..');
       for (const file of files) {
         await page.goto('file:///' + path.join(root,file).replaceAll('\\','/'),{waitUntil:'domcontentloaded'});
         await page.evaluate(() => document.fonts.ready);
-        await page.waitForTimeout(180);
+        await page.waitForTimeout(600);
         const state = await page.evaluate(() => {
           const jp = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
           const segmenter = new Intl.Segmenter('ja',{granularity:'grapheme'});

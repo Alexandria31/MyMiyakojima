@@ -15,6 +15,7 @@
   isolation: isolate;
 }
 .weather-dock[hidden], body:is(.menu-open, .saved-drawer-open) .weather-dock { display: none; }
+.weather-dock.is-yielding:not(:focus-within) { visibility: hidden; pointer-events: none; }
 .weather-dock-link {
   display: flex;
   align-items: center;
