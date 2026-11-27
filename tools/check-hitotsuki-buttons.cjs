@@ -11,7 +11,7 @@ const {chromium}=require('C:/Users/lexym/.cache/codex-runtimes/codex-primary-run
    const buttons=page.locator('main .map-button,.page-nav a');
    for(const button of await buttons.all()){
     const normal=await button.evaluate(x=>({bg:getComputedStyle(x).backgroundColor,color:getComputedStyle(x).color,shadow:getComputedStyle(x).boxShadow}));
-    if(normal.bg!=='rgb(210, 222, 215)'||normal.color!=='rgb(36, 77, 73)'||normal.shadow!=='none')throw Error(JSON.stringify(normal));
+    if(normal.bg!=='rgb(169, 189, 177)'||normal.color!=='rgb(36, 77, 73)'||normal.shadow!=='none')throw Error(JSON.stringify(normal));
     await button.focus();
     if(await button.evaluate(x=>getComputedStyle(x).color)!=='rgb(36, 77, 73)')throw Error('Focus text contrast');
    }
@@ -19,7 +19,7 @@ const {chromium}=require('C:/Users/lexym/.cache/codex-runtimes/codex-primary-run
     const button=page.locator('.hitotsuki-opening .map-button');
     await button.hover();
     await page.waitForTimeout(250);
-    if(await button.evaluate(x=>getComputedStyle(x).backgroundColor)!=='rgb(189, 207, 195)')throw Error('Hover is not muted');
+    if(await button.evaluate(x=>getComputedStyle(x).backgroundColor)!=='rgb(150, 174, 159)')throw Error('Hover is not muted');
     await button.screenshot({path:path.resolve(__dirname,'hitotsuki-button-muted.png')});
    }
    console.log(`${width}px: all contact and section buttons use muted backgrounds and dark text`);
